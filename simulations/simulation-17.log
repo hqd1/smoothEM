@@ -1,0 +1,1526 @@
+ 
+ 
+Job started on comp-sc-0494.acib.production.int.aci.ics.psu.edu at Fri Dec 18 13:40:03 EST 2020
+ 
+Loading required package: doParallel
+Loading required package: foreach
+Loading required package: iterators
+Loading required package: parallel
+Loading required package: dplyr
+
+Attaching package: 'dplyr'
+
+The following objects are masked from 'package:stats':
+
+    filter, lag
+
+The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Loading required package: plotly
+Loading required package: ggplot2
+
+Attaching package: 'plotly'
+
+The following object is masked from 'package:ggplot2':
+
+    last_plot
+
+The following object is masked from 'package:stats':
+
+    filter
+
+The following object is masked from 'package:graphics':
+
+    layout
+
+Loading required package: RColorBrewer
+Loading required package: fda
+Loading required package: splines
+Loading required package: Matrix
+
+Attaching package: 'fda'
+
+The following object is masked from 'package:graphics':
+
+    matplot
+
+17 	 7 	 0.001 
+inner it =  1 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	cat2 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -2118.554 	llh.pred =  -2118.554 	llh.pred =  -1918.178 	llh.pred =  -1918.178 	llh.pred =  -1908.305 	llh.pred =  -1908.305 	cat2 	llh.pred =  -1906.23 	llh.pred =  -1906.23 	llh.pred =  -1904.655 	cat2 	llh.pred =  -2123.94 	llh.pred =  -1904.655 	llh.pred =  -1901.427 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -1901.427 	cat2 	llh.pred =  -1895.042 	llh.pred =  -1895.042 	llh.pred =  -2123.94 	llh.pred =  -2118.554 	llh.pred =  -2123.94 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1918.178 	llh.pred =  -2118.554 	llh.pred =  -2123.94 	llh.pred =  -1908.305 	cat2 	cat2 	llh.pred =  -1918.178 	cat2 	llh.pred =  -2118.554 	llh.pred =  -1906.23 	llh.pred =  -1908.305 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -1918.178 	llh.pred =  -2123.94 	llh.pred =  -1904.655 	llh.pred =  -1906.23 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -1908.305 	llh.pred =  -1901.427 	llh.pred =  -2123.94 	llh.pred =  -1904.655 	llh.pred =  -1906.23 	llh.pred =  -1895.042 	llh.pred =  -2118.554 	llh.pred =  -2118.554 	llh.pred =  -1901.427 	llh.pred =  -2118.554 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1904.655 	llh.pred =  -1918.178 	llh.pred =  -1918.178 	llh.pred =  -1895.042 	llh.pred =  -1918.178 	llh.pred =  -1901.427 	llh.pred =  -1908.305 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1908.305 	llh.pred =  -1908.305 	llh.pred =  -1895.042 	llh.pred =  -1906.23 	llh.pred =  -1906.23 	llh.pred =  -1906.23 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1904.655 	llh.pred =  -1904.655 	llh.pred =  -1904.655 	llh.pred =  -1901.427 	llh.pred =  -1901.427 	llh.pred =  -1901.427 	llh.pred =  -1895.042 	llh.pred =  -1895.042 	llh.pred =  -1895.042 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+cat2 	cat2 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -2118.554 	llh.pred =  -2118.554 	llh.pred =  -1918.178 	llh.pred =  -1918.178 	llh.pred =  -1908.305 	llh.pred =  -1908.305 	llh.pred =  -1906.23 	llh.pred =  -1906.23 	cat2 	llh.pred =  -1904.655 	llh.pred =  -1904.655 	llh.pred =  -1901.427 	llh.pred =  -2123.94 	llh.pred =  -1901.427 	cat2 	llh.pred =  -1895.042 	llh.pred =  -1895.042 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -2118.554 	llh.pred =  -2123.94 	llh.pred =  -1918.178 	llh.pred =  -2118.554 	llh.pred =  -1908.305 	llh.pred =  -1918.178 	llh.pred =  -1906.23 	llh.pred = cat2 	 -1908.305 	llh.pred =  -1904.655 	llh.pred =  -1906.23 	llh.pred =  -2123.94 	llh.pred =  -1901.427 	llh.pred =  -1904.655 	llh.pred =  -1895.042 	llh.pred =  -2123.94 	llh.pred =  -1901.427 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -2118.554 	llh.pred =  -1895.042 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1918.178 	llh.pred =  -1908.305 	cat2 	cat2 	llh.pred =  -1906.23 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -1904.655 	cat2 	llh.pred =  -2123.94 	cat2 	llh.pred =  -1901.427 	llh.pred =  -2123.94 	llh.pred =  -2123.94 	llh.pred =  -1895.042 	llh.pred =  -2123.94 	llh.pred =  -2118.554 	llh.pred =  -2118.554 	llh.pred =  -2123.94 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1918.178 	llh.pred =  -2123.94 	llh.pred =  -1918.178 	llh.pred =  -1908.305 	llh.pred =  -2118.554 	llh.pred =  -1908.305 	llh.pred =  -2118.554 	llh.pred =  -1906.23 	llh.pred =  -1918.178 	cat2 	llh.pred =  -1906.23 	llh.pred =  -1918.178 	llh.pred =  -1908.305 	llh.pred =  -1904.655 	llh.pred =  -2123.94 	llh.pred =  -1904.655 	llh.pred =  -1908.305 	llh.pred =  -1901.427 	llh.pred =  -1906.23 	cat2 	llh.pred =  -1901.427 	llh.pred =  -1906.23 	llh.pred =  -2123.94 	llh.pred =  -1895.042 	llh.pred =  -1904.655 	llh.pred =  -1895.042 	llh.pred =  -2123.94 	llh.pred =  -1904.655 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1901.427 	llh.pred =  -2118.554 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+cat2 	llh.pred =  -1901.427 	llh.pred =  -2123.94 	llh.pred =  -1895.042 	llh.pred =  -1918.178 	llh.pred =  -1895.042 	llh.pred =  -2123.94 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1908.305 	llh.pred =  -2118.554 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1906.23 	llh.pred =  -2123.94 	llh.pred =  -1918.178 	llh.pred =  -1904.655 	llh.pred =  -1908.305 	llh.pred =  -2118.554 	llh.pred =  -1901.427 	llh.pred =  -1906.23 	llh.pred =  -1918.178 	llh.pred =  -1895.042 	llh.pred =  -1904.655 	llh.pred =  -1908.305 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1901.427 	llh.pred =  -1906.23 	llh.pred =  -1895.042 	llh.pred =  -1904.655 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+llh.pred =  -1901.427 	llh.pred =  -1895.042 	llh.pred =  -1891.405 	best.ind =  10 
+length(flag)  187  it =  1 
+cat2 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1908.259 	llh.pred =  -1906.319 	llh.pred =  -1904.699 	llh.pred =  -1901.218 	cat2 	llh.pred =  -1894.032 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+llh.pred =  -2133.19 	fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2133.19 	llh.pred =  -2133.19 	cat2 	llh.pred =  -1919.318 	llh.pred =  -2133.19 	cat2 	llh.pred =  -1908.259 	llh.pred =  -2133.19 	llh.pred =  -1906.319 	llh.pred =  -2133.19 	llh.pred =  -1904.699 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1901.218 	llh.pred =  -1919.318 	llh.pred =  -1894.032 	llh.pred =  -2133.19 	llh.pred =  -1908.259 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+llh.pred =  -1919.318 	fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1906.319 	llh.pred =  -1908.259 	llh.pred =  -1904.699 	llh.pred =  -1906.319 	llh.pred =  -1901.218 	llh.pred =  -1904.699 	llh.pred =  -1894.032 	cat2 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+llh.pred =  -1901.218 	fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1894.032 	llh.pred =  -2133.19 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	cat2 	llh.pred =  -2133.19 	cat2 	llh.pred =  -1919.318 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1908.259 	llh.pred =  -2133.19 	llh.pred =  -1908.259 	llh.pred =  -1906.319 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1906.319 	llh.pred =  -1904.699 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1904.699 	llh.pred =  -1901.218 	llh.pred =  -1919.318 	llh.pred =  -1908.259 	llh.pred =  -1894.032 	llh.pred =  -1901.218 	llh.pred =  -1908.259 	llh.pred =  -1906.319 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1894.032 	llh.pred =  -1906.319 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+llh.pred =  -1904.699 	fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1904.699 	llh.pred =  -1901.218 	llh.pred =  -1901.218 	llh.pred =  -1894.032 	llh.pred =  -1894.032 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	cat2 	llh.pred =  -1919.318 	llh.pred =  -1908.259 	llh.pred =  -2133.19 	llh.pred =  -1906.319 	llh.pred =  -2133.19 	llh.pred =  -1904.699 	cat2 	llh.pred =  -2133.19 	llh.pred =  -1901.218 	llh.pred =  -1919.318 	llh.pred =  -1894.032 	llh.pred =  -2133.19 	llh.pred =  -1908.259 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2133.19 	llh.pred =  -1906.319 	llh.pred =  -2133.19 	llh.pred =  -1904.699 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1901.218 	llh.pred =  -2133.19 	llh.pred =  -1894.032 	llh.pred =  -1908.259 	llh.pred =  -2133.19 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1906.319 	llh.pred =  -1919.318 	llh.pred =  -1904.699 	llh.pred =  -1908.259 	llh.pred =  -1901.218 	llh.pred =  -1906.319 	llh.pred =  -1894.032 	llh.pred =  -1904.699 	cat2 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1901.218 	llh.pred =  -2133.19 	llh.pred =  -1894.032 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1908.259 	llh.pred =  -1906.319 	llh.pred =  -1904.699 	cat2 	llh.pred =  -1901.218 	llh.pred =  -2133.19 	llh.pred =  -1894.032 	cat2 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	cat2 	llh.pred =  -1919.318 	llh.pred =  -1908.259 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1906.319 	llh.pred =  -2133.19 	llh.pred =  -1908.259 	llh.pred =  -1904.699 	cat2 	llh.pred =  -2133.19 	llh.pred =  -1906.319 	llh.pred =  -1901.218 	llh.pred =  -1919.318 	llh.pred =  -2133.19 	llh.pred =  -1894.032 	llh.pred =  -1904.699 	llh.pred =  -1908.259 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1901.218 	llh.pred =  -2133.19 	llh.pred =  -1906.319 	llh.pred =  -1894.032 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1904.699 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1919.318 	llh.pred =  -2133.19 	llh.pred =  -1901.218 	llh.pred =  -1908.259 	llh.pred =  -1894.032 	llh.pred =  -2133.19 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1906.319 	llh.pred =  -1919.318 	llh.pred =  -1904.699 	llh.pred =  -1908.259 	llh.pred =  -1901.218 	llh.pred =  -1906.319 	llh.pred =  -1894.032 	llh.pred =  -1904.699 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1901.218 	llh.pred =  -1894.032 	cat2 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2133.19 	llh.pred =  -2133.19 	cat2 	llh.pred =  -2133.19 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -2133.19 	llh.pred =  -1908.259 	llh.pred =  -1906.319 	llh.pred =  -2133.19 	llh.pred =  -1919.318 	llh.pred =  -1904.699 	llh.pred =  -1908.259 	llh.pred =  -1901.218 	llh.pred =  -1894.032 	llh.pred =  -1906.319 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1904.699 	llh.pred =  -1901.218 	llh.pred =  -1894.032 	llh.pred =  -1887.586 	best.ind =  10 
+length(flag)  187  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  2 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	cat2 	llh.pred =  -2084.88 	llh.pred =  -2091.018 	cat2 	llh.pred =  -2084.88 	llh.pred =  -2091.018 	llh.pred =  -2090.522 	llh.pred =  -2076.04 	llh.pred =  -2087.558 	llh.pred =  -2090.522 	llh.pred =  -1873.276 	llh.pred =  -1885.117 	cat2 	cat2 	llh.pred =  -1862.961 	llh.pred =  -2086.643 	llh.pred =  -1875.894 	llh.pred =  -2085.025 	llh.pred =  -2103.256 	llh.pred =  -1883.369 	llh.pred =  -1860.802 	llh.pred =  -1873.929 	llh.pred =  -1873.866 	llh.pred =  -1859.351 	llh.pred =  -2085.025 	llh.pred =  -2103.256 	llh.pred =  -1872.49 	llh.pred =  -1871.897 	llh.pred =  -1854.982 	llh.pred =  -1868.809 	llh.pred =  -2099.342 	llh.pred =  -2079.828 	llh.pred =  -1870.056 	llh.pred =  -1848.651 	llh.pred =  -1863.185 	cat2 	llh.pred =  -1896.91 	llh.pred =  -1879.107 	llh.pred =  -1866.288 	llh.pred =  -1843.533 	best.ind =  10 
+length(flag)  157  it =  1 
+llh.pred =  -1857.391 	best.ind =  10 
+length(flag)  165  it =  1 
+cat2 	llh.pred =  -1887.041 	llh.pred =  -1869.094 	llh.pred =  -2103.757 	llh.pred =  -1860.577 	llh.pred =  -2107.417 	llh.pred =  -1885.276 	llh.pred =  -1867.163 	llh.pred =  -1855.112 	best.ind =  10 
+length(flag)  164  it =  1 
+llh.pred =  -2103.757 	llh.pred =  -1865.519 	llh.pred =  -1883.529 	llh.pred =  -2107.417 	cat2 	llh.pred =  -1862.166 	llh.pred =  -2091.943 	llh.pred =  -1880.443 	llh.pred =  -2101.651 	llh.pred =  -2106.761 	llh.pred =  -1888.431 	llh.pred =  -1857.096 	llh.pred =  -1873.838 	llh.pred =  -1905.237 	llh.pred =  -1879.001 	llh.pred =  -1852.155 	best.ind =  10 
+length(flag)  162  it =  1 
+llh.pred =  -1870.074 	best.ind =  10 
+length(flag)  173  it =  1 
+llh.pred =  -2106.761 	llh.pred =  -1896.083 	llh.pred =  -1877.128 	llh.pred =  -2104.73 	llh.pred =  -1894.091 	llh.pred =  -1875.31 	llh.pred =  -1899.2 	llh.pred =  -1892.431 	llh.pred =  -1871.728 	llh.pred =  -1889.864 	llh.pred =  -1888.905 	llh.pred =  -1865.295 	llh.pred =  -1888.063 	llh.pred =  -1883.078 	llh.pred =  -1861.732 	best.ind =  10 
+length(flag)  168  it =  1 
+llh.pred =  -1886.325 	llh.pred =  -1879.414 	best.ind =  10 
+length(flag)  179  it =  1 
+llh.pred =  -1883.101 	llh.pred =  -1877.929 	llh.pred =  -1872.738 	best.ind =  10 
+length(flag)  174  it =  1 
+cat2 	llh.pred =  -2089.62 	llh.pred =  -2089.62 	llh.pred =  -2085.179 	llh.pred =  -1881.054 	llh.pred =  -1871.669 	llh.pred =  -1870.196 	llh.pred =  -1868.444 	llh.pred =  -1864.944 	llh.pred =  -1858.259 	llh.pred =  -1854.67 	best.ind =  10 
+length(flag)  163  it =  1 
+cat2 	cat2 	llh.pred =  -2096.871 	llh.pred =  -2091.625 	cat2 	cat2 	llh.pred =  -2096.871 	llh.pred =  -2110.92 	llh.pred =  -2089.13 	llh.pred =  -2091.625 	llh.pred =  -2091.723 	cat2 	llh.pred =  -2110.92 	llh.pred =  -1888.611 	llh.pred =  -2089.13 	llh.pred =  -2086.485 	cat2 	llh.pred =  -2100.994 	llh.pred =  -1878.682 	llh.pred =  -1883.239 	llh.pred =  -2106.379 	llh.pred =  -2087.948 	llh.pred =  -1876.689 	llh.pred =  -1873.962 	llh.pred =  -2081.863 	llh.pred =  -1904.683 	llh.pred =  -1879.66 	llh.pred =  -2100.994 	llh.pred =  -1875.048 	llh.pred =  -1871.826 	llh.pred =  -1894.629 	llh.pred =  -1870.633 	llh.pred =  -2081.863 	llh.pred =  -2087.802 	llh.pred =  -1871.556 	llh.pred =  -1870.588 	llh.pred =  -1892.558 	llh.pred =  -1868.771 	llh.pred =  -1882.726 	llh.pred =  -1865.595 	llh.pred =  -1867.237 	llh.pred =  -2074.292 	llh.pred =  -1890.956 	llh.pred =  -1867.392 	cat2 	llh.pred =  -1873.642 	llh.pred =  -1860.215 	best.ind =  10 
+length(flag)  168  it =  1 
+llh.pred =  -1861.536 	llh.pred =  -1871.285 	llh.pred =  -1887.52 	llh.pred =  -1863.638 	llh.pred =  -2109.465 	llh.pred =  -1871.638 	llh.pred =  -1861.233 	llh.pred =  -1855.607 	best.ind =  10 
+length(flag)  164  it =  1 
+llh.pred =  -1881.936 	llh.pred =  -1857.187 	llh.pred =  -1870.292 	llh.pred =  -2109.465 	llh.pred =  -1859.558 	llh.pred =  -1877.766 	best.ind =  10 
+length(flag)  178  it =  1 
+llh.pred =  -1851.214 	best.ind =  10 
+length(flag)  163  it =  1 
+llh.pred =  -1866.377 	llh.pred =  -1857.704 	llh.pred =  -2104.347 	llh.pred =  -1861.851 	llh.pred =  -1853.792 	llh.pred =  -1900.959 	llh.pred =  -1856.744 	best.ind =  10 
+length(flag)  163  it =  1 
+llh.pred =  -1848.222 	llh.pred =  -1891.923 	llh.pred =  -1843.114 	best.ind =  10 
+length(flag)  157  it =  1 
+llh.pred =  -1889.956 	llh.pred =  -1888.689 	llh.pred =  -1885.049 	cat2 	llh.pred =  -1879.078 	llh.pred =  -2102.738 	llh.pred =  -1874.874 	best.ind =  10 
+length(flag)  176  it =  1 
+llh.pred =  -2102.738 	cat2 	llh.pred =  -2095.529 	llh.pred =  -2104.242 	llh.pred =  -1891.168 	cat2 	llh.pred =  -1882.103 	llh.pred =  -2104.242 	llh.pred =  -1880.051 	llh.pred =  -2105.062 	llh.pred =  -2101.115 	llh.pred =  -1878.598 	llh.pred =  -1897.187 	llh.pred =  -2105.062 	llh.pred =  -1875.187 	cat2 	llh.pred =  -1886.771 	llh.pred =  -2100.013 	llh.pred =  -1868.918 	llh.pred =  -2100.819 	llh.pred =  -1884.833 	llh.pred =  -1898.387 	llh.pred =  -1863.364 	best.ind =  10 
+length(flag)  170  it =  1 
+llh.pred =  -1883.329 	llh.pred =  -2100.819 	llh.pred =  -1889.453 	llh.pred =  -1879.834 	llh.pred =  -1887.464 	llh.pred =  -2095.488 	llh.pred =  -1874.078 	llh.pred =  -1885.997 	llh.pred =  -1897.132 	llh.pred =  -1868.64 	best.ind =  10 
+length(flag)  173  it =  1 
+llh.pred =  -1882.678 	llh.pred =  -1888.208 	llh.pred =  -1878.017 	llh.pred =  -1886.463 	llh.pred =  -1873.575 	best.ind =  10 
+length(flag)  175  it =  1 
+llh.pred =  -1884.763 	llh.pred =  -1881.162 	llh.pred =  -1874.611 	llh.pred =  -1870.456 	best.ind =  10 
+length(flag)  174  it =  1 
+cat2 	llh.pred =  -2096.774 	llh.pred =  -2096.774 	llh.pred =  -2096.774 	llh.pred =  -1886.26 	llh.pred =  -1875.82 	cat2 	llh.pred =  -1873.973 	llh.pred =  -2100.225 	llh.pred =  -1872.3 	llh.pred =  -1868.626 	llh.pred =  -2100.225 	llh.pred =  -1862.499 	llh.pred =  -2097.747 	llh.pred =  -1855.049 	best.ind =  10 
+length(flag)  165  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1884.362 	llh.pred =  -1873.688 	llh.pred =  -1871.775 	llh.pred =  -1870.143 	llh.pred =  -1866.647 	cat2 	llh.pred =  -1859.427 	llh.pred =  -2096.809 	llh.pred =  -1853.055 	best.ind =  10 
+length(flag)  164  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2096.809 	cat2 	llh.pred =  -2117.08 	cat2 	llh.pred =  -2096.809 	llh.pred =  -1880.072 	llh.pred =  -2117.08 	llh.pred =  -2112.576 	llh.pred =  -1869.034 	cat2 	llh.pred =  -2117.08 	llh.pred =  -2112.576 	llh.pred =  -1867.03 	llh.pred =  -1906.547 	cat2 	llh.pred =  -2084.826 	llh.pred =  -1865.319 	llh.pred =  -1896.01 	llh.pred =  -2112.576 	llh.pred =  -2106.446 	llh.pred =  -1861.632 	llh.pred =  -2084.826 	llh.pred =  -1897.896 	llh.pred =  -1894.172 	cat2 	llh.pred =  -1854.687 	llh.pred =  -2106.446 	llh.pred =  -1886.976 	llh.pred =  -1892.494 	llh.pred =  -2084.826 	llh.pred =  -1848.495 	best.ind =  10 
+length(flag)  162  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2114.632 	llh.pred =  -1885.102 	llh.pred =  -1888.769 	llh.pred =  -1873.702 	llh.pred =  -2106.446 	llh.pred =  -1881.573 	llh.pred =  -1883.517 	llh.pred =  -2114.632 	llh.pred =  -1862.912 	llh.pred =  -1889.035 	llh.pred =  -1875.159 	best.ind =  10 
+length(flag)  179  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1879.876 	llh.pred =  -1860.992 	llh.pred =  -1878.751 	llh.pred =  -2114.632 	llh.pred =  -1873.137 	llh.pred =  -1859.237 	llh.pred =  -1900.356 	llh.pred =  -1876.766 	llh.pred =  -1866.312 	best.ind =  10 
+length(flag)  173  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1855.281 	llh.pred =  -1875.201 	llh.pred =  -1889.732 	llh.pred =  -1847.915 	llh.pred =  -1871.705 	llh.pred =  -1887.815 	llh.pred =  -1841.401 	best.ind =  10 
+length(flag)  157  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1864.351 	llh.pred =  -1886.129 	llh.pred =  -1857.98 	best.ind =  10 
+length(flag)  167  it =  2 
+llh.pred =  -1882.701 	llh.pred =  -1875.538 	llh.pred =  -1869.214 	best.ind =  10 
+length(flag)  173  it =  2 
+cat2 	llh.pred =  -2092.609 	llh.pred =  -2092.609 	llh.pred =  -2092.609 	llh.pred =  -1881.79 	llh.pred =  -1871.705 	llh.pred =  -1869.848 	llh.pred =  -1868.062 	llh.pred =  -1864.703 	llh.pred =  -1857.331 	llh.pred =  -1850.749 	best.ind =  10 
+length(flag)  163  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	cat2 	cat2 	llh.pred =  -2094.609 	llh.pred =  -2085.075 	llh.pred =  -2099.874 	llh.pred =  -2085.075 	llh.pred =  -2094.609 	llh.pred =  -2099.874 	llh.pred =  -2094.609 	cat2 	llh.pred =  -2085.075 	llh.pred =  -2099.874 	llh.pred =  -1884.161 	llh.pred =  -1871.578 	llh.pred =  -2120.422 	llh.pred =  -1889.205 	llh.pred =  -1861.155 	llh.pred =  -1878.58 	llh.pred =  -2120.422 	llh.pred =  -1859.379 	cat2 	llh.pred =  -1876.641 	llh.pred =  -1857.605 	llh.pred =  -2120.422 	llh.pred =  -1874.981 	llh.pred =  -2095.819 	llh.pred =  -1905.827 	llh.pred =  -1853.784 	llh.pred =  -1873.851 	llh.pred =  -1871.339 	llh.pred =  -1846.764 	llh.pred =  -1894.517 	llh.pred =  -2095.819 	llh.pred =  -1871.885 	llh.pred =  -1864.176 	llh.pred =  -1840.483 	best.ind =  10 
+length(flag)  156  it =  2 
+llh.pred =  -1892.681 	llh.pred =  -1870.295 	llh.pred =  -1857.721 	best.ind =  10 
+length(flag)  168  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2095.819 	llh.pred =  -1890.848 	llh.pred =  -1866.788 	llh.pred =  -1880.442 	llh.pred =  -1887.588 	llh.pred =  -1859.866 	llh.pred =  -1870.528 	cat2 	llh.pred =  -1880.372 	llh.pred =  -1852.928 	best.ind =  10 
+length(flag)  163  it =  2 
+llh.pred =  -1868.987 	llh.pred =  -1873.774 	best.ind =  10 
+length(flag)  178  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2118.935 	llh.pred =  -1867.203 	llh.pred =  -2118.935 	llh.pred =  -1863.621 	llh.pred =  -1856.187 	llh.pred =  -2118.935 	llh.pred =  -1849.651 	best.ind =  10 
+length(flag)  163  it =  2 
+llh.pred =  -1902.524 	fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1891.849 	cat2 	llh.pred =  -2100.295 	llh.pred =  -1889.979 	llh.pred =  -2107.169 	llh.pred =  -1888.293 	llh.pred =  -2100.295 	llh.pred =  -1884.27 	llh.pred =  -2107.169 	llh.pred =  -2100.295 	llh.pred =  -1877.432 	cat2 	llh.pred =  -1870.722 	best.ind = llh.pred =   10 
+-1883.391 	length(flag)  176  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2107.169 	llh.pred =  -1873.587 	llh.pred =  -2110.009 	llh.pred =  -1892.143 	cat2 	cat2 	llh.pred =  -1871.825 	llh.pred =  -1882.056 	llh.pred =  -2110.009 	llh.pred =  -2113.784 	llh.pred =  -1870.239 	llh.pred =  -2111.837 	llh.pred =  -1880.166 	llh.pred =  -2110.009 	llh.pred =  -2113.784 	llh.pred =  -1866.335 	llh.pred =  -1878.555 	llh.pred =  -2111.837 	llh.pred =  -1898.228 	llh.pred =  -1858.881 	llh.pred =  -1874.999 	llh.pred =  -2113.784 	llh.pred =  -1888.015 	llh.pred =  -1852.497 	best.ind =  10 
+length(flag)  163  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1868.115 	llh.pred =  -2111.837 	llh.pred =  -1899.641 	llh.pred =  -1886.17 	llh.pred =  -1898.204 	llh.pred =  -1861.121 	best.ind =  10 
+length(flag)  170  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1889.328 	llh.pred =  -1884.591 	llh.pred =  -1886.732 	llh.pred =  -1887.474 	llh.pred =  -1880.799 	llh.pred =  -1884.715 	llh.pred =  -1885.825 	llh.pred =  -1873.361 	llh.pred =  -1883.073 	llh.pred =  -1882.129 	llh.pred =  -1867.079 	best.ind =  10 
+length(flag)  173  it =  2 
+llh.pred =  -1879.643 	llh.pred =  -1875.159 	llh.pred =  -1872.647 	llh.pred =  -1868.55 	best.ind =  10 
+length(flag)  175  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1866.286 	best.ind =  10 
+length(flag)  173  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2109.263 	llh.pred =  -2109.263 	llh.pred =  -2106.446 	llh.pred =  -1889.035 	llh.pred =  -1878.751 	llh.pred =  -1876.766 	llh.pred =  -1875.201 	llh.pred =  -1871.705 	llh.pred =  -1864.351 	llh.pred =  -1857.98 	best.ind =  10 
+length(flag)  167  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2114.632 	llh.pred =  -2114.632 	llh.pred =  -2114.632 	llh.pred =  -1900.356 	llh.pred =  -1889.732 	llh.pred =  -1887.941 	llh.pred =  -1886.129 	llh.pred =  -1882.701 	llh.pred =  -1875.538 	llh.pred =  -1869.214 	best.ind =  10 
+length(flag)  173  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2085.075 	llh.pred =  -2085.075 	llh.pred =  -2085.075 	llh.pred =  -1871.578 	llh.pred =  -1861.166 	llh.pred =  -1859.379 	llh.pred =  -1857.605 	llh.pred =  -1853.784 	llh.pred =  -1846.764 	llh.pred =  -1840.483 	best.ind =  10 
+length(flag)  156  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2094.609 	llh.pred =  -2094.609 	llh.pred =  -2094.609 	llh.pred =  -1884.161 	llh.pred =  -1873.851 	llh.pred =  -1871.885 	llh.pred =  -1870.128 	llh.pred =  -1866.788 	llh.pred =  -1860.415 	llh.pred =  -1853.281 	best.ind =  10 
+length(flag)  163  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2109.04 	llh.pred =  -2109.04 	llh.pred =  -2109.04 	llh.pred =  -1898.141 	llh.pred =  -1888.015 	llh.pred =  -1886.17 	llh.pred =  -1884.591 	llh.pred =  -1880.799 	llh.pred =  -1873.361 	llh.pred =  -1867.251 	best.ind =  10 
+length(flag)  173  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  3 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	llh.pred =  -2072.685 	llh.pred =  -2072.685 	llh.pred =  -2069.945 	llh.pred =  -1864.408 	llh.pred =  -1853.679 	llh.pred =  -1851.758 	llh.pred =  -1850.139 	llh.pred =  -1846.824 	llh.pred =  -1841.182 	llh.pred =  -1835.809 	best.ind =  10 
+length(flag)  151  it =  1 
+cat2 	llh.pred =  -2068.617 	llh.pred =  -2068.617 	llh.pred =  -2050.288 	llh.pred =  -1849.523 	cat2 	cat2 	llh.pred =  -1841.188 	cat2 	llh.pred =  -2060.222 	llh.pred =  -2081.018 	llh.pred =  -1839.703 	llh.pred =  -2078.632 	llh.pred =  -2060.222 	llh.pred =  -1838.155 	llh.pred =  -2081.018 	llh.pred =  -2078.632 	llh.pred =  -1834.626 	cat2 	llh.pred =  -2052.643 	llh.pred =  -2078.963 	llh.pred =  -1827.847 	llh.pred =  -2071.172 	llh.pred =  -1853.26 	llh.pred =  -2044.698 	llh.pred =  -1873.106 	llh.pred =  -1872.449 	llh.pred =  -1844.4 	llh.pred =  -1821.584 	best.ind =  10 
+length(flag)  144  it =  1 
+llh.pred =  -1863.424 	llh.pred =  -1863.681 	llh.pred =  -2044.698 	llh.pred =  -1842.594 	llh.pred =  -1861.675 	llh.pred =  -1862.236 	llh.pred =  -1840.988 	cat2 	llh.pred =  -1859.636 	llh.pred =  -1860.88 	llh.pred =  -1837.8 	llh.pred =  -1855.919 	llh.pred =  -1857.348 	llh.pred =  -2064.769 	llh.pred =  -1832.286 	llh.pred =  -1849.881 	llh.pred =  -1852.818 	llh.pred =  -1825.943 	best.ind =  10 
+length(flag)  147  it =  1 
+llh.pred =  -2064.769 	llh.pred =  -1847.345 	best.ind =  10 
+length(flag)  160  it =  1 
+llh.pred =  -1843.962 	best.ind =  10 
+length(flag)  158  it =  1 
+llh.pred =  -2039.486 	llh.pred =  -1841.258 	llh.pred =  -2061.06 	llh.pred =  -1832.828 	cat2 	llh.pred =  -1842.167 	llh.pred =  -1831.513 	llh.pred =  -1833.221 	llh.pred =  -1830.052 	llh.pred =  -2062.169 	llh.pred =  -1831.818 	llh.pred =  -1827.01 	llh.pred =  -1830.489 	llh.pred =  -2062.169 	llh.pred =  -1821.302 	llh.pred =  -1826.127 	llh.pred =  -1815.469 	best.ind =  10 
+length(flag)  141  it =  1 
+llh.pred =  -2055.672 	llh.pred =  -1820.368 	llh.pred =  -1845.51 	llh.pred =  -1817.417 	best.ind =  10 
+length(flag)  140  it =  1 
+llh.pred =  -1835.506 	llh.pred =  -1833.707 	llh.pred =  -1832.621 	llh.pred =  -1828.273 	llh.pred =  -1822.29 	llh.pred =  -1816.494 	best.ind =  10 
+length(flag)  143  it =  1 
+cat2 	llh.pred =  -2066.851 	cat2 	llh.pred =  -2066.851 	llh.pred =  -2066.059 	llh.pred =  -2061.623 	llh.pred =  -1858.91 	llh.pred =  -2066.059 	llh.pred =  -1849.553 	llh.pred =  -2060.952 	cat2 	llh.pred =  -1847.94 	llh.pred =  -1862.835 	llh.pred =  -1846.081 	llh.pred =  -2086.502 	llh.pred =  -1853.363 	llh.pred =  -1842.614 	cat2 	llh.pred =  -2086.502 	llh.pred =  -1851.307 	llh.pred =  -1836.518 	llh.pred =  -1849.723 	llh.pred =  -1830.921 	best.ind =  10 
+length(flag)  150  it =  1 
+llh.pred =  -2060.734 	llh.pred =  -2080.94 	llh.pred =  -1846.694 	llh.pred =  -1877.462 	cat2 	cat2 	llh.pred =  -2060.734 	llh.pred =  -1841.588 	cat2 	llh.pred =  -1869.006 	llh.pred =  -1836.346 	best.ind =  10 
+length(flag)  152  it =  1 
+llh.pred =  -2067.519 	llh.pred =  -2060.545 	llh.pred =  -2051.24 	llh.pred =  -1866.972 	llh.pred =  -2074.605 	llh.pred =  -1848.725 	llh.pred =  -2067.519 	llh.pred =  -1865.454 	llh.pred =  -2060.545 	llh.pred =  -2074.605 	llh.pred =  -1838.021 	llh.pred =  -1862 	cat2 	llh.pred =  -2065.708 	llh.pred =  -1836.28 	llh.pred =  -2046.045 	llh.pred =  -1856.483 	llh.pred =  -2073.574 	llh.pred =  -1857.109 	llh.pred =  -2078.951 	llh.pred =  -1834.518 	llh.pred =  -1837.813 	llh.pred =  -1849.995 	best.ind =  10 
+length(flag)  162  it =  1 
+llh.pred =  -1865.025 	llh.pred =  -1848.751 	llh.pred =  -1830.897 	llh.pred =  -1829.3 	llh.pred =  -2078.951 	llh.pred =  -1856.486 	cat2 	llh.pred =  -1846.857 	llh.pred =  -1824.334 	llh.pred =  -1827.91 	llh.pred =  -1854.65 	llh.pred =  -1845.447 	llh.pred =  -2070.138 	llh.pred =  -1826.486 	llh.pred =  -1818.897 	best.ind =  10 
+length(flag)  143  it =  1 
+llh.pred =  -2068.654 	llh.pred =  -1852.774 	llh.pred =  -1865.773 	llh.pred =  -1842.063 	llh.pred =  -1822.455 	llh.pred =  -1848.746 	llh.pred =  -1856.779 	llh.pred =  -1835.943 	llh.pred =  -1816.212 	llh.pred =  -2068.654 	llh.pred =  -1842.677 	llh.pred =  -1855.036 	llh.pred =  -1830.585 	best.ind =  10 
+length(flag)  150  it =  1 
+llh.pred =  -1810.129 	best.ind =  10 
+length(flag)  139  it =  1 
+llh.pred =  -1836.654 	best.ind =  10 
+length(flag)  153  it =  1 
+llh.pred =  -1853.46 	llh.pred =  -2052.575 	cat2 	llh.pred =  -1845.523 	llh.pred =  -1849.694 	cat2 	llh.pred =  -2055.014 	llh.pred =  -1843.084 	llh.pred =  -1835.232 	llh.pred =  -1836.812 	best.ind =  10 
+length(flag)  153  it =  1 
+llh.pred =  -2061.786 	llh.pred =  -2055.014 	llh.pred =  -2049.921 	llh.pred =  -2061.786 	llh.pred =  -1843.893 	cat2 	llh.pred =  -2052.924 	llh.pred =  -1834.012 	llh.pred =  -1834.059 	llh.pred =  -1846.191 	llh.pred =  -2072.776 	llh.pred =  -1832.39 	llh.pred =  -1832.836 	llh.pred =  -1837.709 	llh.pred =  -1830.886 	llh.pred =  -1828.921 	llh.pred =  -2072.776 	llh.pred =  -1835.923 	llh.pred =  -1827.18 	llh.pred =  -1823.216 	llh.pred =  -1834.203 	llh.pred =  -1820.453 	llh.pred =  -2064.598 	llh.pred =  -1816.286 	best.ind =  10 
+length(flag)  142  it =  1 
+llh.pred =  -1829.72 	llh.pred =  -1814.764 	best.ind =  10 
+length(flag)  141  it =  1 
+llh.pred =  -1853.016 	llh.pred =  -1823.632 	llh.pred =  -1843.297 	llh.pred =  -1818.265 	best.ind =  10 
+length(flag)  143  it =  1 
+llh.pred =  -1841.779 	llh.pred =  -1840.303 	llh.pred =  -1836.005 	llh.pred =  -1829.944 	llh.pred =  -1826.19 	best.ind =  10 
+length(flag)  147  it =  1 
+cat2 	llh.pred =  -2075.93 	llh.pred =  -2075.93 	llh.pred =  -2075.93 	cat2 	llh.pred =  -1850.064 	llh.pred =  -1840.91 	llh.pred =  -2083.93 	llh.pred =  -1839.217 	llh.pred =  -1837.794 	llh.pred =  -2083.93 	llh.pred =  -1834.232 	llh.pred =  -2083.93 	llh.pred =  -1827.42 	llh.pred =  -1865.632 	llh.pred =  -1820.576 	best.ind =  10 
+length(flag)  144  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1853.578 	llh.pred =  -1851.541 	llh.pred =  -1849.939 	llh.pred =  -1846.434 	llh.pred =  -1840.188 	llh.pred =  -1833.534 	best.ind =  10 
+length(flag)  151  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2092.334 	llh.pred =  -2092.334 	llh.pred =  -2092.334 	cat2 	llh.pred =  -1874.264 	llh.pred =  -1863.335 	llh.pred =  -2088.51 	llh.pred =  -1861.454 	llh.pred =  -2088.51 	llh.pred =  -2088.51 	llh.pred =  -1873.598 	cat2 	llh.pred =  -1863.379 	llh.pred =  -1861.902 	llh.pred =  -1859.732 	llh.pred =  -2052.855 	llh.pred =  -1860.289 	llh.pred =  -1856.135 	llh.pred =  -2052.855 	llh.pred =  -1856.853 	llh.pred =  -1849.509 	llh.pred =  -1849.991 	llh.pred =  -1842.331 	best.ind =  10 
+length(flag)  158  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2052.855 	llh.pred =  -1843.305 	best.ind =  10 
+length(flag)  160  it =  2 
+llh.pred =  -1842.656 	llh.pred =  -1832.626 	llh.pred =  -1831.076 	cat2 	llh.pred =  -1829.521 	llh.pred =  -2063.096 	llh.pred =  -1826.344 	llh.pred =  -1819.307 	llh.pred =  -2063.096 	llh.pred =  -1812.651 	best.ind =  10 
+length(flag)  142  it =  2 
+llh.pred =  -2063.096 	llh.pred =  -1854.199 	llh.pred =  -1844.117 	llh.pred =  -1842.541 	cat2 	llh.pred =  -1840.814 	llh.pred =  -1837.435 	llh.pred =  -2058.463 	llh.pred =  -1831.718 	llh.pred =  -2058.463 	llh.pred =  -1823.871 	best.ind =  10 
+length(flag)  147  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2058.463 	llh.pred =  -1845.796 	llh.pred =  -2068.611 	llh.pred =  -1835.549 	llh.pred =  -2068.611 	llh.pred =  -1833.929 	llh.pred =  -1832.05 	llh.pred =  -2068.611 	llh.pred =  -1828.402 	llh.pred =  -1842.753 	llh.pred =  -1821.052 	llh.pred =  -1833.221 	llh.pred =  -1814.672 	best.ind =  10 
+length(flag)  143  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1831.755 	llh.pred =  -1830.252 	llh.pred =  -1826.059 	llh.pred =  -1818.697 	llh.pred =  -1812.286 	best.ind =  10 
+length(flag)  140  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	cat2 	llh.pred =  -2069.803 	llh.pred =  -2092.958 	llh.pred =  -2069.803 	llh.pred =  -2092.958 	llh.pred =  -2069.803 	llh.pred =  -1859.671 	llh.pred =  -1849.578 	cat2 	llh.pred =  -1847.676 	llh.pred =  -2067.198 	llh.pred =  -1846.016 	llh.pred =  -1842.031 	llh.pred =  -2092.958 	llh.pred =  -2067.198 	llh.pred =  -1835.049 	llh.pred =  -1877.991 	llh.pred =  -1828.597 	best.ind =  10 
+length(flag)  151  it =  2 
+llh.pred =  -1868.864 	cat2 	llh.pred =  -2067.198 	llh.pred =  -1867.036 	llh.pred =  -1848.68 	llh.pred =  -2075.797 	llh.pred =  -1865.487 	llh.pred =  -1837.929 	llh.pred =  -2075.797 	cat2 	llh.pred =  -1861.974 	llh.pred =  -1835.919 	llh.pred =  -1855.279 	llh.pred =  -1834.065 	llh.pred =  -2064.623 	llh.pred =  -2075.797 	llh.pred =  -1847.9 	best.ind =  10 
+length(flag)  161  it =  2 
+llh.pred =  -1830.167 	llh.pred =  -1863.801 	llh.pred =  -2064.623 	llh.pred =  -1823.401 	llh.pred =  -1853.137 	llh.pred =  -1817.431 	best.ind =  10 
+length(flag)  142  it =  2 
+llh.pred =  -1851.194 	llh.pred =  -2064.623 	llh.pred =  -1849.448 	llh.pred =  -1838.396 	llh.pred =  -1845.954 	llh.pred =  -1829.3 	llh.pred =  -1838.488 	llh.pred =  -1827.705 	llh.pred =  -1831.859 	best.ind =  10 
+length(flag)  151  it =  2 
+llh.pred =  -1826.194 	llh.pred =  -1822.418 	cat2 	llh.pred =  -1815.01 	cat2 	llh.pred =  -1808.404 	best.ind =  10 
+length(flag)  139  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2079.249 	llh.pred =  -2075.025 	llh.pred =  -2079.249 	cat2 	llh.pred =  -2075.025 	llh.pred =  -2067.737 	llh.pred =  -2079.249 	llh.pred =  -1865.654 	llh.pred =  -2075.025 	llh.pred =  -2067.737 	llh.pred =  -1856.17 	llh.pred =  -1858.658 	llh.pred =  -1854.311 	llh.pred =  -1848.566 	llh.pred =  -2067.737 	llh.pred =  -1852.91 	llh.pred =  -1846.774 	llh.pred =  -1846.59 	llh.pred =  -1849.08 	llh.pred =  -1845.254 	llh.pred =  -1837.504 	cat2 	llh.pred =  -1841.725 	llh.pred =  -1841.694 	llh.pred =  -1835.851 	llh.pred =  -1835.249 	best.ind =  10 
+length(flag)  153  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2081.964 	llh.pred =  -1834.485 	llh.pred =  -1834.009 	llh.pred =  -1827.643 	best.ind =  10 
+length(flag)  149  it =  2 
+llh.pred =  -2081.964 	llh.pred =  -1830.058 	llh.pred =  -1823.52 	cat2 	llh.pred =  -2081.964 	llh.pred =  -1816.427 	best.ind =  10 
+length(flag)  143  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1866.473 	llh.pred =  -2067.461 	llh.pred =  -1856.697 	cat2 	llh.pred =  -1854.874 	llh.pred =  -2067.461 	llh.pred =  -2073.584 	llh.pred =  -1853.212 	llh.pred =  -2067.461 	llh.pred =  -1849.276 	llh.pred =  -2073.584 	llh.pred =  -1844.778 	llh.pred =  -1842.322 	llh.pred =  -1835.114 	best.ind =  10 
+length(flag)  153  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1833.853 	llh.pred =  -2073.584 	llh.pred =  -1831.994 	llh.pred =  -1845.962 	llh.pred =  -1830.217 	llh.pred =  -1835.228 	llh.pred =  -1826.529 	llh.pred =  -1833.585 	llh.pred =  -1819.909 	llh.pred =  -1831.649 	llh.pred =  -1813.441 	best.ind =  10 
+length(flag)  141  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1827.337 	cat2 	llh.pred =  -1820.63 	llh.pred =  -2078.415 	llh.pred =  -1814.271 	best.ind =  10 
+length(flag)  141  it =  2 
+llh.pred =  -2078.415 	llh.pred =  -2078.415 	llh.pred =  -1853.343 	llh.pred =  -1843.123 	llh.pred =  -1841.186 	llh.pred =  -1839.641 	llh.pred =  -1836.114 	llh.pred =  -1829.156 	llh.pred =  -1822.601 	best.ind =  10 
+length(flag)  146  it =  2 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2088.51 	llh.pred =  -2088.51 	llh.pred =  -2088.51 	llh.pred =  -1873.598 	llh.pred =  -1863.379 	llh.pred =  -1861.902 	llh.pred =  -1860.289 	llh.pred =  -1856.853 	llh.pred =  -1849.991 	llh.pred =  -1843.305 	best.ind =  10 
+length(flag)  160  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2052.855 	llh.pred =  -2052.855 	llh.pred =  -2052.855 	llh.pred =  -1842.656 	llh.pred =  -1832.626 	llh.pred =  -1831.076 	llh.pred =  -1829.521 	llh.pred =  -1826.344 	llh.pred =  -1819.307 	llh.pred =  -1812.651 	best.ind =  10 
+length(flag)  142  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	cat2 	llh.pred =  -2092.958 	llh.pred =  -2069.803 	llh.pred =  -2092.958 	llh.pred =  -2069.803 	llh.pred =  -2092.958 	llh.pred =  -2069.803 	llh.pred = llh.pred =   -1859.777-1878.278  		llh.pred =  -1849.578 	llh.pred =  -1868.864 	llh.pred =  -1847.676 	llh.pred =  -1867.036 	llh.pred =  -1846.016 	llh.pred =  -1865.33 	llh.pred =  -1842.238 	llh.pred =  -1861.974 	llh.pred =  -1835.049 	llh.pred =  -1855.279 	llh.pred =  -1828.597 	best.ind =  10 
+length(flag)  151  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1847.9 	best.ind =  10 
+length(flag)  161  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2069.829 	llh.pred =  -2067.198 	llh.pred =  -2067.198 	llh.pred =  -1848.68 	llh.pred =  -1837.929 	cat2 	llh.pred =  -1835.919 	llh.pred =  -1834.065 	llh.pred =  -2079.835 	llh.pred =  -1830.167 	llh.pred =  -2079.835 	llh.pred =  -1823.401 	llh.pred =  -1817.431 	best.ind =  10 
+length(flag)  142  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2079.835 	llh.pred =  -1858.658 	llh.pred =  -1848.566 	llh.pred =  -1846.774 	llh.pred =  -1845.254 	llh.pred =  -1841.694 	llh.pred =  -1834.485 	llh.pred =  -1827.643 	best.ind =  10 
+length(flag)  149  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2073.584 	llh.pred =  -2073.584 	llh.pred =  -2073.584 	llh.pred =  -1845.962 	llh.pred =  -1835.228 	llh.pred =  -1833.585 	llh.pred =  -1831.788 	llh.pred =  -1827.337 	llh.pred =  -1820.63 	llh.pred =  -1814.271 	best.ind =  10 
+length(flag)  141  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2075.797 	llh.pred =  -2075.797 	llh.pred =  -2075.797 	llh.pred =  -1863.801 	llh.pred =  -1853.137 	llh.pred =  -1851.194 	llh.pred =  -1849.448 	llh.pred =  -1845.954 	llh.pred =  -1838.488 	llh.pred =  -1831.859 	best.ind =  10 
+length(flag)  151  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2078.415 	llh.pred =  -2078.415 	llh.pred =  -2078.415 	llh.pred =  -1853.343 	llh.pred =  -1843.123 	llh.pred =  -1841.186 	llh.pred =  -1839.641 	llh.pred =  -1836.114 	llh.pred =  -1829.156 	llh.pred =  -1822.601 	best.ind =  10 
+length(flag)  146  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  4 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  17 
+rep =  19 
+rep =  16 
+rep =  18 
+rep =  20 
+cat2 	llh.pred =  -2048.644 	llh.pred =  -2036.03 	llh.pred =  -2030.558 	cat2 	llh.pred =  -1815.387 	cat2 	llh.pred =  -1805.507 	llh.pred =  -2057.244 	cat2 	llh.pred =  -2023.161 	llh.pred =  -1804.017 	cat2 	llh.pred =  -1802.395 	llh.pred =  -2057.244 	llh.pred =  -2054.145 	llh.pred =  -2023.161 	llh.pred =  -2024.872 	llh.pred =  -1798.978 	llh.pred =  -2047.906 	llh.pred =  -1793.277 	llh.pred =  -2022.363 	llh.pred =  -1852.179 	llh.pred =  -2039.611 	llh.pred =  -2024.872 	llh.pred =  -1787.222 	best.ind =  10 
+length(flag)  127  it =  1 
+llh.pred =  -1807.148 	llh.pred =  -1844.525 	llh.pred =  -1797.388 	llh.pred =  -2036.849 	llh.pred =  -1842.695 	llh.pred =  -2017.277 	llh.pred =  -1795.988 	llh.pred =  -1812.262 	llh.pred =  -1841.144 	llh.pred =  -1810.087 	llh.pred =  -1794.652 	llh.pred =  -1804.465 	llh.pred =  -1837.286 	llh.pred =  -1802.939 	llh.pred =  -1789.832 	llh.pred =  -1803.252 	llh.pred =  -1831.292 	llh.pred =  -1801.22 	llh.pred =  -1783.641 	llh.pred =  -1802.246 	llh.pred =  -1799.231 	llh.pred =  -1825.083 	best.ind =  10 
+length(flag)  146  it =  1 
+llh.pred =  -1778.519 	best.ind =  10 
+length(flag)  123  it =  1 
+llh.pred =  -1798.498 	llh.pred =  -1794.658 	llh.pred =  -1792.455 	llh.pred =  -1788.187 	cat2 	llh.pred =  -1786.96 	best.ind =  10 
+length(flag)  126  it =  1 
+llh.pred =  -1782.294 	best.ind =  10 
+length(flag)  124  it =  1 
+llh.pred =  -2021.855 	cat2 	llh.pred =  -2021.855 	llh.pred =  -2042.462 	llh.pred =  -2011.945 	llh.pred =  -1813.828 	cat2 	llh.pred =  -1806.255 	llh.pred =  -2042.462 	llh.pred =  -1804.856 	llh.pred =  -2042.662 	llh.pred =  -2031.161 	llh.pred =  -1803.572 	llh.pred =  -1820.578 	llh.pred =  -1800.341 	llh.pred =  -2042.662 	llh.pred =  -1810.636 	llh.pred =  -1794.623 	llh.pred =  -1809.39 	llh.pred =  -2028.72 	llh.pred =  -1788.583 	best.ind =  10 
+length(flag)  128  it =  1 
+llh.pred =  -1824.995 	llh.pred =  -1807.897 	llh.pred =  -1815.954 	llh.pred =  -1803.429 	llh.pred =  -1814.325 	llh.pred =  -1797.348 	llh.pred =  -1812.726 	llh.pred =  -1791.016 	best.ind =  10 
+length(flag)  128  it =  1 
+llh.pred =  -1810.586 	llh.pred =  -1804.291 	llh.pred =  -1798.421 	best.ind =  10 
+length(flag)  130  it =  1 
+cat2 	llh.pred =  -2039.209 	llh.pred =  -2039.209 	llh.pred =  -2031.479 	llh.pred =  -1830.786 	llh.pred =  -1821.17 	llh.pred =  -1819.304 	cat2 	llh.pred =  -1817.559 	llh.pred =  -2039.58 	llh.pred =  -1814.133 	cat2 	llh.pred =  -1808.733 	llh.pred =  -2039.58 	llh.pred =  -1802.977 	best.ind =  10 
+length(flag)  134  it =  1 
+llh.pred =  -2045.386 	llh.pred =  -2032.28 	cat2 	llh.pred =  -1821.781 	llh.pred =  -2045.386 	llh.pred =  -1813.538 	llh.pred =  -2034.689 	llh.pred =  -2035.999 	llh.pred =  -1811.826 	cat2 	llh.pred =  -1824.01 	llh.pred =  -1810.511 	cat2 	llh.pred =  -1815.768 	llh.pred =  -1806.596 	llh.pred =  -2034.689 	llh.pred =  -2033.224 	llh.pred =  -2047.88 	llh.pred =  -1814.337 	llh.pred =  -1800.167 	llh.pred =  -1812.885 	llh.pred =  -2016.639 	llh.pred =  -1794.053 	best.ind =  10 
+length(flag)  131  it =  1 
+llh.pred =  -2047.88 	llh.pred =  -2033.224 	llh.pred =  -1808.89 	llh.pred =  -1792.888 	llh.pred =  -1802.544 	llh.pred =  -1785.125 	llh.pred =  -2023.179 	llh.pred =  -2041.969 	llh.pred =  -1795.144 	best.ind =  10 
+length(flag)  131  it =  1 
+llh.pred =  -1783.965 	cat2 	llh.pred =  -1805.017 	llh.pred =  -1836.08 	llh.pred =  -1782.628 	cat2 	llh.pred =  -1797.228 	llh.pred =  -1827.397 	llh.pred =  -1778.415 	llh.pred =  -2035.498 	llh.pred =  -2014.553 	llh.pred =  -1795.933 	llh.pred =  -1826.094 	llh.pred =  -1772.342 	llh.pred =  -1794.526 	llh.pred =  -1824.649 	llh.pred =  -1767.628 	best.ind =  10 
+length(flag)  117  it =  1 
+llh.pred =  -2035.498 	llh.pred =  -1790.993 	llh.pred =  -1822.674 	llh.pred =  -2021.31 	llh.pred =  -1816.727 	llh.pred =  -1785.042 	cat2 	llh.pred =  -2025.58 	llh.pred =  -1778.559 	best.ind =  10 
+length(flag)  123  it =  1 
+llh.pred =  -2012.385 	llh.pred =  -1811.066 	best.ind =  10 
+length(flag)  138  it =  1 
+llh.pred =  -1823.489 	llh.pred =  -1803.285 	llh.pred =  -2037.589 	llh.pred =  -1813.341 	llh.pred =  -1795.53 	llh.pred =  -1811.458 	llh.pred =  -1793.592 	llh.pred =  -2037.589 	llh.pred =  -1810.198 	llh.pred =  -1792.109 	llh.pred =  -1805.712 	llh.pred =  -1788.76 	llh.pred =  -2027.186 	llh.pred =  -1800.081 	llh.pred =  -1781.942 	llh.pred =  -1821.67 	llh.pred =  -1794.841 	best.ind =  10 
+length(flag)  129  it =  1 
+llh.pred =  -1775.508 	best.ind =  10 
+length(flag)  122  it =  1 
+llh.pred =  -1813.736 	llh.pred =  -1811.972 	llh.pred =  -1810.474 	llh.pred =  -1806.499 	llh.pred =  -1800.634 	llh.pred =  -1795.19 	best.ind =  10 
+length(flag)  129  it =  1 
+cat2 	llh.pred =  -2034.492 	llh.pred =  -2034.492 	cat2 	llh.pred =  -2023.722 	llh.pred =  -2041.793 	llh.pred =  -1815.174 	llh.pred =  -1805.214 	llh.pred =  -2041.793 	llh.pred =  -1803.693 	llh.pred =  -1801.896 	llh.pred =  -2037.524 	cat2 	llh.pred =  -1798.238 	llh.pred =  -1834.806 	llh.pred =  -1791.764 	llh.pred =  -1825.28 	llh.pred =  -2037.045 	llh.pred =  -1787.22 	best.ind =  10 
+length(flag)  127  it =  1 
+llh.pred =  -1823.381 	llh.pred =  -1821.664 	llh.pred =  -1817.255 	llh.pred =  -2037.045 	llh.pred =  -1811.6 	llh.pred =  -2032.223 	llh.pred =  -1805.738 	best.ind =  10 
+length(flag)  136  it =  1 
+llh.pred =  -1815.713 	llh.pred =  -1805.9 	llh.pred =  -1804.181 	llh.pred =  -1802.632 	llh.pred =  -1798.902 	llh.pred =  -1793.334 	llh.pred =  -1787.392 	best.ind =  10 
+length(flag)  126  it =  1 
+cat2 	llh.pred =  -2031.203 	llh.pred =  -2031.203 	llh.pred =  -2031.203 	llh.pred =  -1810.46 	llh.pred =  -1802.636 	llh.pred =  -1801.202 	llh.pred =  -1799.032 	llh.pred =  -1794.935 	llh.pred =  -1788.26 	cat2 	llh.pred =  -1781.335 	best.ind =  10 
+length(flag)  124  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2040.411 	llh.pred =  -2040.411 	llh.pred =  -2040.411 	llh.pred =  -1812.296 	llh.pred =  -1804.465 	llh.pred =  -1803.224 	cat2 	llh.pred =  -1801.993 	llh.pred =  -1798.093 	cat2 	llh.pred =  -2043.254 	llh.pred =  -1790.639 	llh.pred =  -2060.918 	llh.pred =  -1783.478 	best.ind =  10 
+length(flag)  126  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2043.254 	llh.pred =  -2060.918 	llh.pred =  -2043.254 	llh.pred =  -2060.918 	llh.pred =  -1815.005 	cat2 	llh.pred =  -1852.972 	llh.pred =  -1805.364 	llh.pred =  -1844.333 	llh.pred =  -2026.858 	llh.pred =  -1803.718 	llh.pred =  -1842.681 	llh.pred =  -1802.038 	llh.pred =  -1840.841 	llh.pred =  -2026.858 	llh.pred =  -1798.129 	llh.pred =  -1837.147 	cat2 	cat2 	llh.pred =  -1791.524 	llh.pred =  -2026.858 	llh.pred =  -1829.266 	llh.pred =  -1784.491 	best.ind =  10 
+length(flag)  127  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2027.97 	llh.pred =  -1822.862 	best.ind =  10 
+length(flag)  146  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1807.406 	llh.pred =  -2046.671 	llh.pred =  -1797.431 	llh.pred =  -2027.97 	llh.pred =  -1795.934 	llh.pred =  -2046.671 	llh.pred =  -2025.4 	llh.pred =  -1794.184 	llh.pred =  -1814.959 	llh.pred =  -1790.245 	llh.pred =  -2046.671 	llh.pred =  -1805.793 	llh.pred =  -1782.979 	llh.pred =  -1820.959 	llh.pred =  -1804.326 	llh.pred =  -1776.55 	best.ind =  10 
+length(flag)  123  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1810.606 	llh.pred =  -1802.84 	llh.pred =  -1808.911 	llh.pred =  -1799.613 	llh.pred =  -1806.914 	llh.pred =  -1792.484 	llh.pred =  -1802.561 	llh.pred =  -1785.962 	best.ind =  10 
+length(flag)  128  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1795.714 	llh.pred =  -1789.229 	best.ind =  10 
+length(flag)  128  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2047.167 	llh.pred =  -2047.167 	llh.pred =  -2047.167 	llh.pred =  -1825.708 	llh.pred =  -1815.828 	llh.pred =  -1814.234 	llh.pred =  -1812.474 	llh.pred =  -1808.656 	llh.pred =  -1800.735 	llh.pred =  -1794.172 	best.ind =  10 
+length(flag)  131  it =  2 
+cat2 	cat2 	llh.pred =  -2046.126 	llh.pred =  -2044.041 	llh.pred =  -2046.126 	llh.pred =  -2041.678 	llh.pred =  -2041.547 	llh.pred =  -2044.041 	llh.pred =  -1831.618 	llh.pred =  -1821.988 	llh.pred =  -1820.967 	llh.pred =  -1813.353 	llh.pred =  -1819.299 	llh.pred =  -1811.826 	llh.pred =  -1817.51 	llh.pred =  -1810.166 	llh.pred =  -1814.145 	llh.pred =  -1806.546 	llh.pred =  -1808.483 	llh.pred =  -1798.9 	llh.pred =  -1801.366 	best.ind =  10 
+length(flag)  134  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1791.993 	best.ind =  10 
+length(flag)  131  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	cat2 	llh.pred =  -2036.772 	llh.pred =  -2050.6 	llh.pred =  -2036.772 	llh.pred =  -2050.6 	cat2 	cat2 	llh.pred =  -2036.772 	llh.pred =  -2050.6 	llh.pred =  -2053.451 	llh.pred =  -1805.577 	llh.pred =  -2025.106 	llh.pred =  -1824.559 	llh.pred =  -1796.833 	llh.pred =  -2053.451 	llh.pred =  -1815.635 	llh.pred =  -1795.39 	llh.pred =  -2025.106 	llh.pred =  -1814.168 	llh.pred =  -2053.451 	llh.pred =  -1794.08 	llh.pred =  -1812.649 	llh.pred =  -1837.405 	llh.pred =  -2023.274 	llh.pred =  -1790.316 	llh.pred =  -1827.105 	llh.pred =  -1808.949 	llh.pred =  -1793.027 	llh.pred =  -1783.699 	cat2 	llh.pred =  -1825.639 	llh.pred =  -1785.277 	llh.pred =  -1801.538 	llh.pred =  -1775.834 	best.ind =  10 
+length(flag)  123  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1824.257 	llh.pred =  -1794.844 	best.ind =  10 
+length(flag)  131  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1784.006 	llh.pred =  -2022.201 	llh.pred =  -1820.495 	llh.pred =  -1782.559 	cat2 	llh.pred =  -1813.874 	llh.pred =  -2022.201 	llh.pred =  -1778.684 	llh.pred =  -1807.237 	best.ind =  10 
+length(flag)  139  it =  2 
+llh.pred =  -2047.755 	llh.pred =  -1771.076 	llh.pred =  -2022.201 	llh.pred =  -1764.505 	best.ind =  10 
+length(flag)  117  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1803.854 	llh.pred =  -2047.755 	llh.pred =  -1795.223 	llh.pred =  -2047.755 	llh.pred =  -1793.647 	llh.pred =  -1824.054 	llh.pred =  -1791.705 	cat2 	llh.pred =  -1813.17 	llh.pred =  -1787.607 	llh.pred =  -1780.393 	llh.pred =  -1811.099 	llh.pred =  -2044.844 	llh.pred =  -1773.713 	best.ind =  10 
+length(flag)  122  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1809.486 	llh.pred =  -1805.737 	llh.pred =  -2044.844 	llh.pred =  -1799.19 	llh.pred =  -2044.844 	llh.pred =  -1792.335 	best.ind =  10 
+length(flag)  129  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1823.053 	llh.pred =  -1813.501 	llh.pred =  -1811.822 	llh.pred =  -1810.238 	llh.pred =  -1806.468 	llh.pred =  -1798.879 	llh.pred =  -1792.417 	best.ind =  10 
+length(flag)  130  it =  2 
+cat2 	llh.pred =  -2044.885 	llh.pred =  -2044.885 	cat2 	llh.pred =  -2044.885 	llh.pred =  -1835.569 	llh.pred =  -2044.774 	llh.pred =  -1825.201 	llh.pred =  -1823.515 	llh.pred =  -2044.774 	llh.pred =  -1821.752 	llh.pred =  -2044.774 	llh.pred =  -1817.916 	llh.pred =  -1810.81 	llh.pred =  -1815.758 	llh.pred =  -1804.242 	best.ind =  10 
+length(flag)  137  it =  2 
+llh.pred =  -1804.962 	llh.pred =  -1803.212 	llh.pred =  -1801.438 	llh.pred =  -1797.554 	llh.pred =  -1791.054 	llh.pred =  -1784.545 	best.ind =  10 
+length(flag)  127  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2039.798 	llh.pred =  -2039.798 	llh.pred =  -2039.798 	llh.pred =  -1815.059 	llh.pred =  -1805.738 	llh.pred =  -1803.868 	llh.pred =  -1802.15 	llh.pred =  -1798.576 	llh.pred =  -1791.95 	llh.pred =  -1784.846 	best.ind =  10 
+length(flag)  126  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2047.167 	llh.pred =  -2047.167 	llh.pred =  -2047.167 	llh.pred =  -1825.708 	llh.pred =  -1815.828 	llh.pred =  -1814.109 	llh.pred =  -1812.474 	llh.pred =  -1808.656 	llh.pred =  -1800.735 	llh.pred =  -1794.172 	best.ind =  10 
+length(flag)  131  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2044.844 	llh.pred =  -2044.844 	llh.pred =  -2044.844 	llh.pred =  -1823.053 	llh.pred =  -1813.501 	cat2 	llh.pred =  -1811.822 	llh.pred =  -2053.451 	llh.pred =  -1810.238 	llh.pred =  -1806.468 	llh.pred =  -2053.451 	llh.pred =  -1798.879 	llh.pred =  -2053.451 	llh.pred =  -1792.417 	best.ind =  10 
+length(flag)  130  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1837.405 	llh.pred =  -1827.105 	llh.pred =  -1825.639 	llh.pred =  -1824.257 	llh.pred =  -1820.495 	llh.pred =  -1813.874 	llh.pred =  -1807.237 	best.ind =  10 
+length(flag)  139  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2044.885 	llh.pred =  -2046.398 	llh.pred =  -2046.398 	llh.pred =  -1835.569 	llh.pred =  -1825.201 	llh.pred =  -1823.515 	llh.pred =  -1821.752 	llh.pred =  -1817.916 	llh.pred =  -1810.81 	llh.pred =  -1804.242 	best.ind =  10 
+length(flag)  137  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  5 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	cat2 	llh.pred =  -2004.433 	llh.pred =  -2013.198 	cat2 	llh.pred =  -2004.433 	cat2 	llh.pred =  -2013.198 	llh.pred =  -2001.051 	cat2 	llh.pred =  -2031.974 	llh.pred =  -2009.214 	llh.pred = llh.pred =   -2018.517-1797.092  		llh.pred =  -1996.799 	llh.pred =  -1788.78 	llh.pred =  -1788.83 	llh.pred =  -2031.974 	llh.pred =  -1778.968 	llh.pred =  -1787.308 	llh.pred =  -1996.799 	llh.pred =  -2018.517 	llh.pred =  -1786.134 	llh.pred =  -1777.397 	llh.pred =  -2029.277 	llh.pred =  -1782.381 	llh.pred =  -1775.75 	llh.pred =  -1992.301 	llh.pred =  -1789.909 	llh.pred = llh.pred =   -1776.823-2017.421  		llh.pred =  -1771.967 	llh.pred =  -1794.312 	llh.pred =  -1781.038 	llh.pred =  -1770.77 	best.ind =  10 
+length(flag)  119  it =  1 
+llh.pred =  -1765.488 	llh.pred =  -1786.068 	llh.pred =  -1766.328 	llh.pred =  -1779.607 	cat2 	llh.pred =  -1760.453 	best.ind =  10 
+length(flag)  115  it =  1 
+llh.pred =  -1784.38 	llh.pred =  -1757.675 	llh.pred =  -1778.058 	llh.pred =  -1782.923 	llh.pred =  -1756.394 	llh.pred =  -2028.527 	llh.pred =  -1774.808 	llh.pred =  -1781.25 	llh.pred =  -1755.008 	llh.pred =  -1767.695 	llh.pred =  -1774.86 	llh.pred =  -1751.484 	llh.pred =  -1761.889 	best.ind =  10 
+length(flag)  115  it =  1 
+llh.pred =  -1769.562 	best.ind =  10 
+length(flag)  118  it =  1 
+llh.pred =  -2012.622 	llh.pred =  -1745.608 	llh.pred =  -1739.08 	best.ind =  10 
+length(flag)  104  it =  1 
+llh.pred =  -2007.806 	llh.pred =  -1783.924 	cat2 	llh.pred =  -1776.055 	llh.pred =  -1997.702 	llh.pred =  -1774.984 	llh.pred =  -1773.648 	llh.pred =  -1997.702 	llh.pred =  -1770.045 	llh.pred =  -1996.05 	llh.pred =  -1764.92 	llh.pred =  -1794.071 	llh.pred =  -1759.515 	best.ind =  10 
+length(flag)  113  it =  1 
+llh.pred =  -1785.057 	llh.pred =  -1783.297 	llh.pred =  -1781.591 	llh.pred =  -1777.135 	llh.pred =  -1771.38 	llh.pred =  -1765.218 	best.ind =  10 
+length(flag)  117  it =  1 
+cat2 	llh.pred =  -1998.058 	llh.pred =  -1998.058 	llh.pred =  -1990.892 	llh.pred =  -1776.76 	llh.pred =  -1766.947 	llh.pred =  -1765.556 	llh.pred =  -1764.194 	cat2 	llh.pred =  -1759.27 	llh.pred =  -1753.065 	llh.pred =  -1983.586 	llh.pred =  -1747.488 	best.ind =  10 
+length(flag)  108  it =  1 
+cat2 	cat2 	llh.pred =  -2002.887 	cat2 	llh.pred =  -1998.021 	llh.pred =  -2019.778 	llh.pred =  -2020.116 	llh.pred =  -1980.625 	llh.pred =  -1765.306 	cat2 	llh.pred =  -1998.021 	llh.pred =  -2020.116 	llh.pred =  -2019.778 	llh.pred =  -2002.999 	llh.pred =  -1993.308 	llh.pred =  -2016.673 	cat2 	llh.pred =  -1785.325 	llh.pred =  -2016.511 	llh.pred =  -1809.282 	llh.pred =  -1776.411 	llh.pred =  -1795.498 	llh.pred =  -2002.999 	llh.pred =  -1996.713 	llh.pred =  -1800.508 	llh.pred =  -1757.766 	llh.pred =  -1775.103 	llh.pred =  -1785.442 	llh.pred =  -1799.191 	llh.pred =  -1987.668 	llh.pred =  -1773.786 	llh.pred =  -1756.149 	llh.pred =  -1783.823 	llh.pred =  -1797.646 	cat2 	llh.pred =  -1996.713 	llh.pred =  -1783.647 	llh.pred =  -1770.263 	llh.pred =  -1754.323 	llh.pred =  -1793.667 	llh.pred =  -1782.078 	llh.pred =  -1764.498 	llh.pred =  -1996.598 	llh.pred =  -1787.528 	llh.pred =  -1749.916 	llh.pred =  -1778.621 	llh.pred =  -1996.948 	cat2 	llh.pred =  -1759.021 	best.ind =  10 
+length(flag)  112  it =  1 
+cat2 	llh.pred =  -1781.062 	llh.pred =  -1781.83 	best.ind =  10 
+length(flag)  125  it =  1 
+llh.pred =  -1744.381 	llh.pred =  -1772.12 	cat2 	llh.pred =  -1773.156 	llh.pred =  -1988.204 	llh.pred =  -1738.75 	best.ind =  10 
+length(flag)  103  it =  1 
+llh.pred =  -1995.395 	llh.pred =  -1766.183 	best.ind =  10 
+length(flag)  115  it =  1 
+llh.pred =  -1771.572 	llh.pred =  -1775.803 	llh.pred =  -1996.948 	llh.pred =  -2023.639 	llh.pred =  -1769.73 	cat2 	llh.pred =  -1774.2 	llh.pred =  -1765.564 	llh.pred =  -1995.395 	llh.pred =  -1988.204 	llh.pred =  -1984.039 	llh.pred =  -1772.499 	llh.pred =  -2018.786 	llh.pred =  -1759.231 	cat2 	llh.pred =  -1744.264 	llh.pred =  -2023.639 	llh.pred =  -1768.305 	llh.pred =  -1985.767 	llh.pred =  -1752.536 	best.ind =  10 
+length(flag)  109  it =  1 
+llh.pred =  -1991.049 	llh.pred =  -1737.332 	llh.pred =  -2018.786 	llh.pred =  -1762.339 	llh.pred =  -1771.133 	llh.pred =  -1772.87 	llh.pred =  -2006.375 	llh.pred =  -1736.266 	llh.pred =  -2020.481 	llh.pred =  -1756.989 	best.ind =  10 
+length(flag)  111  it =  1 
+llh.pred =  -1763.569 	llh.pred =  -1761.919 	llh.pred =  -2015.989 	llh.pred =  -1734.86 	llh.pred =  -1779.084 	llh.pred =  -1762.344 	llh.pred =  -1813.052 	llh.pred =  -1760.327 	llh.pred =  -1730.378 	llh.pred =  -1760.916 	llh.pred =  -1769.532 	llh.pred =  -1806.207 	llh.pred =  -1758.538 	llh.pred =  -1723.885 	llh.pred =  -1756.628 	llh.pred =  -1767.743 	llh.pred =  -1804.644 	llh.pred =  -1719.85 	best.ind =  10 
+length(flag)  95  it =  1 
+llh.pred =  -1755.261 	llh.pred =  -1750.313 	llh.pred =  -1803.071 	llh.pred =  -1766.368 	llh.pred =  -1748.148 	llh.pred =  -1743.324 	best.ind =  10 
+length(flag)  108  it =  1 
+llh.pred =  -1799.098 	llh.pred =  -1763.221 	llh.pred =  -2006.375 	llh.pred =  -1744.788 	best.ind =  10 
+length(flag)  104  it =  1 
+llh.pred =  -1792.59 	llh.pred =  -1757.075 	llh.pred =  -1982.449 	llh.pred =  -1786.796 	best.ind =  10 
+length(flag)  127  it =  1 
+llh.pred =  -1751.197 	best.ind =  10 
+length(flag)  108  it =  1 
+llh.pred =  -1765.737 	llh.pred =  -1759.266 	llh.pred =  -1757.745 	llh.pred =  -1755.561 	llh.pred =  -1750.445 	llh.pred =  -1744.06 	llh.pred =  -1737.085 	best.ind =  10 
+length(flag)  102  it =  1 
+cat2 	llh.pred =  -2024.468 	llh.pred =  -2024.468 	llh.pred =  -2016.769 	llh.pred =  -1765.286 	llh.pred =  -1757.311 	llh.pred =  -1756.066 	cat2 	cat2 	llh.pred =  -1754.694 	llh.pred =  -2034.816 	llh.pred =  -1750.869 	llh.pred =  -2019.185 	llh.pred =  -1744.01 	llh.pred =  -1736.053 	best.ind =  10 
+length(flag)  104llh.pred =    it =  -2019.1852  	
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2034.816 	llh.pred =  -2015.531 	llh.pred =  -2019.035 	cat2 	llh.pred =  -1798.248 	llh.pred =  -1789.389 	llh.pred =  -1788.399 	llh.pred =  -1778.747 	llh.pred =  -2036.476 	cat2 	llh.pred =  -1786.983 	llh.pred =  -1776.943 	llh.pred =  -1785.528 	llh.pred =  -2013.953 	llh.pred =  -1775.315 	llh.pred =  -2036.476 	llh.pred =  -1781.788 	llh.pred =  -1771.273 	llh.pred =  -1774.568 	llh.pred =  -2013.953 	llh.pred =  -1765.274 	llh.pred =  -1768.307 	best.ind =  10 
+length(flag)  119  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2035.473 	llh.pred =  -1758.344 	best.ind =  10 
+length(flag)  115  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2013.953 	llh.pred =  -1789.288 	llh.pred =  -1795.194 	llh.pred =  -1780.81 	llh.pred =  -2029.898 	llh.pred =  -1785.786 	llh.pred =  -1779.326 	llh.pred =  -1784.272 	llh.pred =  -1777.67 	llh.pred =  -1782.638 	llh.pred =  -2029.898 	llh.pred =  -1773.663 	llh.pred =  -1778.754 	llh.pred =  -1767.483 	llh.pred =  -1771.319 	llh.pred =  -2028.862 	llh.pred =  -1760.009 	best.ind =  10 
+length(flag)  115  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1764.573 	best.ind =  10 
+length(flag)  118  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1783.946 	llh.pred =  -1776.055 	llh.pred =  -1774.984 	llh.pred =  -1773.659 	llh.pred =  -1769.613 	llh.pred =  -1762.145 	llh.pred =  -1755.002 	best.ind =  10 
+length(flag)  112  it =  2 
+cat2 	llh.pred =  -2004.714 	llh.pred =  -2004.714 	llh.pred =  -2004.714 	llh.pred =  -1794.736 	llh.pred =  -1784.905 	llh.pred =  -1783.423 	llh.pred =  -1781.566 	llh.pred =  -1777.503 	llh.pred =  -1770.379 	llh.pred =  -1763.918 	best.ind =  10 
+length(flag)  117  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2027.045 	llh.pred =  -2030.331 	llh.pred =  -2030.331 	llh.pred =  -1810.643 	llh.pred =  -1800.294 	llh.pred =  -1798.835 	llh.pred =  -1797.09 	llh.pred =  -1792.921 	llh.pred =  -1786.699 	llh.pred =  -1780.542 	best.ind =  10 
+length(flag)  125  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1999.929 	llh.pred =  -1999.929 	cat2 	llh.pred =  -1999.929 	llh.pred =  -1776.76 	llh.pred =  -2008.884 	llh.pred =  -1766.963 	llh.pred =  -1765.592 	llh.pred =  -2008.884 	llh.pred =  -1763.84 	cat2 	llh.pred =  -1759.337 	cat2 	llh.pred =  -2005.901 	llh.pred =  -1975.416 	llh.pred =  -1752.215 	llh.pred =  -1771.314 	llh.pred =  -1745.566 	best.ind =  10 
+length(flag)  108  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2022.524 	cat2 	llh.pred =  -1761.665 	llh.pred =  -1994.054 	llh.pred =  -1759.955 	llh.pred =  -2002.908 	llh.pred =  -1994.054 	llh.pred =  -1758.106 	llh.pred =  -1744.38 	llh.pred =  -2002.908 	llh.pred =  -1753.942 	llh.pred =  -1737.495 	llh.pred =  -1746.795 	llh.pred =  -2022.524 	llh.pred =  -2002.908 	llh.pred =  -1736.282 	llh.pred =  -1740.429 	best.ind =  10 
+length(flag)  104  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1781.298 	llh.pred =  -1734.749 	cat2 	llh.pred =  -2022.524 	llh.pred =  -1773.156 	cat2 	llh.pred =  -1730.526 	llh.pred =  -1795.047 	llh.pred =  -2002.89 	llh.pred =  -1722.697 	llh.pred =  -2003.431 	llh.pred =  -1771.572 	llh.pred =  -1784.96 	llh.pred =  -1716.159 	best.ind =  10 
+length(flag)  95  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1769.747 	llh.pred =  -2021.591 	llh.pred =  -1783.217 	llh.pred =  -2002.89 	llh.pred =  -2003.431 	llh.pred =  -1765.597 	llh.pred =  -1781.286 	llh.pred =  -1776.844 	llh.pred =  -1758.22 	llh.pred =  -1988.632 	llh.pred =  -2021.591 	llh.pred =  -2003.431 	llh.pred =  -1769.655 	llh.pred =  -1751.768 	best.ind =  10 
+length(flag)  109  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1765.825 	llh.pred =  -1773.146 	llh.pred =  -1763.559 	best.ind =  10 
+length(flag)  115  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2021.591 	llh.pred =  -1757.561 	llh.pred =  -1763.603 	cat2 	cat2 	llh.pred =  -1779.251 	llh.pred =  -1755.862 	llh.pred =  -1762.299 	llh.pred =  -1760.768 	llh.pred =  -1754.009 	llh.pred =  -1769.387 	llh.pred =  -2008.402 	llh.pred =  -2009.647 	llh.pred =  -1756.982 	llh.pred =  -1749.935 	llh.pred =  -1767.429 	llh.pred =  -1749.862 	llh.pred =  -2008.402 	llh.pred =  -1742.568 	llh.pred =  -1766.025 	llh.pred =  -2009.647 	llh.pred =  -1742.644 	best.ind =  10 
+length(flag)  108  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1735.809 	best.ind =  10 
+length(flag)  103  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1762.402 	llh.pred =  -2007.525 	llh.pred =  -2008.026 	llh.pred =  -1756.584 	llh.pred =  -1786.21 	llh.pred =  -1765.981 	llh.pred =  -1747.847 	best.ind =  10 
+length(flag)  108  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1776.2 	llh.pred =  -1759.041 	llh.pred =  -1774.851 	cat2 	llh.pred =  -1773.167 	llh.pred =  -1757.528 	llh.pred =  -1769.573 	llh.pred =  -2011.226 	llh.pred =  -1755.493 	llh.pred =  -1763.38 	llh.pred =  -1751.138 	llh.pred =  -2011.226 	llh.pred =  -1756.412 	best.ind =  10 
+length(flag)  112  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1744.332 	llh.pred =  -1737.082 	best.ind =  10 
+length(flag)  102  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2011.226 	llh.pred =  -1784.104 	llh.pred =  -1775.443 	llh.pred =  -1773.775 	llh.pred =  -1772.199 	llh.pred =  -1768.251 	llh.pred =  -1760.716 	llh.pred =  -1754.436 	best.ind =  10 
+length(flag)  111  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2019.516 	llh.pred =  -2019.516 	llh.pred =  -2019.516 	llh.pred =  -1813.787 	llh.pred =  -1805.901 	llh.pred =  -1804.435 	llh.pred =  -1802.687 	llh.pred =  -1798.987 	llh.pred =  -1791.343 	llh.pred =  -1784.631 	best.ind =  10 
+length(flag)  127  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-07 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2029.898 	llh.pred =  -2029.898 	llh.pred =  -2017.193 	llh.pred =  -1783.946 	llh.pred =  -1776.157 	llh.pred =  -1774.984 	llh.pred =  -1773.659 	llh.pred =  -1769.613 	llh.pred =  -1762.145 	llh.pred =  -1755.002 	best.ind =  10 
+length(flag)  112  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  6 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	cat2 	llh.pred =  -2015.498 	llh.pred =  -1998.422 	llh.pred =  -2015.498 	cat2 	cat2 	llh.pred =  -1998.422 	llh.pred =  -1966.637 	llh.pred =  -1969.917 	llh.pred =  -1995.546 	llh.pred =  -2010.517 	llh.pred =  -1966.637 	llh.pred =  -1749.082 	cat2 	llh.pred =  -1733.817 	llh.pred =  -1969.917 	llh.pred =  -1740.522 	llh.pred =  -1726.593 	llh.pred =  -1952.61 	llh.pred =  -1954.397 	llh.pred =  -1739.294 	llh.pred =  -1966.545 	llh.pred =  -1725.188 	llh.pred =  -1743.612 	llh.pred =  -1737.746 	llh.pred =  -1764.869 	llh.pred =  -1723.147 	llh.pred =  -1736.797 	llh.pred =  -1954.397 	llh.pred =  -1734.094 	llh.pred =  -1757.445 	llh.pred =  -1719.221 	llh.pred =  -1736.014 	llh.pred =  -1728.154 	llh.pred =  -1755.847 	llh.pred =  -1951.265 	cat2 	llh.pred =  -1712.8 	cat2 	llh.pred =  -1734.532 	llh.pred =  -1722.007 	best.ind =  10 
+length(flag)  97  it =  1 
+llh.pred =  -1754.21 	llh.pred =  -1738.956 	llh.pred =  -1707.015 	best.ind =  10 
+length(flag)  90  it =  1 
+llh.pred =  -1729.986 	llh.pred =  -1749.7 	llh.pred =  -1992.536 	llh.pred =  -1988.941 	llh.pred =  -1723.192 	llh.pred =  -1743.897 	llh.pred =  -1716.699 	best.ind =  10 
+length(flag)  95  it =  1 
+llh.pred =  -1737.619 	best.ind =  10 
+length(flag)  103  it =  1 
+llh.pred =  -1992.536 	llh.pred =  -1730.649 	llh.pred =  -1728.941 	llh.pred =  -1990.914 	llh.pred =  -1727.057 	llh.pred =  -1745.447 	llh.pred =  -1988.941 	llh.pred =  -1722.648 	llh.pred =  -1735.529 	llh.pred =  -1716.259 	llh.pred =  -1734.237 	llh.pred =  -1986.05 	llh.pred =  -1709.591 	best.ind =  10 
+length(flag)  91  it =  1 
+cat2 	llh.pred =  -1732.736 	llh.pred =  -1744.337 	llh.pred =  -1729.673 	llh.pred =  -1736.542 	llh.pred =  -1995.062 	llh.pred =  -1724.084 	llh.pred =  -1734.918 	llh.pred =  -1718.215 	best.ind =  10 
+length(flag)  94  it =  1 
+llh.pred =  -1733.169 	llh.pred =  -1995.062 	llh.pred =  -1730.422 	llh.pred =  -1723.753 	llh.pred =  -1980.944 	llh.pred =  -1718.02 	best.ind =  10 
+length(flag)  93  it =  1 
+llh.pred =  -1745.483 	llh.pred =  -1735.828 	llh.pred =  -1734.519 	llh.pred =  -1733.127 	llh.pred =  -1729.577 	llh.pred =  -1723.347 	llh.pred =  -1717.329 	best.ind =  10 
+length(flag)  95  it =  1 
+cat2 	cat2 	llh.pred =  -2025.339 	cat2 	llh.pred =  -2015.09 	llh.pred =  -2025.339 	llh.pred =  -1947.304 	cat2 	llh.pred =  -2015.09 	llh.pred =  -1947.304 	llh.pred =  -2015.168 	llh.pred =  -2002.169 	llh.pred =  -2011.182 	llh.pred =  -1738.847 	llh.pred =  -1970.57 	llh.pred =  -1759.887 	llh.pred =  -1731.137 	llh.pred =  -1734.61 	llh.pred =  -1750.734 	llh.pred =  -1729.778 	cat2 	cat2 	llh.pred =  -2008.303 	llh.pred =  -1727.928 	llh.pred =  -1749.142 	llh.pred =  -1729.465 	llh.pred =  -1944.854 	llh.pred =  -1726.811 	llh.pred =  -1747.781 	llh.pred =  -1725.756 	llh.pred =  -1996.644 	llh.pred =  -2013.129 	llh.pred =  -1725.402 	llh.pred =  -1744.043 	llh.pred =  -1944.854 	llh.pred =  -1739.857 	llh.pred =  -1719.983 	llh.pred =  -1721.438 	llh.pred =  -1738.11 	llh.pred =  -1715.147 	llh.pred =  -1732.65 	llh.pred =  -1941.021 	llh.pred =  -1712.677 	best.ind =  10 
+length(flag)  92  it =  1 
+llh.pred =  -1733.908 	best.ind =  10 
+length(flag)  101  it =  1 
+llh.pred =  -2013.129 	llh.pred =  -1707.924 	best.ind =  10 
+length(flag)  91  it =  1 
+llh.pred =  llh.pred = -1731.184  	-1740.818 	llh.pred =  -1733.875 	llh.pred =  -1729.578 	cat2 	llh.pred =  -1731.985 	llh.pred =  -1725.549 	llh.pred =  -2011.259 	llh.pred =  -1730.363 	llh.pred =  -1734.185 	llh.pred =  -1719.435 	llh.pred =  -1725.562 	llh.pred =  -1727.141 	llh.pred =  -1713.488 	best.ind =  10 
+length(flag)  93  it =  1 
+llh.pred =  -2003.692 	cat2 	cat2 	llh.pred =  -1719.085 	llh.pred =  -1726.225 	cat2 	cat2 	llh.pred =  -1711.629 	best.ind =  10 
+length(flag)  92  it =  1 
+llh.pred =  -1725.747 	llh.pred =  -1996.493 	llh.pred =  -2003.692 	llh.pred =  -2001.963 	cat2 	llh.pred =  -1948.023 	llh.pred =  -1722.718 	llh.pred =  -2013.067 	llh.pred =  -1993.577 	llh.pred =  -1993.919 	llh.pred =  -1716.209 	llh.pred =  -2001.963 	llh.pred =  -1948.023 	llh.pred =  -1998.305 	llh.pred =  -1711.6 	best.ind =  10 
+length(flag)  91  it =  1 
+llh.pred =  -2001.046 	llh.pred =  -1721.412 	llh.pred =  -1940.659 	llh.pred =  -1983.85 	llh.pred =  -1993.919 	llh.pred =  -2013.067 	llh.pred =  -1713.687 	llh.pred =  -1781.639 	llh.pred =  -1730.825 	llh.pred =  -1743.009 	llh.pred =  -1989.553 	llh.pred =  -1712.426 	llh.pred =  -1735.524 	llh.pred =  -1725.157 	llh.pred =  -1771.596 	llh.pred =  -1765.529 	llh.pred =  -1710.966 	llh.pred =  -1734.315 	llh.pred =  -1724.333 	llh.pred =  -1770.223 	llh.pred =  -1980.977 	llh.pred =  -1707.383 	llh.pred =  -1722.752 	llh.pred =  -1732.656 	llh.pred =  -1768.743 	llh.pred =  -1712.463 	llh.pred =  -1701.309 	llh.pred =  -1729.175 	llh.pred =  -1719.503 	llh.pred =  -1765.12 	llh.pred =  -1702.928 	llh.pred =  -1723.186 	llh.pred =  -1712.071 	llh.pred =  -1695.461 	best.ind =  10 
+length(flag)  83  it =  1 
+llh.pred =  -1759.463 	llh.pred =  -1701.111 	llh.pred =  -1757.801 	llh.pred =  -1707.032 	best.ind =  10 
+length(flag)  86  it =  1 
+llh.pred =  -1718.75 	best.ind =  10 
+length(flag)  93  it =  1 
+llh.pred =  -1753.366 	best.ind =  10 
+length(flag)  110  it =  1 
+llh.pred =  -1699.471 	llh.pred =  -1756.888 	llh.pred =  -1754.95 	llh.pred =  -1694.632 	llh.pred =  -1750.801 	llh.pred =  -1688.411 	llh.pred =  -1744.596 	llh.pred =  -1683.264 	best.ind =  10 
+length(flag)  78  it =  1 
+llh.pred =  -1739.511 	best.ind =  10 
+length(flag)  105  it =  1 
+cat2 	llh.pred =  -2002.146 	cat2 	llh.pred =  -2002.146 	llh.pred =  -2037.014 	llh.pred =  -1996.568 	llh.pred =  -1749.106 	llh.pred =  -1740.649 	llh.pred =  -2037.014 	llh.pred =  -1739.428 	llh.pred =  -1737.817 	llh.pred =  -1734.172 	llh.pred =  -1727.649 	llh.pred =  -2033.423 	llh.pred =  -1720.013 	best.ind =  10 
+length(flag)  97  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1733.817 	llh.pred =  -1726.181 	cat2 	llh.pred =  -1724.87 	llh.pred =  -1723.039 	llh.pred =  -1977.613 	llh.pred =  -1718.978 	cat2 	llh.pred =  -1712.398 	cat2 	llh.pred =  -1704.753 	best.ind =  10 
+length(flag)  90  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2032.194 	llh.pred =  -1988.08 	llh.pred =  -1977.613 	llh.pred =  -2032.194 	llh.pred =  -1977.613 	cat2 	llh.pred =  -1739.537 	llh.pred =  -1996.352 	cat2 	llh.pred =  -1730.481 	llh.pred =  -1745.131 	llh.pred =  -1988.08 	llh.pred =  -1979.637 	llh.pred =  -1728.778 	cat2 	llh.pred =  -1736.18 	llh.pred =  -1991.23 	llh.pred =  -1969.822 	llh.pred =  -1726.884 	llh.pred =  -1979.637 	llh.pred =  -1734.413 	llh.pred =  -1744.279 	llh.pred =  -1722.407 	llh.pred =  -2002.639 	llh.pred =  -1732.782 	llh.pred =  -1991.23 	llh.pred =  -1736.25 	llh.pred =  -1979.637 	llh.pred =  -1715.341 	llh.pred =  -1728.539 	llh.pred =  -1735.452 	llh.pred =  -1765.468 	llh.pred =  -1708.208 	best.ind =  10 
+length(flag)  91  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1991.23 	llh.pred =  -2002.639 	llh.pred =  -1733.978 	llh.pred =  -1721.797 	llh.pred =  -1757.162 	llh.pred =  -1745.434 	llh.pred =  -1729.406 	llh.pred =  -1714.817 	best.ind =  10 
+length(flag)  93  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1755.658 	llh.pred =  -1735.286 	llh.pred =  -1722.008 	llh.pred =  -2002.243 	llh.pred =  -1753.744 	llh.pred =  -1715.32 	best.ind =  10 
+length(flag)  95  it =  2 
+llh.pred =  -1733.663 	fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1749.362 	llh.pred =  -1745.296 	llh.pred =  -1732.184 	llh.pred =  -1742.394 	llh.pred =  -1735.531 	llh.pred =  -1728.39 	llh.pred =  -1734.955 	best.ind =  10 
+length(flag)  103  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1734.008 	llh.pred =  -1721.256 	llh.pred =  -1713.821 	best.ind =  10 
+length(flag)  95  it =  2 
+llh.pred =  -1732.533 	llh.pred =  -1728.828 	llh.pred =  -1721.894 	llh.pred =  -1714.257 	best.ind =  10 
+length(flag)  95  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2035.795 	cat2 	llh.pred =  -2035.795 	llh.pred =  -1973.495 	llh.pred =  -2034.398 	llh.pred =  -1973.495 	llh.pred =  -1738.95 	cat2 	llh.pred =  -1952.663 	llh.pred =  -1730.83 	llh.pred =  -1735.092 	llh.pred =  -1729.284 	llh.pred =  -2019.518 	llh.pred =  -1727.715 	llh.pred =  -1727.951 	cat2 	llh.pred =  -1726.458 	cat2 	llh.pred =  -1724.465 	llh.pred =  -2019.518 	llh.pred =  -1725.069 	llh.pred =  -1718.404 	llh.pred =  -1964.035 	llh.pred =  -2033.521 	llh.pred =  -1721.55 	llh.pred =  -1710.796 	best.ind =  10 
+length(flag)  92  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1715.016 	llh.pred =  -2011.82 	llh.pred =  -1964.035 	llh.pred =  -1706.697 	best.ind =  10 
+length(flag)  91  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1760.002 	llh.pred =  -2033.521 	llh.pred =  -1958.768 	llh.pred =  -1750.323 	llh.pred =  -1741.488 	llh.pred =  -1748.992 	llh.pred =  -1733.08 	llh.pred =  -2021.442 	llh.pred =  -1747.624 	llh.pred =  -1731.327 	llh.pred =  -1739.425 	llh.pred =  -1743.783 	llh.pred =  -1729.358 	llh.pred =  -1736.588 	llh.pred =  -1732.429 	llh.pred =  -1724.605 	llh.pred =  -1729.848 	best.ind =  10 
+length(flag)  101  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1730.981 	llh.pred =  -1717.482 	llh.pred =  -1729.688 	llh.pred =  -1710.5 	best.ind =  10 
+length(flag)  92  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1725.407 	cat2 	llh.pred =  -1717.736 	llh.pred =  -1710.903 	best.ind =  10 
+length(flag)  93  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2034.563 	llh.pred =  -2036.326 	cat2 	cat2 	llh.pred =  -1963.541 	llh.pred =  -2030.509 	llh.pred =  -2024.074 	llh.pred =  -1734.218 	cat2 	llh.pred =  -1949.826 	cat2 	llh.pred =  -1726.291 	llh.pred =  -2025.797 	cat2 	llh.pred =  -2000.281 	llh.pred =  -1724.94 	llh.pred =  -1960.728 	llh.pred =  -2007.6 	llh.pred =  -1723.956 	llh.pred =  -1730.902 	llh.pred =  -2024.282 	llh.pred =  -2014.165 	llh.pred =  -1720.734 	llh.pred =  -1724.861 	llh.pred =  -2021.784 	llh.pred =  -1782.46 	llh.pred =  -2007.6 	llh.pred =  -1714.257 	llh.pred =  -1723.635 	llh.pred =  -1771.182 	llh.pred =  -1997.923 	llh.pred =  -1704.943 	best.ind =  10 
+length(flag)  91  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1769.542 	llh.pred = llh.pred =   -1721.929-1766.019  		llh.pred =  -1768 	llh.pred =  -2021.784 	llh.pred =  -1757.568 	llh.pred =  -1717.74 	llh.pred =  -2023.964 	llh.pred =  -1764.174 	llh.pred =  -1756.283 	llh.pred =  -1709.099 	llh.pred =  -1744 	llh.pred =  -1757.458 	llh.pred =  -1754.719 	llh.pred =  -1702.189 	best.ind =  10 
+length(flag)  86  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1735.255 	cat2 	llh.pred =  -1750.63 	best.ind =  10 
+length(flag)  110  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  llh.pred = -1750.65  	-2017.647 	llh.pred =  -1733.784 	llh.pred =  -1743.393 	llh.pred =  -1720.993 	llh.pred =  -1732.095 	llh.pred =  -1736.381 	best.ind =  10 
+length(flag)  105  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1713.903 	llh.pred =  -1728.286 	llh.pred =  -2031.306 	llh.pred =  -1712.15 	llh.pred =  -1721.303 	llh.pred =  -1710.386 	llh.pred =  -1713.83 	best.ind =  10 
+length(flag)  93  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1706.397 	llh.pred =  -1700.124 	llh.pred =  -2031.306 	llh.pred =  -1691.951 	best.ind =  10 
+length(flag)  83  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2030.84 	llh.pred =  -1712.62 	llh.pred =  -1702.949 	llh.pred =  -1700.339 	llh.pred =  -1699.115 	llh.pred =  -1694.597 	llh.pred =  -1688.731 	llh.pred =  -1680.152 	best.ind =  10 
+length(flag)  78  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -1999.149 	llh.pred =  -1999.149 	llh.pred =  -1991.23 	llh.pred =  -1745.434 	llh.pred =  -1735.286 	llh.pred =  -1733.663 	llh.pred =  -1732.184 	llh.pred =  -1728.078 	llh.pred =  -1721.039 	llh.pred =  -1713.821 	best.ind =  10 
+length(flag)  95  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  7 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  20 
+rep =  17 
+rep =  18 
+rep =  19 
+cat2 	llh.pred =  -1985.911 	llh.pred =  -1985.911 	llh.pred =  -1972.37 	llh.pred =  -1721.028 	llh.pred =  -1711.442 	cat2 	llh.pred =  -1710.417 	llh.pred =  -1709.015 	llh.pred =  -1989.669 	llh.pred =  -1705.976 	llh.pred =  -1700.173 	cat2 	llh.pred =  -1989.669 	llh.pred =  -1694.405 	best.ind =  10 
+length(flag)  84  it =  1 
+cat2 	llh.pred =  -1975.675 	llh.pred =  -1720.801 	llh.pred =  -2010.873 	llh.pred =  -1712.954 	llh.pred =  -1711.876 	llh.pred =  -1710.53 	llh.pred =  -2042.182 	llh.pred =  -1707.078 	llh.pred =  -2010.873 	llh.pred =  -1700.407 	llh.pred =  -1695.983 	best.ind =  10 
+length(flag)  84  it =  1 
+llh.pred =  -2042.182 	llh.pred =  -1989.422 	llh.pred =  -1687.301 	cat2 	llh.pred =  -1681.024 	cat2 	llh.pred =  -1679.89 	cat2 	llh.pred =  -2027.059 	llh.pred =  -1678.6 	llh.pred =  -1687.659 	llh.pred =  -1674.73 	llh.pred =  -1965.139 	llh.pred =  -2040.201 	llh.pred =  -1679.946 	llh.pred =  -1668.458 	cat2 	llh.pred =  -1682.856 	llh.pred =  -1663.154 	best.ind =  10 
+length(flag)  72  it =  1 
+llh.pred =  -1965.139 	llh.pred =  -2051.161 	llh.pred =  -1680.191 	llh.pred =  -1979.888 	llh.pred =  -1678.681 	llh.pred =  -2040.201 	llh.pred =  -1955.61 	llh.pred =  -1673.61 	llh.pred =  -1699.569 	llh.pred =  -1979.888 	llh.pred =  -1667.845 	best.ind =  10 
+length(flag)  72  it =  1 
+llh.pred =  -1691.537 	llh.pred =  -2051.161 	llh.pred =  -1690.092 	llh.pred =  -1975.127 	llh.pred =  -2036.749 	llh.pred =  -1688.435 	llh.pred =  -1709.665 	llh.pred =  -1686.343 	llh.pred =  -1684.232 	llh.pred =  -1702.116 	llh.pred =  -1679.384 	llh.pred =  -1678.456 	llh.pred =  -1700.838 	llh.pred =  -1672.762 	best.ind =  10 
+length(flag)  76  it =  1 
+llh.pred =  -1678.144 	llh.pred = llh.pred =   -2038.69-1699.337  		llh.pred =  -1676.652 	llh.pred =  -1695.882 	llh.pred =  -1666.913 	llh.pred =  -1672.185 	llh.pred =  -1690.45 	llh.pred =  -1660.399 	llh.pred =  -1666.381 	llh.pred =  -1684.364 	best.ind =  10 
+length(flag)  79  it =  1 
+llh.pred =  -1659.696 	llh.pred =  -1659.753 	best.ind =  10 
+length(flag)  70  it =  1 
+llh.pred =  -1657.943 	llh.pred =  -1695.402 	llh.pred =  -1647.715 	llh.pred =  -1689.42 	best.ind =  9 
+length(flag)  60  it =  1 
+cat2 	cat2 	llh.pred =  -2075.024 	llh.pred =  -1967.963 	cat2 	llh.pred =  -1967.963 	llh.pred =  -2003.936 	llh.pred =  -1939.102 	llh.pred =  -1689.758 	llh.pred =  -2075.024 	llh.pred =  -1682.969 	llh.pred =  -2003.936 	llh.pred =  -1681.895 	llh.pred =  -1679.975 	llh.pred =  -1979.612 	llh.pred =  -1675.549 	cat2 	llh.pred =  -1713.026 	llh.pred =  -1668.5 	cat2 	llh.pred =  -2020.717 	llh.pred =  -1660.897 	best.ind =  10 
+length(flag)  71  it =  1 
+llh.pred =  -1705.378 	cat2 	llh.pred =  -1699.743 	llh.pred =  -1704.125 	llh.pred =  -2009.296 	llh.pred =  -1996.319 	llh.pred =  -1703.505 	llh.pred =  -1980.022 	llh.pred =  -1703.405 	llh.pred =  -1699.324 	llh.pred =  -1652.069 	llh.pred =  -1981.561 	llh.pred =  -1692.124 	llh.pred =  -1996.319 	llh.pred =  -1980.022 	llh.pred =  -1686.08 	best.ind =  10 
+length(flag)  79  it =  1 
+llh.pred =  -1708.187 	llh.pred =  -1979.279 	cat2 	llh.pred =  -1980.671 	llh.pred =  -1977.69 	llh.pred =  -1743.508 	cat2 	llh.pred =  -1700.089 	llh.pred =  -1698.544 	llh.pred =  -1703.507 	llh.pred =  -1733.763 	cat2 	llh.pred =  -1691.473 	llh.pred =  -1695.206 	cat2 	llh.pred =  -2014.043 	llh.pred =  -1732.577 	llh.pred =  -1960.251 	cat2 	llh.pred =  -1681.211 	llh.pred =  -1690.068 	llh.pred =  -1693.947 	llh.pred =  -1731.277 	llh.pred =  -1692.829 	llh.pred =  -1689.438 	llh.pred =  -1727.375 	llh.pred =  -1958.55 	llh.pred =  -1960.251 	llh.pred =  -1680.729 	best.ind =  6 
+length(flag)  62  it =  1 
+llh.pred =  -1960.558 	llh.pred =  -2014.043 	llh.pred =  -1684.564 	llh.pred =  -1721.335 	llh.pred =  -2046.303 	llh.pred =  -1689.571 	llh.pred =  -1678.262 	llh.pred =  -1953.417 	llh.pred =  -1715.248 	best.ind =  10 
+length(flag)  93  it =  1 
+llh.pred =  -1960.558 	llh.pred =  -1958.55 	llh.pred =  -1682.637 	llh.pred =  -1989.186 	llh.pred =  -1672.628 	best.ind =  10 
+length(flag)  74  it =  1 
+llh.pred =  -1720.238 	llh.pred =  -1676.731 	best.ind =  10 
+length(flag)  78  it =  1 
+llh.pred =  -1715.361 	llh.pred =  -1712.135 	llh.pred =  -1949.923 	llh.pred =  -1708.41 	llh.pred =  -1710.884 	llh.pred =  -1704.85 	llh.pred =  -1707.422 	cat2 	llh.pred =  -2046.303 	llh.pred =  -1698.257 	llh.pred =  -1709.427 	llh.pred =  -1706.016 	llh.pred =  -1704.913 	llh.pred =  -1697.628 	llh.pred =  -1702.058 	llh.pred =  -1949.451 	llh.pred =  -1698.646 	llh.pred =  -1696.013 	llh.pred =  -1695.211 	llh.pred =  -2004.717 	llh.pred =  -1692.319 	best.ind =  10 
+length(flag)  84  it =  1 
+llh.pred =  -1693.304 	llh.pred =  -1692.03 	llh.pred =  -1687.219 	best.ind =  10 
+length(flag)  83  it =  1 
+llh.pred =  -1688.121 	llh.pred =  -1684.97 	llh.pred =  -2012.525 	llh.pred =  -1687.189 	llh.pred =  -1678.561 	best.ind =  10 
+length(flag)  79  it =  1 
+llh.pred =  -1683.217 	llh.pred =  -2004.717 	llh.pred =  -1685.628 	llh.pred =  -1676.173 	llh.pred =  -1681.88 	llh.pred =  -1674.324 	llh.pred =  -1675.323 	llh.pred =  -1990.893 	llh.pred =  -1672.717 	llh.pred =  -1667.564 	best.ind =  10 
+length(flag)  72  it =  1 
+llh.pred =  -1700.083 	llh.pred =  -1668.314 	llh.pred =  -1692.017 	llh.pred =  -1690.742 	llh.pred =  -1662.176 	llh.pred =  -1689.491 	llh.pred =  -1656.489 	best.ind =  10 
+length(flag)  68  it =  1 
+llh.pred =  -1685.866 	llh.pred =  -1679.735 	llh.pred =  -1674.395 	best.ind =  10 
+length(flag)  75  it =  1 
+cat2 	llh.pred =  -2006.323 	llh.pred =  -2006.323 	llh.pred =  -2001.403 	llh.pred =  -1721.597 	llh.pred =  -1711.212 	cat2 	llh.pred =  -1709.837 	cat2 	llh.pred =  -1708.484 	llh.pred =  -1704.675 	llh.pred =  -2017.759 	llh.pred =  -1697.576 	llh.pred =  -1690.299 	best.ind =  10 
+length(flag)  84  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2042.089 	llh.pred =  -2017.759 	llh.pred =  -1981.369 	cat2 	llh.pred =  -2042.089 	llh.pred =  -1721.308 	llh.pred =  -1712.678 	llh.pred =  -1711.625 	llh.pred =  -2030.446 	llh.pred =  -1710.274 	llh.pred =  -2042.744 	llh.pred =  -1705.978 	cat2 	llh.pred =  -1698.434 	llh.pred =  -1687.293 	llh.pred =  -1691.598 	best.ind =  10 
+length(flag)  84  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1679.946 	llh.pred =  -2030.446 	llh.pred =  -1985.103 	llh.pred =  -1679.242 	llh.pred =  -1677.924 	llh.pred =  -1985.103 	llh.pred =  -1675.818 	llh.pred =  -2019.578 	llh.pred =  -1668.676 	llh.pred =  -1688.16 	llh.pred =  -1680.864 	llh.pred =  -1661.197 	best.ind =  10 
+length(flag)  71  it =  2 
+llh.pred =  -1983.952 	llh.pred =  -1679.726 	llh.pred =  -1700.054 	llh.pred =  -1678.483 	cat2 	cat2 	llh.pred =  -1691.383 	llh.pred =  -1674.786 	llh.pred =  -1689.869 	llh.pred =  -1668.562 	llh.pred =  -1688.268 	llh.pred =  -1659.866 	best.ind =  10 
+length(flag)  72  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1684.165 	llh.pred =  -1677.734 	llh.pred =  -2057.505 	llh.pred =  -1669.997 	best.ind =  10 
+length(flag)  76  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2043.296 	llh.pred =  -2009.246 	llh.pred =  -2057.505 	llh.pred =  -2043.296 	llh.pred =  -2009.246 	llh.pred =  -2009.246 	llh.pred =  -2041.33 	llh.pred =  -2034.191 	llh.pred =  -1709.674 	llh.pred =  -1666.853 	llh.pred =  -1686.343 	llh.pred =  -1701.856 	llh.pred =  -1660.479 	llh.pred =  -1700.461 	llh.pred =  -1679.087 	llh.pred =  -1659.013 	llh.pred =  -1698.814 	llh.pred =  -1677.532 	llh.pred =  -1657.068 	llh.pred =  -1695.167 	llh.pred =  -1676.018 	llh.pred =  -1652.739 	llh.pred =  -1688.518 	llh.pred =  -1671.975 	llh.pred =  -1646.292 	llh.pred =  -1680.804 	best.ind =  10 
+length(flag)  78  it =  2 
+llh.pred =  -1665.95 	llh.pred =  -1638.017 	best.ind =  10 
+length(flag)  61  it =  2 
+llh.pred =  -1658.824 	best.ind =  10 
+length(flag)  70  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2075.635 	cat2 	llh.pred =  -2009.654 	cat2 	llh.pred =  -2075.635 	llh.pred =  -2009.654 	llh.pred =  -1999.358 	cat2 	llh.pred =  -2007.542 	llh.pred =  -1999.358 	llh.pred =  -2069.62 	llh.pred =  -1713.035 	llh.pred =  -1705.039 	llh.pred =  -1978.067 	llh.pred =  -1701.201 	llh.pred =  -1997.146 	llh.pred =  -1703.957 	llh.pred =  -1703.707 	llh.pred =  -1702.035 	llh.pred =  -1702.623 	llh.pred =  -1694.458 	llh.pred =  -1978.067 	llh.pred =  -1697.679 	llh.pred =  -1693.29 	llh.pred =  -1691.527 	llh.pred =  -1700.117 	llh.pred =  -1691.775 	llh.pred =  -1682.99 	best.ind =  10 
+length(flag)  80  it =  2 
+llh.pred =  -1975.249 	llh.pred =  -1688.211 	cat2 	llh.pred =  -1694.114 	llh.pred =  -1690.374 	cat2 	llh.pred =  -1681.864 	llh.pred =  -1682.422 	llh.pred =  -1673.288 	best.ind =  10 
+length(flag)  78  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1683.784 	llh.pred =  -1681.252 	llh.pred =  -2025.012 	llh.pred =  -1977.01 	llh.pred =  -1641.185 	llh.pred =  -1679.369 	llh.pred =  -1674.385 	llh.pred =  -1634.937 	best.ind =  10 
+length(flag)  60  it =  2 
+llh.pred =  -1667.008 	llh.pred =  -1977.01 	llh.pred =  -1659.5 	best.ind =  10 
+length(flag)  71  it =  2 
+llh.pred =  -2025.012 	fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1974.595 	llh.pred =  -1994.065 	llh.pred =  -1693.279 	cat2 	llh.pred =  -1687.669 	llh.pred =  -1698.611 	cat2 	llh.pred =  -1691.267 	llh.pred =  -1686.627 	cat2 	llh.pred =  -1964.615 	llh.pred =  -1684.832 	llh.pred =  -1689.884 	llh.pred =  -1990.741 	llh.pred =  -1680.542 	llh.pred =  -1688.492 	llh.pred =  -1993.04 	llh.pred =  -1964.615 	llh.pred =  -1672.728 	llh.pred =  -1683.978 	llh.pred =  -1990.741 	llh.pred =  -1665.614 	best.ind =  10 
+length(flag)  72  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1676.111 	llh.pred =  -1993.04 	llh.pred =  -1957.676 	llh.pred =  -1669.214 	best.ind =  10 
+length(flag)  74  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1720.929 	llh.pred =  -1988.407 	cat2 	llh.pred =  -1990.886 	llh.pred =  -1712.048 	llh.pred =  -1705.482 	llh.pred =  -1710.53 	llh.pred =  -1743.841 	llh.pred =  -1697.84 	llh.pred =  -1708.832 	llh.pred =  -1733.235 	llh.pred =  -1697.189 	llh.pred =  -1704.476 	llh.pred =  -1731.7 	llh.pred =  -1695.585 	llh.pred =  -1697.699 	llh.pred =  -2029.765 	llh.pred =  -1730.161 	llh.pred =  -1691.09 	llh.pred =  -1691.027 	best.ind =  10 
+length(flag)  84  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1684.063 	llh.pred =  -1726.467 	llh.pred =  -1676.848 	best.ind =  10 
+length(flag)  79  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1719.338 	llh.pred =  -1712.657 	best.ind =  10 
+length(flag)  93  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2016.836 	llh.pred =  -2029.765 	llh.pred =  -2016.836 	llh.pred =  -2019.645 	cat2 	llh.pred =  -2014.097 	llh.pred =  -1683.217 	llh.pred =  -1715.398 	llh.pred =  -1675.737 	llh.pred =  -1708.224 	llh.pred =  -1707.257 	llh.pred =  -1674.245 	llh.pred =  -2029.05 	llh.pred =  -1705.831 	llh.pred =  -1672.461 	llh.pred =  -1701.611 	llh.pred =  -1667.952 	llh.pred =  -1694.215 	llh.pred =  -1687.092 	best.ind =  10 
+length(flag)  83  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1661.925 	llh.pred =  -1654.212 	best.ind =  10 
+length(flag)  67  it =  2 
+llh.pred =  -2029.05 	llh.pred =  -1998.066 	llh.pred =  -1700.083 	llh.pred =  -1692.136 	llh.pred =  -1690.933 	llh.pred =  -1689.338 	llh.pred =  -1685.435 	llh.pred =  -1679.013 	llh.pred =  -1671.323 	best.ind =  10 
+length(flag)  76  it =  2 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	cat2 	cat2 	llh.pred =  -2072.717 	llh.pred =  -2009.246 	llh.pred =  -2009.246 	llh.pred =  -2072.717 	llh.pred =  -2064.115 	llh.pred =  -2006.357 	llh.pred =  -1709.674 	llh.pred =  -1701.856 	llh.pred =  -2042.744 	llh.pred =  -1700.461 	llh.pred =  -1698.814 	llh.pred =  -1686.53 	llh.pred =  -2064.115 	llh.pred =  -1694.876 	llh.pred =  -1679.946 	llh.pred =  -1689.086 	llh.pred =  -1679.242 	llh.pred =  -1680.804 	best.ind =  10 
+length(flag)  78  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1678.2 	llh.pred =  -1675.818 	llh.pred =  -2041.33 	llh.pred =  -1666.853 	llh.pred =  -1668.676 	llh.pred =  -1660.479 	llh.pred =  -1661.197 	best.ind =  10 
+length(flag)  71  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1659.013 	llh.pred =  -1657.068 	llh.pred =  -1652.739 	llh.pred =  -1646.292 	llh.pred =  -1638.017 	best.ind =  10 
+length(flag)  61  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2069.883 	cat2 	llh.pred =  -2009.654 	llh.pred =  -2083.304 	llh.pred =  -2009.654 	llh.pred =  -2007.542 	llh.pred =  -1713.035 	llh.pred =  -2064.848 	llh.pred =  -1705.503 	llh.pred =  -1703.581 	llh.pred =  -1701.201 	llh.pred =  -1702.035 	llh.pred =  -1697.679 	llh.pred =  -1702.623 	llh.pred =  -1691.527 	llh.pred =  -1699.425 	llh.pred =  -1682.99 	best.ind =  10 
+length(flag)  80  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1695.387 	llh.pred =  -1701.338 	llh.pred =  -1673.865 	llh.pred =  -1634.937 	best.ind =  10 
+length(flag)  60  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2029.765 	llh.pred =  -2021.276 	llh.pred =  -2020.888 	llh.pred =  -1683.217 	llh.pred =  -1675.737 	llh.pred =  -1674.245 	llh.pred =  -1672.461 	llh.pred =  -1667.952 	llh.pred =  -1661.925 	llh.pred =  -1654.212 	best.ind =  10 
+length(flag)  67  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2031.671 	llh.pred =  -2031.671 	llh.pred =  -1998.066 	llh.pred =  -1700.083 	llh.pred =  -1692.136 	llh.pred =  -1690.933 	llh.pred =  -1689.338 	llh.pred =  -1685.435 	llh.pred =  -1678.696 	llh.pred =  -1671.323 	best.ind =  10 
+length(flag)  76  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  8 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	cat2 	cat2 	cat2 	llh.pred =  -2064.228 	llh.pred =  -2116.507 	llh.pred =  -2110.548 	llh.pred =  -2086.453 	cat2 	llh.pred =  -2116.507 	cat2 	llh.pred =  -2065.308 	llh.pred =  -2039.769 	llh.pred =  -1991.367 	llh.pred =  -2074.76 	cat2 	llh.pred =  -1715.224 	llh.pred =  -2117.694 	llh.pred =  -1716.236 	cat2 	llh.pred =  -1991.367 	llh.pred =  -2060.393 	llh.pred =  -1984.086 	llh.pred =  -1704.846 	llh.pred =  -1716.828 	llh.pred =  -1691.524 	llh.pred =  -2074.76 	llh.pred =  -1966.394 	llh.pred =  -1986.451 	llh.pred =  -1697.754 	llh.pred =  -1672.174 	llh.pred =  -1672.813 	llh.pred =  -1984.086 	llh.pred =  -1713.678 	llh.pred =  -1664.224 	llh.pred =  -1675.303 	llh.pred =  -1663.506 	llh.pred =  -1699.855 	llh.pred =  -1710.141 	llh.pred =  -1662.069 	llh.pred =  -1986.451 	llh.pred =  -1967.786 	llh.pred =  -1671.908 	llh.pred =  -1658.32 	llh.pred =  -1659.083 	llh.pred =  -1626.805 	llh.pred =  -2042.798 	llh.pred =  -2047.349 	llh.pred =  -1652.823 	llh.pred =  -1702.063 	llh.pred =  -1652.828 	llh.pred =  -1712.866 	llh.pred =  -1645.116 	best.ind =  10 
+length(flag)  64  it =  1 
+llh.pred =  -1652.146 	llh.pred =  -1972.161 	llh.pred =  -1677.165 	llh.pred =  -1695.887 	llh.pred =  -1650.272 	llh.pred =  -1657.345 	llh.pred =  -1652.693 	llh.pred =  -1726.822 	best.ind =  8 
+length(flag)  57  it =  1 
+llh.pred =  -1707.191 	llh.pred =  -1646.187 	llh.pred =  -1650.769 	llh.pred =  -1675.998 	best.ind =  8 
+length(flag)  52  it =  1 
+llh.pred =  -1651.347 	llh.pred =  -1639.591 	llh.pred =  -1649.679 	llh.pred =  -1633.051 	best.ind =  10 
+length(flag)  60  it =  1 
+llh.pred =  -1647.992 	llh.pred =  -1688.786 	llh.pred =  -1707.095 	llh.pred =  -1643.658 	llh.pred =  -1636.984 	llh.pred =  -1679.844 	llh.pred =  -1630.276 	best.ind =  10 
+length(flag)  60  it =  1 
+llh.pred =  -1641.193 	llh.pred =  -1705.645 	best.ind =  5 
+length(flag)  52  it =  1 
+llh.pred =  -1667.949 	best.ind =  9 
+length(flag)  59  it =  1 
+llh.pred =  -2047.349 	cat2 	cat2 	llh.pred =  -2168.628 	llh.pred =  -2036.39 	cat2 	cat2 	llh.pred =  -2168.628 	cat2 	cat2 	llh.pred =  -2036.39 	cat2 	cat2 	llh.pred =  -1994.518 	llh.pred =  -2007.927 	llh.pred =  -2005.295 	llh.pred =  -2036.371 	llh.pred =  -2121.533 	llh.pred =  -2010.945 	llh.pred =  -2020.652 	llh.pred =  -1698.251 	llh.pred =  -1652.868 	llh.pred =  -2005.295 	llh.pred =  -1994.518 	llh.pred =  -2074.512 	cat2 	llh.pred =  -2007.927 	llh.pred =  -2010.945 	llh.pred =  -1707.246 	llh.pred =  -2036.371 	llh.pred =  -1704.902 	llh.pred =  -1644.717 	llh.pred =  -1972.763 	llh.pred =  -1956.485 	cat2 	llh.pred =  -1703.968 	llh.pred =  -1698.028 	llh.pred =  -1675.546 	cat2 	llh.pred =  -1984.664 	llh.pred =  -1998.314 	llh.pred =  -1667.907 	llh.pred =  -2074.512 	llh.pred =  -2044.546 	llh.pred =  -1988.397 	llh.pred =  -1671.009 	llh.pred =  -1708.316 	llh.pred =  -2010.508 	llh.pred =  -1668.186 	llh.pred =  -1687.214 	llh.pred =  -1696.638 	llh.pred =  -1956.485 	llh.pred =  -1664.164 	llh.pred =  -1978.719 	llh.pred =  -1695.24 	llh.pred =  -1668.315 	llh.pred =  -1991.07 	llh.pred =  -1663.294 	llh.pred =  -1702.125 	llh.pred =  -1710.705 	llh.pred =  -1691.039 	cat2 	llh.pred =  -1661.834 	llh.pred =  -1712.931 	llh.pred =  -1693.144 	llh.pred =  -1661.507 	llh.pred =  -1682.362 	llh.pred =  -1942.725 	llh.pred =  -1656.958 	llh.pred =  -1692.585 	llh.pred =  -1693.092 	best.ind =  6 
+length(flag)  60  it =  1 
+llh.pred =  -1978.719 	llh.pred =  -1657.766 	llh.pred =  -1690.02 	llh.pred =  -1662.899 	llh.pred =  -1651.943 	best.ind =  10 
+length(flag)  65  it =  1 
+llh.pred =  -1641.576 	llh.pred =  -2058.747 	llh.pred =  -1687.556 	llh.pred =  -1652.818 	llh.pred =  -1654.632 	llh.pred =  -1991.07 	llh.pred =  -1707.494 	llh.pred =  -1688.801 	llh.pred =  -2004.376 	llh.pred =  -1647.126 	best.ind =  10 
+length(flag)  65  it =  1 
+llh.pred =  -1698.734 	llh.pred =  -1699.039 	llh.pred =  -1694.628 	llh.pred =  -1653.555 	llh.pred =  -1973.426 	llh.pred =  -1686.628 	llh.pred =  -1643.115 	llh.pred =  -1636.963 	llh.pred =  -1652.164 	llh.pred =  -1683.408 	llh.pred =  -1688.686 	llh.pred =  -1706.935 	best.ind =  8 
+length(flag)  51  it =  1 
+llh.pred =  -1631.112 	llh.pred =  -1686.013 	llh.pred =  -1649.16 	llh.pred =  -1680.34 	llh.pred =  -1965.716 	llh.pred =  -1688.142 	llh.pred =  -1691.325 	llh.pred =  -1678.851 	llh.pred =  -2004.376 	llh.pred =  -1666.104 	llh.pred =  -1702.1 	llh.pred =  -1687.391 	best.ind =  9 
+length(flag)  56  it =  1 
+llh.pred =  -1692.744 	llh.pred =  -1685.529 	llh.pred =  -1684.497 	llh.pred =  -1677.423 	llh.pred =  -1657.879 	llh.pred =  -1681.165 	best.ind =  10 
+length(flag)  57  it =  1 
+llh.pred =  -1637.979 	llh.pred =  -1679.825 	best.ind =  8 
+length(flag)  62  it =  1 
+llh.pred =  -1673.525 	llh.pred =  -1656.856 	llh.pred =  -1699.798 	best.ind =  5 
+length(flag)  58  it =  1 
+llh.pred =  -1668.976 	llh.pred =  -1656.485 	llh.pred =  -1975.106 	llh.pred =  -1677.408 	llh.pred =  -1698.106 	llh.pred =  -1660.981 	best.ind =  10 
+length(flag)  70  it =  1 
+llh.pred =  -1652.216 	llh.pred =  -1659.831 	llh.pred =  -1672.36 	best.ind =  8 
+length(flag)  58  it =  1 
+llh.pred =  -1646.406 	llh.pred =  -1654.043 	llh.pred =  -1646.382 	best.ind =  10 
+length(flag)  64  it =  1 
+llh.pred =  -1653.031 	llh.pred =  -1695.267 	llh.pred =  -1651.969 	llh.pred =  -1648.199 	llh.pred =  -1642.054 	llh.pred =  -1695.858 	llh.pred =  -1636.896 	best.ind =  10 
+length(flag)  59  it =  1 
+llh.pred =  -1691.867 	best.ind =  10 
+length(flag)  43  it =  1 
+cat2 	cat2 	llh.pred =  -2099.051 	llh.pred =  -1992.384 	cat2 	cat2 	cat2 	llh.pred =  -1992.384 	llh.pred =  -1990.034 	llh.pred =  -2099.051 	llh.pred =  -1988.501 	llh.pred =  -2083.688 	llh.pred =  -1991.326 	cat2 	llh.pred =  -1671.773 	llh.pred =  -1663.842 	llh.pred =  -1988.501 	llh.pred =  -1662.644 	llh.pred =  -1660.969 	llh.pred =  -1990.034 	llh.pred =  -2073.171 	llh.pred =  -1656.564 	llh.pred =  -2056.451 	llh.pred =  -1649.803 	llh.pred =  -1988.501 	llh.pred =  -2127.636 	llh.pred =  -1714.418 	llh.pred =  -1642.53 	best.ind =  10 
+length(flag)  64  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1657.94 	llh.pred =  -1989.722 	llh.pred =  -1650.59 	llh.pred =  -1660.02 	llh.pred =  -1689.76 	llh.pred =  -1649.41 	llh.pred =  -1652.242 	llh.pred =  -1647.903 	cat2 	llh.pred =  -1651.463 	llh.pred =  -1691.518 	llh.pred =  -2053.664 	llh.pred =  -1642.598 	llh.pred =  -1650.018 	llh.pred =  -1635.661 	llh.pred =  -1645.593 	llh.pred =  -1687.104 	llh.pred =  -2153.624 	llh.pred =  -1690.423 	llh.pred =  -1628.558 	best.ind =  10 
+length(flag)  60  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1638.013 	llh.pred =  -1630.645 	best.ind =  10 
+length(flag)  60  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1677.207 	llh.pred =  -1687.535 	llh.pred =  -1674.199 	llh.pred =  -1682.131 	llh.pred =  -1671.565 	llh.pred =  -1680.341 	best.ind =  10 
+length(flag)  57  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2120.648 	llh.pred =  -2085.692 	llh.pred =  -1666.863 	llh.pred =  -1619.571 	llh.pred =  -1704.776 	llh.pred =  -1609.135 	best.ind =  10 
+length(flag)  52  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1693.928 	llh.pred =  -2085.692 	llh.pred =  -1698.088 	llh.pred =  -1701.225 	llh.pred =  -2069.367 	llh.pred =  -1665.428 	llh.pred =  -1705.887 	llh.pred =  -1652.21 	llh.pred =  -1650.546 	llh.pred =  -1695.405 	llh.pred =  -1648.668 	llh.pred =  -1646.034 	llh.pred =  -1638.549 	llh.pred =  -1693.712 	best.ind =  10 
+length(flag)  52  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1632.472 	best.ind =  10 
+length(flag)  58  it =  2 
+cat2 	llh.pred =  -2055.844 	cat2 	llh.pred =  -2062.661 	cat2 	llh.pred =  -2062.661 	cat2 	llh.pred =  -2023.585 	cat2 	cat2 	llh.pred =  -2053.325 	llh.pred =  -2023.585 	llh.pred =  -2002.384 	llh.pred =  -1687.492 	llh.pred =  -2024.213 	llh.pred =  -1690.404 	llh.pred =  -2055.844 	llh.pred =  -2126.637 	llh.pred =  -2002.384 	llh.pred =  -1687.289 	llh.pred =  -2022.074 	llh.pred =  -1643.478 	llh.pred =  -1670.98 	llh.pred =  -1639.75 	cat2 	llh.pred =  -1663.976 	llh.pred =  -1633.166 	llh.pred =  -2024.213 	cat2 	llh.pred =  -1662.639 	llh.pred =  -1999.916 	llh.pred =  -1675.686 	llh.pred =  -1661.007 	llh.pred =  -1679.499 	best.ind =  9 
+length(flag)  58  it =  2 
+llh.pred =  -1666.91 	llh.pred =  -1980.074 	llh.pred =  -2126.637 	llh.pred =  -1657.146 	llh.pred =  -1665.992 	llh.pred =  -2010.415 	llh.pred =  -1650.383 	cat2 	cat2 	llh.pred =  -1664.935 	llh.pred =  -1642.377 	best.ind =  10 
+length(flag)  64  it =  2 
+llh.pred =  -2019.593 	llh.pred =  -1660.574 	llh.pred =  -1980.074 	llh.pred =  -1654.259 	llh.pred =  -2010.415 	llh.pred =  -1688.813 	llh.pred =  -1646.121 	best.ind =  10 
+length(flag)  65  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1687.629 	llh.pred =  -2122.204 	llh.pred =  -1972.747 	llh.pred =  -2052.178 	cat2 	llh.pred =  -2064.683 	llh.pred =  -1662.941 	llh.pred =  -2010.865 	llh.pred =  -1684.794 	llh.pred =  -1654.23 	llh.pred =  -1697.576 	llh.pred =  -1688.685 	llh.pred =  -1652.869 	llh.pred =  -1680.09 	llh.pred =  -1683.763 	llh.pred =  -1651.131 	llh.pred =  -1678.502 	llh.pred =  -1696.519 	llh.pred =  -1647.065 	llh.pred =  -1670.524 	llh.pred =  -1676.612 	llh.pred =  -2052.178 	llh.pred =  -1640.694 	llh.pred =  -2064.683 	llh.pred =  -2022.43 	llh.pred =  -1629.25 	llh.pred =  -1672.873 	llh.pred =  -1632.769 	best.ind =  10 
+length(flag)  61  it =  2 
+llh.pred =  -1699.956 	llh.pred =  -1666.381 	llh.pred =  -1622.788 	best.ind =  10 
+length(flag)  54  it =  2 
+cat2 	llh.pred =  -1659.127 	best.ind =  10 
+length(flag)  70  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1700.971 	llh.pred =  -1621.975 	llh.pred =  -2049.217 	llh.pred =  -2060.943 	cat2 	llh.pred =  -1988.095 	llh.pred =  -1685.684 	llh.pred =  -1688.358 	llh.pred =  -1703.562 	llh.pred =  -1643.008 	llh.pred =  -1692.085 	llh.pred =  -1642.235 	llh.pred =  -2036.01 	llh.pred =  -1990.105 	llh.pred =  -1687.135 	best.ind =  8 
+length(flag)  49  it =  2 
+llh.pred =  -1640.305 	llh.pred =  -1640.872 	llh.pred =  -1636.637 	llh.pred =  -1686.292 	llh.pred =  -1629.906 	llh.pred =  -1988.095 	llh.pred =  -1621.126 	best.ind =  10 
+length(flag)  58  it =  2 
+llh.pred =  -1990.105 	llh.pred =  -1686.787 	llh.pred =  -1628.542 	llh.pred =  -2017.62 	llh.pred =  -1620.92 	best.ind =  10 
+length(flag)  56  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1650.467 	llh.pred =  -1984.177 	llh.pred =  -1990.105 	llh.pred =  -1666.289 	llh.pred =  -1686.057 	llh.pred =  -1659.831 	llh.pred =  -1657.664 	llh.pred =  -2057.057 	llh.pred =  -1653.422 	llh.pred =  -1656.345 	llh.pred =  -1683.466 	llh.pred =  -1652.318 	llh.pred =  -1655.094 	llh.pred =  -1650.876 	llh.pred =  -1651.38 	llh.pred =  -1686.268 	llh.pred =  -1646.682 	llh.pred =  -1645.08 	llh.pred =  -1715.02 	llh.pred =  -1639.522 	llh.pred =  -1637.005 	best.ind =  10 
+length(flag)  63  it =  2 
+llh.pred =  -1682.915 	llh.pred =  -1631.827 	best.ind =  10 
+length(flag)  59  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1676.17 	llh.pred =  -1689.001 	llh.pred =  -1618.843 	best.ind =  10 
+length(flag)  56  it =  2 
+llh.pred =  -1687.856 	llh.pred =  -1689.91 	llh.pred =  -1686.28 	llh.pred =  -1685.621 	llh.pred =  -1683.278 	best.ind =  10 
+length(flag)  42  it =  2 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2084.381 	llh.pred =  -2084.381 	llh.pred =  -2078.446 	llh.pred =  -1664.584 	llh.pred =  -1652.21 	llh.pred =  -1694.644 	llh.pred =  -1648.668 	llh.pred =  -1645.125 	llh.pred =  -1639.545 	llh.pred =  -1632.472 	best.ind =  10 
+length(flag)  58  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2062.661 	llh.pred =  -2062.661 	llh.pred =  -2050.929 	cat2 	llh.pred =  -1652.889 	cat2 	llh.pred =  -1690.841 	llh.pred =  -1687.289 	llh.pred =  -1643.577 	llh.pred =  -2024.529 	llh.pred =  -1639.75 	llh.pred =  -1633.166 	llh.pred =  -1679.499 	best.ind =  9 
+length(flag)  58  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2024.529 	cat2 	llh.pred =  -2016.907 	llh.pred =  -1688.813 	llh.pred =  -2002.048 	llh.pred =  -1682.749 	llh.pred =  -1685.475 	llh.pred =  -1984.61 	llh.pred =  -1679.535 	llh.pred =  -1984.177 	llh.pred =  -1669.436 	llh.pred =  -1666.289 	llh.pred =  -1629.446 	llh.pred =  -1657.664 	llh.pred =  -1622.788 	best.ind =  10 
+length(flag)  54  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1656.345 	llh.pred =  -1655.221 	llh.pred =  -1651.38 	llh.pred =  -1645.08 	llh.pred =  -1636.111 	best.ind =  10 
+length(flag)  63  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2166.741 	llh.pred =  -2063.329 	cat2 	llh.pred =  -2125.606 	cat2 	llh.pred =  -2023.585 	llh.pred =  -1976.262 	llh.pred =  -2115.589 	llh.pred =  -2023.585 	llh.pred =  -1697.576 	llh.pred =  -1976.262 	llh.pred =  -1696.006 	llh.pred =  -2022.074 	llh.pred =  -1973.198 	llh.pred =  -1673.924 	llh.pred =  -1700.093 	llh.pred =  -1662.941 	llh.pred =  -1663.976 	llh.pred =  -1654.23 	llh.pred =  -1662.639 	llh.pred =  -1652.75 	llh.pred =  -1699.4 	llh.pred =  -1661.007 	llh.pred =  -1651.131 	llh.pred =  -1656.886 	llh.pred =  -1646.754 	llh.pred =  -1674.35 	llh.pred =  -1650.184 	llh.pred =  -1640.627 	llh.pred =  -1632.769 	best.ind =  10 
+length(flag)  61  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1643.515 	best.ind =  10 
+length(flag)  64  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1683.708 	cat2 	llh.pred =  -1685.518 	best.ind =  8 
+length(flag)  50  it =  3 
+llh.pred =  -2071.287 	llh.pred =  -2055.844 	llh.pred =  -2071.287 	llh.pred =  -2058.604 	llh.pred =  -1689.677 	llh.pred =  -1643.008 	llh.pred =  -1642.235 	llh.pred =  -1640.872 	llh.pred =  -1635.845 	llh.pred =  -1629.906 	llh.pred =  -1621.126 	best.ind =  10 
+length(flag)  58  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2024.945 	llh.pred =  -2055.972 	llh.pred =  -2024.945 	llh.pred =  -1704.375 	llh.pred =  -1690.305 	llh.pred =  -2017.62 	llh.pred =  -1700.299 	llh.pred =  -1709.882 	llh.pred =  -1686.45 	llh.pred =  -1682.857 	llh.pred =  -1689.91 	llh.pred =  -1686.268 	llh.pred =  -1683.498 	llh.pred =  -1686.989 	llh.pred =  -1676.17 	llh.pred =  -1668.759 	best.ind =  10 
+length(flag)  57  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1689.035 	llh.pred =  -1682.781 	best.ind =  10 
+length(flag)  42  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2125.606 	llh.pred =  -2125.606 	llh.pred =  -2122.204 	llh.pred =  -1697.576 	llh.pred =  -1680.564 	llh.pred =  -1700.555 	llh.pred =  -1700.349 	llh.pred =  -1702.416 	llh.pred =  -1688.584 	llh.pred =  -1685.838 	best.ind =  5 
+length(flag)  51  it =  4 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  9 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat2 	llh.pred =  -2020.402 	cat2 	cat2 	cat2 	llh.pred =  -2020.402 	llh.pred =  -2037.167 	llh.pred =  -2013.515 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2035.451 	llh.pred =  -2018.976 	llh.pred =  -2037.167 	cat2 	llh.pred =  -2035.451 	llh.pred =  -2018.976 	llh.pred =  -2035.123 	cat2 	cat2 	llh.pred =  -2051.34 	llh.pred =  -1798.163 	llh.pred =  -2101.958 	best.ind =  4 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2030.314 	llh.pred =  -2024 	llh.pred =  -1666.207 	best.ind =  4 
+length(flag)  28  it =  1 
+llh.pred =  -2044.715 	llh.pred =  -1751.225 	best.ind =  4 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2044.902 	cat2 	llh.pred =  -2051.34 	cat2 	cat2 	llh.pred =  -2152.654 	cat2 	llh.pred =  -2009.867 	llh.pred =  -2113.423 	cat2 	llh.pred =  -2185.008 	llh.pred =  -2050.101 	llh.pred =  -2113.423 	llh.pred =  -2009.867 	llh.pred =  -1991.858 	llh.pred =  -2157.038 	llh.pred =  -2050.101 	llh.pred =  -1716.348 	llh.pred =  -1976.253 	llh.pred =  -2114.482 	llh.pred =  -2044.715 	llh.pred =  -1695.551 	llh.pred =  -1698.118 	llh.pred =  -1709.114 	llh.pred =  -1687.053 	llh.pred =  -1684.081 	llh.pred =  -2044.902 	llh.pred =  -1697.524 	llh.pred =  -1686.207 	llh.pred =  -1997.757 	llh.pred =  -1685.053 	llh.pred =  -2044.001 	llh.pred =  -1690.392 	llh.pred =  -1626.053 	llh.pred =  -1690.598 	llh.pred =  -1699.38 	llh.pred =  -1685.689 	llh.pred =  -1689.733 	llh.pred =  -1687.638 	llh.pred =  -1597.24 	llh.pred =  -1967.698 	llh.pred =  -1704.948 	llh.pred =  -1688.476 	llh.pred =  -1685.537 	llh.pred =  -1679.706 	best.ind =  9 
+length(flag)  44  it =  1 
+llh.pred =  -1702.647 	llh.pred =  -1686.991 	llh.pred =  -1677.175 	best.ind =  10 
+length(flag)  47  it =  1 
+llh.pred =  -1610.874 	llh.pred =  -1695.668 	llh.pred =  -1607.803 	llh.pred =  -1669.468 	llh.pred =  -1698.551 	llh.pred =  -1611.02 	llh.pred =  -1654.868 	best.ind =  8 
+length(flag)  46  it =  1 
+llh.pred =  -1696.402 	llh.pred =  -1699.103 	best.ind =  6 
+length(flag)  46  it =  1 
+llh.pred =  -1692.413 	llh.pred =  -1695.24 	best.ind =  6 
+length(flag)  45  it =  1 
+cat2 	llh.pred =  -2249.964 	cat2 	cat2 	llh.pred =  -2249.964 	llh.pred =  -2276.622 	cat2 	cat2 	cat2 	llh.pred =  -2042.506 	llh.pred =  -1698.376 	llh.pred =  -2101.775 	llh.pred =  -2044.556 	llh.pred =  -1673.816 	llh.pred =  -2120.828 	cat2 	llh.pred =  -2053.54 	llh.pred =  -2027.147 	cat2 	llh.pred =  -1699.764 	llh.pred =  -2359.954 	llh.pred =  -2135.948 	llh.pred =  -2101.775 	llh.pred =  -2344.174 	llh.pred =  -1710.434 	llh.pred =  -2282.841 	llh.pred =  -1722.887 	llh.pred =  -2179.439 	llh.pred =  -1700.998 	llh.pred =  -2282.841 	llh.pred =  -1698.518 	llh.pred =  -1690.298 	llh.pred =  -2100.048 	llh.pred =  -2143.954 	llh.pred =  -1698.807 	llh.pred =  -2135.948 	llh.pred =  -1701.262 	llh.pred =  -1683.335 	llh.pred =  -2215.042 	llh.pred =  -2129.77 	llh.pred =  -1700.105 	llh.pred =  -2344.174 	llh.pred =  -1697.838 	llh.pred =  -1698.446 	llh.pred =  -1670.149 	best.ind =  10 
+length(flag)  38  it =  1 
+llh.pred =  -1695.875 	llh.pred =  -1612.693 	llh.pred =  -1695.704 	llh.pred =  -1685.571 	best.ind =  7 
+length(flag)  39  it =  1 
+llh.pred =  -2359.954 	llh.pred =  -1679.44 	llh.pred =  -2051.925 	llh.pred =  -2292.26 	llh.pred =  -1691.13 	llh.pred =  -1696.719 	llh.pred =  -1686.998 	llh.pred =  -2124.767 	llh.pred =  -2121.218 	llh.pred =  -1687.94 	llh.pred =  -1614.238 	llh.pred =  -1707.989 	llh.pred =  -1693.063 	llh.pred =  -1690.85 	llh.pred =  -1682.512 	llh.pred =  -1691.217 	llh.pred =  -1682.386 	llh.pred =  -1598.309 	llh.pred =  -1705.203 	llh.pred =  -1687.325 	llh.pred =  -1687.404 	llh.pred =  -1677.663 	llh.pred =  -1682.49 	llh.pred =  -1686.265 	best.ind =  7 
+length(flag)  33  it =  1 
+llh.pred =  -1687.91 	best.ind =  9 
+length(flag)  50  it =  1 
+llh.pred =  -1695.956 	llh.pred =  -1695.9 	llh.pred =  -1688.864 	best.ind =  5 
+length(flag)  45  it =  1 
+llh.pred =  -1681.317 	llh.pred =  -1680.817 	llh.pred =  -2346.379 	llh.pred =  -1709.202 	llh.pred =  -1677.309 	llh.pred =  -1675.449 	llh.pred =  -1704.664 	llh.pred =  -1682.699 	llh.pred =  -1711.108 	llh.pred =  -1675.024 	llh.pred =  -1711.789 	llh.pred =  -1673.596 	llh.pred =  -1685.682 	llh.pred =  -1682.059 	best.ind =  9 
+length(flag)  42  it =  1 
+llh.pred =  -1677.347 	best.ind =  5 
+length(flag)  42  it =  1 
+llh.pred =  -1720.912 	llh.pred =  -1691.699 	llh.pred =  -1696.658 	best.ind =  8 
+length(flag)  37  it =  1 
+llh.pred =  -1675.218 	llh.pred =  -1710.648 	best.ind =  4 
+length(flag)  45  it =  1 
+llh.pred =  -1704.127 	llh.pred =  -1674.37 	llh.pred =  -1710.853 	llh.pred =  -1677.942 	best.ind =  9 
+length(flag)  36  it =  1 
+llh.pred =  -1706.477 	llh.pred =  -1698.164 	llh.pred =  -1705.158 	best.ind =  5 
+length(flag)  42  it =  1 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	llh.pred =  -2033.311 	llh.pred =  -2033.311 	llh.pred =  -2033.735 	llh.pred =  -1661.984 	llh.pred =  -1667.442 	best.ind =  4 
+length(flag)  29  it =  2 
+cat2 	cat2 	cat2 	llh.pred =  -2026.481 	cat2 	llh.pred =  -2165.732 	cat2 	llh.pred =  -2026.481 	llh.pred =  -2126.126 	llh.pred =  -2165.732 	llh.pred =  -2003.673 	llh.pred =  -2013.669 	cat2 	llh.pred =  -1691.447 	llh.pred =  -2126.126 	cat2 	llh.pred =  -1691.61 	llh.pred =  -2173.428 	llh.pred =  -2045.709 	llh.pred =  -1685.652 	llh.pred =  -1717.564 	llh.pred =  -1687.522 	llh.pred =  -2091.64 	llh.pred =  -2013.669 	llh.pred =  -1689.334 	llh.pred =  -2062.873 	llh.pred =  -1688.701 	llh.pred =  -1697.237 	llh.pred =  -1672.136 	llh.pred =  -1688.081 	llh.pred =  -1698.022 	llh.pred =  -1656.006 	best.ind =  10 
+length(flag)  47  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1689.893 	llh.pred =  -2002.073 	llh.pred =  -2358.446 	llh.pred =  -1698.775 	llh.pred =  -1691.278 	llh.pred =  -1688.876 	llh.pred =  -1597.557 	llh.pred =  -2062.873 	llh.pred =  -1698.069 	llh.pred =  -1678.119 	llh.pred =  -1687.149 	llh.pred =  -1585.935 	best.ind =  10 
+length(flag)  44  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -1685.147 	llh.pred =  -1700.852 	llh.pred =  -1690.989 	llh.pred =  -2072.02 	llh.pred =  -1695.048 	best.ind =  10 
+length(flag)  46  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1691.357 	llh.pred =  -1687.537 	llh.pred =  -1682.1 	llh.pred =  -1682.651 	llh.pred =  -1683.549 	llh.pred =  -1680.254 	best.ind =  10 
+length(flag)  45  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1682.128 	llh.pred =  -1684.983 	llh.pred =  -1675.134 	llh.pred =  -1591.743 	best.ind =  10 
+length(flag)  45  it =  2 
+llh.pred =  -2045.709 	cat2 	llh.pred =  -2275.276 	llh.pred =  -2275.276 	llh.pred =  -2255.614 	llh.pred =  -1693.177 	llh.pred =  -1671.318 	llh.pred =  -1667.757 	llh.pred =  -2045.11 	llh.pred =  -1672.992 	cat2 	llh.pred =  -1673.065 	llh.pred =  -1668.73 	llh.pred =  -2057.105 	cat2 	llh.pred = llh.pred =   -1667.902-2139.368  		best.ind =  6 
+length(flag)  38  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2044.433 	llh.pred =  -2299.851 	llh.pred =  -2196.763 	cat2 	cat2 	llh.pred =  -2139.368 	llh.pred =  -1703.57 	llh.pred =  -2196.763 	llh.pred =  -1708.372 	llh.pred =  -1701.282 	llh.pred =  -2108.283 	llh.pred =  -2064.908 	llh.pred =  -1701.52 	cat2 	llh.pred =  -1682.186 	llh.pred =  -1691.222 	llh.pred =  -2107.066 	llh.pred =  -1699.338 	llh.pred =  -2352.819 	llh.pred =  -1695.25 	llh.pred =  -1713.474 	llh.pred =  -1677.511 	llh.pred =  -1695.736 	llh.pred =  -1675.014 	llh.pred =  -1694.075 	llh.pred =  -2104.876 	llh.pred =  -1694.936 	cat2 	llh.pred =  -1692.943 	llh.pred =  -2096.755 	llh.pred =  -1691.435 	llh.pred =  -1684.135 	llh.pred =  -2045.11 	llh.pred =  -2272.968 	llh.pred =  -1695.305 	llh.pred =  -1680.015 	best.ind =  6 
+length(flag)  34  it =  2 
+llh.pred =  -2352.819 	llh.pred =  -1689.626 	best.ind =  9 
+length(flag)  50  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1682.477 	best.ind =  7 
+length(flag)  39  it =  2 
+llh.pred =  -1697.964 	llh.pred =  -1692.402 	cat2 	llh.pred =  -2066.285 	llh.pred =  -2272.968 	llh.pred =  -2096.755 	llh.pred =  -1685.42 	llh.pred =  -1689.689 	best.ind =  10 
+length(flag)  46  it =  2 
+llh.pred =  -2306.475 	llh.pred =  -1682.13 	llh.pred =  -2253.555 	llh.pred =  -2223.833 	llh.pred =  -1690.266 	llh.pred =  -1682.193 	llh.pred =  -1704.618 	llh.pred =  -1683.357 	llh.pred =  -1667.355 	llh.pred =  -2030.083 	llh.pred =  -1685.312 	llh.pred =  -1683.388 	llh.pred =  -1693.837 	llh.pred =  -1687.769 	llh.pred =  -1684.98 	llh.pred =  -1671.69 	llh.pred =  -1677.81 	llh.pred =  -2223.833 	llh.pred =  -1670.155 	best.ind =  10 
+length(flag)  43  it =  2 
+llh.pred =  -1677.097 	llh.pred =  -1686.697 	llh.pred =  -1685.127 	llh.pred =  -1590.512 	llh.pred =  -1678.886 	llh.pred =  -1684.353 	llh.pred =  -1672.824 	llh.pred =  -2161.209 	llh.pred =  -1663.531 	llh.pred =  -1683.092 	llh.pred =  -1697.98 	llh.pred =  -1666.222 	llh.pred =  -1665.971 	best.ind =  7 
+length(flag)  41  it =  2 
+llh.pred =  -1694.358 	llh.pred =  -1678.419 	best.ind =  10 
+length(flag)  41  it =  2 
+llh.pred =  -1663.495 	best.ind =  10 
+length(flag)  36  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1694.153 	llh.pred =  -1692.814 	llh.pred =  -1692.734 	llh.pred =  -2042.769 	llh.pred =  -1678.194 	llh.pred =  -1672.913 	best.ind =  10 
+length(flag)  45  it =  2 
+llh.pred =  -1719.172 	llh.pred =  -1702.467 	llh.pred =  -1695.133 	llh.pred =  -1682.748 	llh.pred =  -1680.003 	llh.pred =  -1678.477 	best.ind =  9 
+length(flag)  37  it =  2 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	fitting smoothing spline with gcv lambda =  1e-04 .
+llh.pred =  -2033.311 	llh.pred =  -2033.311 	llh.pred =  -2033.259 	llh.pred =  -1814.647 	llh.pred =  -1663.756 	llh.pred =  -1668.957 	best.ind =  5 
+length(flag)  29  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	llh.pred =  -2117.26 	llh.pred =  -2117.26 	llh.pred =  -2076.935 	llh.pred =  -1685.095 	llh.pred =  -1683.803 	llh.pred =  -1685.031 	llh.pred =  -1683.668 	llh.pred =  -1602.922 	cat2 	llh.pred =  -1682.231 	cat2 	llh.pred =  -1587.669 	best.ind =  10 
+length(flag)  45  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2044.579 	llh.pred =  -2057.105 	llh.pred =  -2358.446 	cat2 	cat2 	llh.pred =  -2299.851 	llh.pred =  -1703.57 	llh.pred =  -2099.712 	llh.pred =  -2044.579 	llh.pred =  -2175.33 	cat2 	llh.pred =  -1701.282 	llh.pred =  -2175.33 	cat2 	llh.pred =  -2099.712 	llh.pred =  -1694.528 	llh.pred =  -2272.968 	llh.pred =  -2036.265 	llh.pred =  -1680.007 	llh.pred =  -2209.476 	llh.pred =  -2272.968 	llh.pred =  -1713.474 	llh.pred =  -1677.873 	llh.pred =  -2070.274 	llh.pred =  -2096.755 	llh.pred =  -1694.692 	llh.pred =  -2251.878 	llh.pred =  -1684.645 	llh.pred =  -1675.618 	best.ind =  9 
+length(flag)  37  it =  3 
+llh.pred =  -1693.642 	llh.pred =  -1682.13 	llh.pred =  -1704.618 	llh.pred =  -1695.941 	llh.pred =  -1682.879 	llh.pred =  -1687.712 	llh.pred =  -1697.964 	llh.pred =  -1682.816 	llh.pred =  -2029.322 	llh.pred =  -1685.591 	llh.pred =  -1692.402 	llh.pred =  -1695.218 	llh.pred =  -1683.974 	llh.pred =  -1593.448 	llh.pred =  -1685.324 	best.ind =  10 
+length(flag)  46  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1671.69 	llh.pred =  -1686.024 	llh.pred =  -1678.196 	llh.pred =  -1670.155 	best.ind =  10 
+length(flag)  43  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1677.225 	llh.pred =  -1683.768 	llh.pred =  -1678.886 	llh.pred =  -1682.049 	llh.pred =  -2045.296 	llh.pred =  -1666.135 	llh.pred =  -1683.179 	best.ind =  9 
+length(flag)  41  it =  3 
+llh.pred =  -1665.971 	best.ind =  5 
+length(flag)  41  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1708.928 	llh.pred =  -1687.939 	cat2 	llh.pred =  -1682.89 	llh.pred =  -2214.375 	llh.pred =  -1674.356 	llh.pred =  -2197.686 	llh.pred =  -1666.201 	best.ind =  8 
+length(flag)  33  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2220.303 	llh.pred =  -1697.651 	llh.pred =  -1694.358 	llh.pred =  -1694.153 	llh.pred =  -1693.944 	llh.pred =  -1692.734 	llh.pred =  -1678.194 	llh.pred =  -1672.913 	best.ind =  10 
+length(flag)  45  it =  3 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+cat2 	cat2 	llh.pred =  -2266.501 	llh.pred =  -2057.721 	llh.pred =  -2266.501 	llh.pred =  -2253.555 	llh.pred =  -1704.618 	llh.pred =  -1687.712 	llh.pred =  -2358.446 	llh.pred =  -1685.591 	llh.pred =  -1686.236 	llh.pred =  -2299.851 	llh.pred =  -1683.93 	llh.pred =  -1703.57 	llh.pred =  -1683.997 	llh.pred =  -1682.498 	best.ind =  10 
+length(flag)  41  it =  4 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -1704.677 	llh.pred =  -1702.1 	llh.pred =  -1695.858 	llh.pred =  -1681.613 	llh.pred =  -1681.068 	llh.pred =  -1675.68 	best.ind =  10 
+length(flag)  37  it =  4 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+inner it =  10 
+rep =  1 
+rep =  2 
+rep =  3 
+rep =  4 
+rep =  5 
+rep =  6 
+rep =  7 
+rep =  8 
+rep =  9 
+rep =  10 
+rep =  11 
+rep =  12 
+rep =  13 
+rep =  14 
+rep =  15 
+rep =  16 
+rep =  17 
+rep =  18 
+rep =  19 
+rep =  20 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat2 	cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+cat1 	fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2018.344 	best.ind =  1 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+cat2 	cat2 	cat2 	cat2 	llh.pred =  -2019.379 	cat2 	cat2 	cat2 	llh.pred =  -2042.249 	llh.pred =  -2036.422 	llh.pred =  -2024.691 	llh.pred =  -2019.379 	llh.pred =  -2019.582 	llh.pred =  -2035.302 	llh.pred =  -2022.14 	llh.pred =  -2035.816 	llh.pred =  -2036.422 	llh.pred =  -2008.486 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2024.691 	llh.pred =  -2019.582 	llh.pred =  -2021.48 	llh.pred =  -2035.302 	llh.pred =  -2034.919 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2030.423 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2011.957 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2016.762 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2014.009 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+llh.pred =  -2024.538 	best.ind =  3 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-06 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+length(flag)  0  it =  1 
+fitting smoothing spline: calculating gcv lambda... 
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-06 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+fitting smoothing spline with gcv lambda =  1e-04 .
+ 
+Job Ended at Fri Dec 18 14:02:18 EST 2020
+ 
