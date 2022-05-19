@@ -1,12 +1,12 @@
 require(fda)
 require(plotly)
 require(RColorBrewer)
-# This file contain R code for the functions needed in the smooth.spikes project
+# This file contain R code for the functions needed in the smoothEM project
 # The first function that we need is that we use to generate data
-# This function return a list of 4 elements: 
+# This function return a list of elements, notably among which are: 
 ## spikes.index: a vector of spikes index. Each element takes value between 1 and length(grid), where grid is created from 'range' and 'by' (and sometimes from spikes generated as well.)
 ## spikes.loc: the actual location of spikes. Each element takes value between range[1] and range[2]
-## smooth: the smooth part evaluated at grid
+## smooth: the true smooth part evaluated at grid
 ## data: a data frame. y is the actual data we want to analyze. grid is, well, grid.
 generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist="homopp",spikes.loc.param=NA, arg.others = NA,spikes.dist="fixed",spikes.param=NA, noise.sd,plot){
   # Caution: if generating spikes according to homopp or nonhomopp, we generate the location of spikes, then move these locations to the nearest grid points
@@ -33,7 +33,9 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
   ## if spikes.dist is random, spikes.param is the (vector of) parameter(s) for 'spikes.dist'
   # noise.sd: the sd of white noise
   # plot: if 'yes', plot the generated data
-  # Caution2: if spikes.dist == fixed, i.e. spikes height is a constant, the function returns constant height. If spikes.dist != fixed, the function returns a vector of height values for each observations
+  # Caution2: if spikes.dist == fixed, i.e. spikes height is a constant, the function returns constant height. 
+  # If spikes.dist != fixed, the function returns a vector of height values for each observations. The code for spikes.dist != fixed is not polished
+  # and not used in our smoothEM paper. 
   if(spikes.dist == "fixed"){ #Case 1: fixed height for spikes
     if(length(spikes.param)>1) warning('\'spikes.param\' has multiple elements. Only the first element will be used.')
     height = spikes.param[1]
@@ -77,13 +79,6 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
                     marker = list(color = jBrewColors[4], symbol = 'x', size = 5))%>%
           layout(xaxis = list(title = "Grid",titlefont = f),
                  yaxis = list(title = "Spiky Data",titlefont = f))
-        # layout(matrix(c(1,2), nrow = 2), heights = c(10,10))
-        # par(bg = "lightyellow", mar=c(5,1,1,1), oma = c(0,0,0,0), pin = c(5.7,2.1))
-        # plot(grid,smooth, type = "l", ylim = c(min(smooth) - height, max(smooth)+height), main = "", xlab = "", ylab = "")
-        # title(sub = "Curves + Random Spikes w/ Same Height + Noise", cex.sub = 1, font.sub =3, col.sub = "darkgreen", line = -2.5)
-        # points(grid[spikes.index], smooth[spikes.index] + height, col = "red", pch = 16)
-        # plot(data$grid, data$y, type = "p", ylim = c(min(smooth) - height, max(smooth)+height), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-        # title(main = "Data: Curves + Random Spikes w/ Same Height + Noise", cex.main = 1, font.main =3, col.main = "darkgreen", line = -2.5)
         p
       }
       output = list(spikes.index = spikes.index, spikes.loc = spikes.loc,smooth = smooth, data = data, height = height, plot = p)
@@ -128,16 +123,6 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
       y = smooth+rnorm(ngrid,0,noise.sd)
       y[spikes.index] = y[spikes.index] + height
       data = cbind.data.frame(y, grid)
-      # if(plot == "yes"){
-      #   layout(matrix(c(1,2), nrow = 2), heights = c(10,10))
-      #   par(bg = "lightyellow", mar=c(5,1,1,1), oma = c(0,0,0,0), pin = c(5.7,2.1))
-      #   plot(grid,smooth, type = "l", ylim = c(min(smooth) - height, max(smooth)+height), main = "", xlab = "", ylab = "")
-      #   title(sub = "Curves + HMPP Spikes w/ Same Height + Noise", cex.sub = 1, font.sub =3, col.sub = "darkgreen", line = -2.5)
-      #   points(grid[spikes.index], smooth[spikes.index] + height, col = "red", pch = 16)
-      #   plot(data$grid, data$y, type = "p", ylim = c(min(smooth) - height, max(smooth)+height), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-      #   title(main = "Data: Curves + HMPP Spikes w/ Same Height + Noise", cex.main = 1, font.main =3, col.main = "darkgreen", line = -2.5)
-      # }
-      p = NA
       if(plot == "yes"){
         jBrewColors <- brewer.pal(n = 8, name = "Dark2")
         f <- list(
@@ -202,30 +187,6 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
       y[spikes.index] = y[spikes.index] + height
       data = cbind.data.frame(y, grid)
       p = NA
-      # if(plot == "yes" & is.na(arg.others)){
-      #   layout(matrix(c(1,2), nrow = 2), heights = c(10,10))
-      #   par(bg = "lightyellow", mar=c(5,1,1,1), oma = c(0,0,0,0), pin = c(5.7,2.1))
-      #   #plot(grid,smooth, type = "l", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "")
-      #   plot(grid,smooth, type = "l", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "")
-      #   title(sub = "Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.sub = 1, font.sub =3, col.sub = "darkgreen", line = -2.5)
-      #   points(grid[spikes.index], smooth[spikes.index] + height, col = "red", pch = 16)
-      #   #plot(data$grid, data$y, type = "p", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-      #   plot(data$grid, data$y, type = "p", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-      #   title(main = "Data: Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.main = 1, font.main =3, col.main = "darkgreen", line = -2.5)
-      #   lines(grid, spikes.loc.param(grid), col = "green") #this is lambda
-      # }
-      # if(plot == "yes" & !is.na(arg.others)){
-      #   layout(matrix(c(1,2), nrow = 2), heights = c(10,10))
-      #   par(bg = "lightyellow", mar=c(5,1,1,1), oma = c(0,0,0,0), pin = c(5.7,2.1))
-      #   #plot(grid,smooth, type = "l", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "")
-      #   plot(grid,smooth, type = "l", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "")
-      #   title(sub = "Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.sub = 1, font.sub =3, col.sub = "darkgreen", line = -2.5)
-      #   points(grid[spikes.index], smooth[spikes.index] + height, col = "red", pch = 16)
-      #   #plot(data$grid, data$y, type = "p", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-      #   plot(data$grid, data$y, type = "p", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-      #   title(main = "Data: Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.main = 1, font.main =3, col.main = "darkgreen", line = -2.5)
-      #   lines(grid, spikes.loc.param(grid, arg.others), col = "green") #this is lambda
-      # }
       if(plot == "yes" & is.na(arg.others)){
         jBrewColors <- brewer.pal(n = 8, name = "Dark2")
         f <- list(
@@ -315,6 +276,7 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
     stop('\'spikes.loc.dist\' other than \'uniform\',\'homopp\',\'nonhomopp\',\'normal\' is not available.')
   }
   # From here on is code for random spikes height, for now we only consider homopp and nonhomopp distribution for spikes location
+  # This part of the code is not polished and is not used in our smoothEM paper. It might contain errors
   if(spikes.dist != "fixed"){
     if(spikes.loc.dist == "homopp"){
       height.gen=NA #If height.gen is unchanged in the next few 'if' cases, it means user enters an invalid spikes.dist
@@ -464,30 +426,6 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
         y[spikes.index] = y[spikes.index] + height
         data = cbind.data.frame(y, grid)
         p = NA
-        # if(plot == "yes" & is.na(arg.others)){
-        #   layout(matrix(c(1,2), nrow = 2), heights = c(10,10))
-        #   par(bg = "lightyellow", mar=c(1,1,1,1), oma = c(0,0,0,0), pin = c(6.7,3.1))
-        #   #plot(grid,smooth, type = "l", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "")
-        #   plot(grid,smooth, type = "l", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "")
-        #   title(sub = "Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.sub = 1, font.sub =3, col.sub = "darkgreen", line = -2.5)
-        #   points(grid[spikes.index], smooth[spikes.index] + height, col = "red", pch = 16)
-        #   #plot(data$grid, data$y, type = "p", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-        #   plot(data$grid, data$y, type = "p", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-        #   title(main = "Data: Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.main = 1, font.main =3, col.main = "darkgreen", line = -2.5)
-        #   lines(grid, spikes.loc.param(grid), col = "green") #this is lambda
-        # }
-        # if(plot == "yes" & !is.na(arg.others)){
-        #   layout(matrix(c(1,2), nrow = 2), heights = c(10,10))
-        #   par(bg = "lightyellow", mar=c(1,1,1,1), oma = c(0,0,0,0), pin = c(6.7,3.1))
-        #   #plot(grid,smooth, type = "l", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "")
-        #   plot(grid,smooth, type = "l", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "")
-        #   title(sub = "Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.sub = 1, font.sub =3, col.sub = "darkgreen", line = -2.5)
-        #   points(grid[spikes.index], smooth[spikes.index] + height, col = "red", pch = 16)
-        #   #plot(data$grid, data$y, type = "p", ylim = c(min(smooth) - height.mean - 4*height.sd, max(smooth)+height.mean + 4*height.sd), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-        #   plot(data$grid, data$y, type = "p", ylim = c(1.5*min(y)-0.5*max(y), 1.5*max(y)-0.5*min(y)), main = "", xlab = "", ylab = "", cex = 0.2, col = "blue")
-        #   title(main = "Data: Curves + Non-HMPP Spikes w/ Same Height + Noise", cex.main = 1, font.main =3, col.main = "darkgreen", line = -2.5)
-        #   lines(grid, spikes.loc.param(grid, arg.others), col = "green") #this is lambda
-        # }
         if(plot == "yes" & is.na(arg.others)){
           jBrewColors <- brewer.pal(n = 8, name = "Dark2")
           f <- list(
@@ -543,16 +481,15 @@ generate.data = function(range, by = 0.01,poly.coefs,nspikes=NA,spikes.loc.dist=
 }
 
 
-#spikes.data = generate.data(range = c(0,10),by = 0.01,poly.coefs = c(1,3,-1,-0.2,0.03),nspikes = 15,spikes.loc.dist = "homopp", spikes.loc.param = c(5,2),spikes.dist = "nonhomopp",spikes.param = c(15,1),noise.sd = 2,plot = "yes")
-
-# The second function is one that we use to separate spikes from smooth curve. Right now, we assume the distribution of white noise
+# The following functions are the main ones that we use to separate spikes from smooth curve. Right now, we assume the distribution of white noise
 # and also, the distribution of spike heights are normal. The main procedure is 
 # (1) to fit an initial spline estimates using smoothing splines
-# (2) then under some arbitrary threshold, perform a rough initial separation. feed this initial separation result to EM algorithm
-# (3) after EM, we need to select a threshold p* to classify the spikes. In this step, use prior knowledge of the spike locations.
-# This second function will contain multiple sub-functions corresponding to the steps above.
-## The first sub-function does (1)
-init = function(data=NA, range, norder= 5, nbasis=NA, Lcoef = c(0,0,1), lambda = NA,alpha.prior = 0.4, smooth.true = NA,spikes.flag = NA, sigma.jiggle = 1,plot = TRUE){
+# (2) then under some arbitrary threshold, perform a rough initial separation. 
+# (3) feed this initial separation result to EM algorithm
+# (4) after EM, we need to select a threshold p* to classify the spikes. In this step, use prior knowledge of the spike locations.
+
+# The  init() function does (1) and (2)
+init = function(data=NA, range, norder= 5, nbasis=NA, Lcoef = c(0,0,1), lambda = NA,alpha.prior = 0.4, smooth.true = NA,spikes.flag = NA, plot = TRUE,sigma.jiggle = NA, border.padding = FALSE){
   # data: a data frame that consists of the observed y and the grid over which it is observed. The first column must be y, and the second is grid.
   ## the data output by the function generate.data is already conforming.
   # range of spline basis functions
@@ -564,12 +501,13 @@ init = function(data=NA, range, norder= 5, nbasis=NA, Lcoef = c(0,0,1), lambda =
   # smooth.true: if given, this is the true underlying curve, used to compared with the fitted splines. Only possible in simulations.
   # spikes.flag: if provided, these points will be excluded from the smoothing procedure. Can be useful in iterated smoothing and EM.
   # sigma.jiggle: the amount of jitter injected to flagged smooth component for each lambda to check for overfit (see later in code)
+  # # border.padding: pad the two borders to avoid problems with fewer data there
   # nbins and qt (quantile) are used to correct the contaminated estimates. We will partition the x-axis into nbins bins, and 
   ## within each bin, retain the data below this quantile and fit a smoothing spline. The result will be matched to the orifinal fit 
   ## (using all data) in the non-spikes region.
   # VALUE: if smooth.true is given, the function returns a data frame that consists of the smooth estimates at each grid point, smooth true, and MSE
   ## otherwise, it returns only the smooth estimates.
-  #data = spikes.data$data;range = c(0,1); norder = 4; nbasis = 300; smooth.true = spikes.data$smooth;Lcoef = c(1,1);nbins=40;qt=0.2;spikes.flag = NA
+  
   if(!is.data.frame(data)){
     stop('data must be of class data.frame') 
   }
@@ -592,8 +530,6 @@ init = function(data=NA, range, norder= 5, nbasis=NA, Lcoef = c(0,0,1), lambda =
     nbasis = (ngrid -1) + (norder - 1) 
   }
   if(any(!is.na(smooth.true)) & length(smooth.true) != length(data$grid)){stop('\'smooth.true\' must be of the same length as grid.')}
-  spline.basis = create.bspline.basis(rangeval=range, nbasis=nbasis, norder = norder)  #create basis
-  Lfd = vec2Lfd(Lcoef, range)
   if(any(is.na(spikes.flag)) || length(spikes.flag) == 0){
     warning('either spikes.flag is not provided or it contains NA value. The entire dataset will be used to fit the splines. \n')
     smoothingdata = data  #this is the data we use to fit the curve.
@@ -605,239 +541,93 @@ init = function(data=NA, range, norder= 5, nbasis=NA, Lcoef = c(0,0,1), lambda =
   spikes.flag = vector("list",nlambda)
   smooth.data = vector("list",nlambda)
   change.jiggle = vector("list",nlambda) #this is explained below, used to prevent overfit
-  for (i in 1:nlambda){
-    fdParobj = fdPar(spline.basis, Lfd, lambda[i])
-    smooth.data.temp = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)  #smooth the data
-    spline.res.temp = data$y-eval.fd(data$grid,smooth.data.temp$fd)
-    sort.index = order(spline.res.temp, decreasing = FALSE)
-    # diff = diff(sort(spline.res.temp, decreasing = FALSE))
-    # if (ngrid > 200){
-    #   breakpoint = which.min(abs(diff - quantile(diff, prob = 0.9999))) #more robust to outliers; find the nearest locations in diff that has jump approximately quantile(diff, prob = 0.95)  
-    #   #only recommended when there's sufficiently many data points
-    # }else{
-    #   breakpoint = which.max(diff)  
-    # }
-    # if(breakpoint<(1-alpha.prior)*ngrid){spikes.flag[[i]] = NA} else {
-    kmeans_result = kmeans(spline.res.temp,2)
-    kmeans_spikes_id = which.max(kmeans_result$centers)
-    if(mean(kmeans_result$cluster == kmeans_spikes_id) > alpha.prior){spikes.flag[[i]] = NA} else {
-      #refit spline
-      #spikes.flag[[i]] = sort.index[-(1:breakpoint)]
-      spikes.flag[[i]] = which(kmeans_result$cluster == kmeans_spikes_id)
-      smooth.data[[i]] = smooth.basis(argvals = data$grid[-spikes.flag[[i]]],y = data$y[-spikes.flag[[i]]], fdParobj = fdParobj)
-      spline.res[[i]] = data$y-eval.fd(data$grid,smooth.data[[i]]$fd)
-      #we will now also jiggle the smooth part and measure the amount of change in the fit, and use this as an overfit criterion
-      nsmooth = length(data$y[-spikes.flag[[i]]])
-      change.jiggle.it = c()
-      for (j in 1:10){
-        smooth.jiggle = smooth.basis(argvals = data$grid[-spikes.flag[[i]]],y = (data$y[-spikes.flag[[i]]] + rnorm(nsmooth, 0, sigma.jiggle)), fdParobj = fdParobj)
-        change.jiggle.it[j] = mean((smooth.jiggle$y - smooth.data[[i]]$y)^2) #mean instead of sum in case of unequal #smoothobservations 
+  spline.basis = create.bspline.basis(rangeval=range, nbasis=nbasis, norder = norder)  #create basis
+  Lfd = vec2Lfd(Lcoef, range)
+  
+  if (border.padding){ #border padding might be useful if there're spikes around the boundaries
+    grid = smoothingdata$grid
+    ngrid = length(grid)
+    y = smoothingdata$y
+    pad.length = round(min(ngrid*0.3,20))
+    left.border = grid[1]; right.border = grid[ngrid]
+    grid.center.left = grid - left.border; grid.center.right = grid - right.border
+    aug.grid.center.left = -grid.center.left[(pad.length+1):2]; aug.grid.center.right = -grid.center.right[(ngrid-1):(ngrid-pad.length)]
+    aug.grid = c(aug.grid.center.left + left.border, grid, aug.grid.center.right+right.border)
+    aug.y = c(y[(pad.length+1):2],y,y[(ngrid-1):(ngrid-pad.length)])
+    aug.ngrid = length(aug.grid); aug.range = c(aug.grid[1], aug.grid[aug.ngrid])
+    aug.spline.basis = create.bspline.basis(rangeval=aug.range, nbasis=nbasis, norder = norder)  #create basis
+    aug.Lfd = vec2Lfd(Lcoef, aug.range)
+    for (i in 1:nlambda){
+      fdParobj = fdPar(spline.basis, Lfd, lambda[i]);aug.fdParobj = fdPar(aug.spline.basis, aug.Lfd, lambda[i])
+      smooth.data.temp = smooth.basis(argvals = aug.grid,y = aug.y, fdParobj = aug.fdParobj)  #smooth the data
+      spline.res.temp = (aug.y-eval.fd(aug.grid,smooth.data.temp$fd))[(pad.length+1):(aug.ngrid-pad.length)]
+      sort.index = order(spline.res.temp, decreasing = FALSE)
+      kmeans_result = kmeans(spline.res.temp,2)
+      kmeans_spikes_id = which.max(kmeans_result$centers)
+      if(mean(kmeans_result$cluster == kmeans_spikes_id) > alpha.prior){spikes.flag[[i]] = NA} else {
+        spikes.flag[[i]] = which(kmeans_result$cluster == kmeans_spikes_id)
+        smooth.data[[i]] = smooth.basis(argvals = smoothingdata$grid[-spikes.flag[[i]]],y = smoothingdata$y[-spikes.flag[[i]]], fdParobj = fdParobj)
+        spline.res[[i]] = smoothingdata$y-eval.fd(smoothingdata$grid,smooth.data[[i]]$fd)
+        #we will now also jiggle the smooth part and measure the amount of change in the fit, and use this as an overfit criterion
+        nsmooth = length(data$y[-spikes.flag[[i]]])
+        change.jiggle.it = c()
+        # for (j in 1:nsmooth){ #this works too for smaller dataset
+        #   smooth.jiggle.loo = smooth.basis(argvals = smoothingdata$grid[-spikes.flag[[i]]][-j],y = smoothingdata$y[-spikes.flag[[i]]][-j], fdParobj = fdParobj)
+        #   smooth.jiggle.full = as.vector(eval.fd(smoothingdata$grid[-spikes.flag[[i]]],smooth.jiggle.loo$fd))
+        #   smooth.data.full =  as.vector(eval.fd(smoothingdata$grid[-spikes.flag[[i]]],smooth.data[[i]]$fd))
+        #   change.jiggle.it[j] = abs(smooth.jiggle.full[j] - smooth.data.full[j]) #mean instead of sum in case of unequal #smoothobservations 
+        # }
+        for (j in 1:10){ #this works too for larger dataset
+          smooth.jiggle = smooth.basis(argvals = data$grid[-spikes.flag[[i]]],y = (data$y[-spikes.flag[[i]]] + rnorm(nsmooth, 0, sigma.jiggle)), fdParobj = fdParobj)
+          smooth.jiggle.eval = as.vector(eval.fd(smoothingdata$grid[-spikes.flag[[i]]],smooth.jiggle$fd))
+          smooth.data.eval =  as.vector(eval.fd(smoothingdata$grid[-spikes.flag[[i]]],smooth.data[[i]]$fd))
+          change.jiggle.it[j] = mean(abs(smooth.jiggle.eval - smooth.data.eval)) #mean instead of sum in case of unequal #smoothobservations
+        }
+        change.jiggle[[i]] = mean(change.jiggle.it)
       }
-      change.jiggle[[i]] = mean(change.jiggle.it)
     }
+    lambda = lambda[!is.na(spikes.flag)]
+    spline.res = spline.res[!is.na(spikes.flag)]
+    smooth.data = smooth.data[!is.na(spikes.flag)]
+    # plot(data$grid,eval.fd(data$grid,smooth.data[[9]]$fd), type = "l")
+    # points(data$grid,data$y, col = "red")
+    change.jiggle = change.jiggle[!is.na(spikes.flag)]
+    spikes.flag = spikes.flag[!is.na(spikes.flag)] #this line needs to be last of all three because spikes.flag plays a role in previous 2 lines
+  }else{
+    for (i in 1:nlambda){
+      fdParobj = fdPar(spline.basis, Lfd, lambda[i])
+      smooth.data.temp = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)  #smooth the data
+      spline.res.temp = smoothingdata$y-eval.fd(smoothingdata$grid,smooth.data.temp$fd)
+      sort.index = order(spline.res.temp, decreasing = FALSE)
+      kmeans_result = kmeans(spline.res.temp,2)
+      kmeans_spikes_id = which.max(kmeans_result$centers)
+      if(mean(kmeans_result$cluster == kmeans_spikes_id) > alpha.prior){spikes.flag[[i]] = NA} else {
+        spikes.flag[[i]] = which(kmeans_result$cluster == kmeans_spikes_id)
+        smooth.data[[i]] = smooth.basis(argvals = smoothingdata$grid[-spikes.flag[[i]]],y = smoothingdata$y[-spikes.flag[[i]]], fdParobj = fdParobj)
+        spline.res[[i]] = smoothingdata$y-eval.fd(smoothingdata$grid,smooth.data[[i]]$fd)
+        #we will now also jiggle the smooth part and measure the amount of change in the fit, and use this as an overfit criterion
+        nsmooth = length(data$y[-spikes.flag[[i]]])
+        change.jiggle.it = c()
+        for (j in 1:10){ #this works too for larger dataset
+          smooth.jiggle = smooth.basis(argvals = data$grid[-spikes.flag[[i]]],y = (data$y[-spikes.flag[[i]]] + rnorm(nsmooth, 0, sigma.jiggle)), fdParobj = fdParobj)
+          smooth.jiggle.eval = as.vector(eval.fd(smoothingdata$grid[-spikes.flag[[i]]],smooth.jiggle$fd))
+          smooth.data.eval =  as.vector(eval.fd(smoothingdata$grid[-spikes.flag[[i]]],smooth.data[[i]]$fd))
+          change.jiggle.it[j] = mean(abs(smooth.jiggle.eval - smooth.data.eval)) #mean instead of sum in case of unequal #smoothobservations
+        }
+        change.jiggle[[i]] = mean(change.jiggle.it)
+      }
+    }
+    lambda = lambda[!is.na(spikes.flag)]
+    spline.res = spline.res[!is.na(spikes.flag)]
+    smooth.data = smooth.data[!is.na(spikes.flag)]
+    change.jiggle = change.jiggle[!is.na(spikes.flag)]
+    spikes.flag = spikes.flag[!is.na(spikes.flag)] #this line needs to be last of all three because spikes.flag plays a role in previous 2 lines
   }
-  lambda = lambda[!is.na(spikes.flag)]
-  spline.res = spline.res[!is.na(spikes.flag)]
-  smooth.data = smooth.data[!is.na(spikes.flag)]
-  change.jiggle = change.jiggle[!is.na(spikes.flag)]
-  spikes.flag = spikes.flag[!is.na(spikes.flag)] #this line needs to be last of all three because spikes.flag plays a role in previous 2 lines
-  ####find lambda through gcv (code from reimherr book):
-  # cat(paste('fitting smoothing spline: calculating gcv lambda... \n'))
-  # lam = 0:9
-  # nlam = length(lam)
-  # dfsave = rep(NA,nlam)
-  # names(dfsave) = lam
-  # gcvsave = dfsave
-  # for (ilam in 1:nlam) {
-  #   #cat(paste('lambda =',10^-lam[ilam],'\n'))
-  #   lambda = 10^-lam[ilam]
-  #   fdParobj = fdPar(spline.basis, Lfd, lambda)
-  #   smoothlist = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)
-  #   dfsave[ilam] = smoothlist$df
-  #   gcvsave[ilam] = sum(smoothlist$gcv)
-  # }
-  # #plot(lam, gcvsave, type='b', lwd=2)
-  # lambda = 10^(-lam[which.min(gcvsave)[1]])  #which.min(gcvsave)[1] because there might be more than 1 min
-  # cat(paste('fitting smoothing spline with gcv lambda = ',lambda,'.\n'))
-  # fdParobj = fdPar(spline.basis, Lfd, lambda = lambda)
-  # smooth.data = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)  #smooth the data
-  # 
-  # # plot the smoothed data
-  # if(plot == TRUE & all(!is.na(smooth.true))){
-  #   dev.off()
-  #   par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,4,0), pin = c(6.5,4.5))
-  #   plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.1)
-  #   lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  #   lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  # }
-  # if(plot == TRUE & any(is.na(smooth.true))){
-  #   dev.off()
-  #   par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,3,0), pin = c(5.5,3.5))
-  #   plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.1)
-  #   lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  # }
-  # 
-  # spline.res.cont = data$y-eval.fd(data$grid,smooth.data$fd) #possibly contaminated residuals
-  # spikes.flag = vector("list", 5)
-  # spline.res = vector("list", 5)
-  # prob = seq(0.7,1,length.out = 6)
-  # for (i in (1:5)){
-  #   threshold = quantile(spline.res.cont, prob = prob[i])
-  #   spikes.flag.cand = which(spline.res.cont > threshold)
-  #   smooth.data = smooth.basis(argvals = data$grid[-spikes.flag.cand],y = data$y[-spikes.flag.cand], fdParobj = fdParobj)
-  #   spline.res[[i]] = data$y-eval.fd(data$grid,smooth.data$fd)
-  #   spikes.flag[[i]] = which(spline.res[[i]] > quantile(spline.res[[i]], prob = prob[i]))
-  # }  
-  ####################
-  # for (i in (1:5)){
-  #   threshold = quantile(spline.res.cont, prob = prob[i])
-  #   spikes.flag[[i]] = which(spline.res.cont > threshold)
-  #   smooth.data = smooth.basis(argvals = data$grid[-spikes.flag[[i]]],y = data$y[-spikes.flag[[i]]], fdParobj = fdParobj)
-  #   spline.res[[i]] = data$y-eval.fd(data$grid,smooth.data$fd)
-  # }
-  
-  # ##Compute residuals. Then, instead of sequential spikes removal, we create a threshold that determines how many
-  # ## points we want to flag as spikes. This threshold can be adaptive as follow. We order the residuals e_i to e(i), and compute the magnitude
-  # ## of jumps in residuals, i.e. max h_i = max e(i+1) - e(i). Let's assume that max h_i = h_j = e(j+1)- e(j). We can classify e(j+1),...,e(n)
-  # ## as spikes. But there's a downside, if spikes have high variance, then the max jumps might occur deep in the spikes region. We want to be
-  # ## more agressive, and get more spikes in the initial classification. Thus instead of using max h_i, we can use the 90% quantile of the h_i.
-  # ##Since the likelihood is not convex (even for Gaussian mixture), EM might converge to one of the local extrema. 
-  # ## It's a good idea to have multiple initialization, and run EM on these initialization. Then pick the EM results with
-  # ## the largest likelihood.
-  # spline.res.cont = data$y-eval.fd(data$grid,smooth.data$fd) #possibly contaminated residuals
-  # sort.index = order(spline.res.cont, decreasing = FALSE)
-  # diff = diff(sort(spline.res.cont, decreasing = FALSE))
-  # spikes.flag = vector("list", 5)
-  # spline.res = vector("list", 5)
-  # #breakpoint = which.max(diff)
-  # prob = seq(0.75,1,length.out = 5)
-  # for (i in (1:5)){
-  # breakpoint = which.min(abs(diff - quantile(diff, prob = prob[i]))) #find the h_i near the 75% quantile
-  # spikes.flag[[i]] = sort.index[-(1:breakpoint)] #under the assumption that spikes make the residuals larger  
-  # smooth.data = smooth.basis(argvals = data$grid[-spikes.flag[[i]]],y = data$y[-spikes.flag[[i]]], fdParobj = fdParobj)
-  # spline.res[[i]] = data$y-eval.fd(data$grid,smooth.data$fd)
-  # }
-  # # Or Use k-means to separate?
-  # spline.res = data$y-eval.fd(data$grid,smooth.data$fd)
-  # kmeans = kmeans(spline.res,2)
-  # spikes.flag = which(kmeans$cluster == which.min(kmeans$size)) #what if nspikes = 0?
-  # smooth.data = smooth.basis(argvals = data$grid[-spikes.flag],y = data$y[-spikes.flag], fdParobj = fdParobj)  #fine tune the estimation
-  #                                                                                                             #without this step, we are using EM to classify bad estimates
-  # spline.res = data$y-eval.fd(data$grid,smooth.data$fd)
-  
-  # find = sort.index[order(c(0,diff),decreasing=TRUE)[1]]
-  # dev.off()
-  # par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,3,0), pin = c(5.5,3.5))
-  # plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.2)
-  # lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  # lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  # points(data$grid[find], data$y[find],pch = 3, cex = 2, col = "red")
-  # 
-  # diff2 = c(0, diff(sort(data$y, decreasing = FALSE)))
-  # plot(diff2)
-  # breakpoint2 = max(diff2)
-  # sort.index2 = order(data$y, decreasing = FALSE)
-  # flag2 =sort.index2[-(1:breakpoint2)]
-  # sum(spikes.data$spikes.index %in% flag2)
-  # find2 = sort.index2[order(c(0,diff2),decreasing=TRUE)[1]]
-  # dev.off()
-  # par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,3,0), pin = c(5.5,3.5))
-  # plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.2)
-  # lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  # lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  # points(data$grid[find2], data$y[find2],pch = 3, cex = 2, col = "red")
-  #  
-  # dev.off()
-  # par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,4,0), pin = c(6.5,4.5))
-  # plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.2)
-  # lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  # lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  # points(data$grid[spikes.data$spikes.index], data$y[spikes.data$spikes.index],pch = 3, cex = 1, col = "red")
-  
-  # #partition the grid into k smaller sections
-  # k = nbins
-  # endpoint = seq(0,1, length.out = k+1)
-  # part.grid = vector("list", k)
-  # part.index = vector("list", k)
-  # part.grid[[1]] = data$grid[data$grid <= endpoint[2]]
-  # part.index[[1]] = which(data$grid %in% part.grid[[1]])
-  # for (i in (2:k)){
-  # part.grid[[i]] = data$grid[data$grid <= endpoint[i+1] & data$grid > endpoint[i]]  
-  # part.index[[i]] = which(data$grid %in% part.grid[[i]])
-  # }
-  # 
-  # new.grid = vector("list",5)
-  # new.index = vector("list",5)
-  # # n = unlist(sapply(1:k, function(i){
-  # #   length(part.grid[[i]])
-  # # }))
-  # # min.n = min(n)
-  # 
-  # #partition the range of y
-  # for(j in (1:5)){
-  # new.grid[[j]] = unlist(lapply(1:k, function(i){
-  #    part.grid[[i]][data$y[part.index[[i]]]<quantile(data$y[part.index[[i]]],probs = qt*j)
-  #                                 & data$y[part.index[[i]]]>=quantile(data$y[part.index[[i]]],probs = qt*j - qt)]
-  #   #part.grid[[i]][order(data$y[part.index[[i]]], decreasing = FALSE)[(1:floor(min.n/5))+5*(j-1)]]
-  # }))
-  # new.index[[j]] = which(data$grid %in% new.grid[[j]])
-  # }
-  # # for(j in (1:5)){
-  # # new.grid[[j]] = unlist(sapply(1:k, function(i){
-  # #    part.grid[[i]][data$y[part.index[[i]]]<(min(data$y[part.index[[i]]])+2*j)
-  # #                                 &data$y[part.index[[i]]]>(min(data$y[part.index[[i]]])+2*j-2)]
-  # #   #part.grid[[i]][order(data$y[part.index[[i]]], decreasing = FALSE)[(1:floor(min.n/5))+5*(j-1)]]
-  # # }))
-  # # new.index[[j]] = which(data$grid %in% new.grid[[j]])
-  # # }
-  # # new.grid[[6]] = unlist(sapply(1:k, function(i){
-  # #    part.grid[[i]][data$y[part.index[[i]]]>(min(data$y[part.index[[i]]])+10)]
-  # # }))
-  # # new.index[[6]] = which(data$grid %in% new.grid[[6]])
-  # 
-  #   
-  # fdParobj = fdPar(spline.basis, Lfd, lambda = lambda)
-  # smooth.data1 = smooth.basis(argvals = data$grid[new.index[[1]]],y = data$y[new.index[[1]]], fdParobj = fdParobj)  #smooth the data
-  # smooth.data2 = smooth.basis(argvals = data$grid[new.index[[2]]],y = data$y[new.index[[2]]], fdParobj = fdParobj)  #smooth the data
-  # smooth.data3 = smooth.basis(argvals = data$grid[new.index[[3]]],y = data$y[new.index[[3]]], fdParobj = fdParobj)  #smooth the data
-  # smooth.data4 = smooth.basis(argvals = data$grid[new.index[[4]]],y = data$y[new.index[[4]]], fdParobj = fdParobj)  #smooth the data
-  # smooth.data5 = smooth.basis(argvals = data$grid[new.index[[5]]],y = data$y[new.index[[5]]], fdParobj = fdParobj)  #smooth the data
-  # dev.off()
-  # par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,4,0), pin = c(6.5,4.5))
-  # plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab = "", cex = 0.1)
-  # lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  # lines(smooth.data1, lwd = 2, col = "red", lty = 2)
-  # lines(smooth.data2, lwd = 2, col = "blue", lty = 2)
-  # lines(smooth.data3, lwd = 2, col = "red", lty = 2)
-  # lines(smooth.data4, lwd = 2, col = "blue", lty = 2)
-  # lines(smooth.data5, lwd = 2, col = "red", lty = 2)
-  # 
-  # i1 = 1
-  # plot(data$grid[new.index[[i1]]], data$y[new.index[[i1]]], main = "", xlab = "",ylab="", cex = 0.1)
-  # points(data$grid[new.index[[i1]][which(new.index[[i1]]%in%spikes.data$spikes.index)]], data$y[new.index[[i1]][which(new.index[[i1]]%in%spikes.data$spikes.index)]], pch = 4, cex = 0.3, col = "red")
-  # 
-  # lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  # lines(smooth.data1, lwd = 3, col = "red", lty = 2)
-  # 
-  # fit = eval.fd(data$grid,smooth.data$fd)
-  # fit1 = eval.fd(data$grid,smooth.data1$fd)
-  # fit2 = eval.fd(data$grid,smooth.data2$fd)
-  # fit3 = eval.fd(data$grid,smooth.data3$fd)
-  # fit4 = eval.fd(data$grid,smooth.data4$fd)
-  # fit5 = eval.fd(data$grid,smooth.data5$fd)
-  # fit.comb = cbind(fit1,fit2, fit3, fit4)
-  # fit.mean = apply(fit.comb, 1, mean)
-  # plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.1)
-  # lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-  # lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  # lines(data$grid,fit.mean + min(fit-fit.mean), lty = 2, col = "red", lwd = 3)
-  # lines(data$grid,fit1+ min(fit-fit1), lty = 2, col = "blue", lwd = 3)
-  
-  return(list(smooth.data = smooth.data,spline.res = spline.res, spikes.flag = spikes.flag, change.jiggle = change.jiggle, lambda= lambda))
+  return(list(smooth.data = smooth.data,spline.res = spline.res, spikes.flag = spikes.flag,change.jiggle = change.jiggle, lambda= lambda))
 }
 
 
-## The second sub-function uses EM to find MLE. For now, this applies when spikes sizes are normal and white noise is normal.
+## The mle() function uses EM to find MLE. For now, this applies when spikes sizes are normal and white noise is normal.
 mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint = 0.05, alpha.prior = 0.4, VIOM = FALSE, MSOM = TRUE){
   #constraint: a lower bound on the variance of components to prevent degeneracy
   #alpha.prior: the prior on percentage of spikes. If EM classify more than alpha points as spikes, we reject this classification
@@ -882,11 +672,9 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
         return(c(prob.1, 1-prob.1))
       })
       EM$prob = EM.prob[2,]  #save the probability of belonging to spike component in the last iteration
-      #EM$flag = which(EM.prob[2,]>0.6)
       #M step:
       EM$alpha[it+1] = sum(EM.prob[2,])/sum(EM.prob)
       EM$mu.h[it+1] = ifelse(sum(EM.prob[2,])>0,sum(spline.res*EM.prob[2,])/sum(EM.prob[2,]),0)
-      #propose.sigma.h = sqrt(sum(EM.prob[2,]*(spline.res-EM$mu.h[it+1])^2)/sum(EM.prob[2,]) - (EM$sd[it]^2))
       propose.sigma2.h = ifelse(sum(EM.prob[2,]) >0,sum(EM.prob[2,]*(spline.res-EM$mu.h[it])^2)/sum(EM.prob[2,]) - (EM$sd[it]^2), constraint)
       EM$sigma.h[it+1] = ifelse(propose.sigma2.h<constraint, sqrt(constraint), sqrt(propose.sigma2.h)) 
       
@@ -895,6 +683,7 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
       c2 = sum(EM.prob[1,]*(spline.res^2)) - 2*(EM$sigma.h[it+1]^2)*sum(EM.prob[1,]) + sum(EM.prob[2,]*(spline.res - EM$mu.h[it+1])^2) - (EM$sigma.h[it+1]^2)*sum(EM.prob[2,])
       c1 = 2*(EM$sigma.h[it+1]^2)*sum(EM.prob[1,]*(spline.res^2)) - (EM$sigma.h[it+1]^4)*sum(EM.prob[1,])
       c0 = (EM$sigma.h[it+1]^4)*sum(EM.prob[1,]*(spline.res^2))
+      # manual code to solve for the polynomials
       # a2 = c2/c3
       # a1 = c1/c3
       # a0 = c0/c3
@@ -915,15 +704,14 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
       #   S = R^(1/3)
       #   roots = c(-a2/3 + 2*S,-a2/3 - S)
       # }
+      # We can use polyroot instead
       comp.roots = polyroot(c(c0,c1,c2,c3))
       real.roots = Re(comp.roots)[abs(Im(comp.roots)) < 1e-6]
-      #EM$sd[it+1] = ifelse(any(roots>1e-05),sqrt(roots[roots>1e-05]),constraint)
       EM$sd[it+1] = sqrt(real.roots[real.roots>0])
       
       test = sum(sapply(1:4, function(k) {
         abs(EM[[k]][[it+1]] - EM[[k]][[it]])
       }))
-      #cat("it = ", it, " test = ", test, "\n")
       it = it+1
     }
     # calculate predictive loglikelihood: expectation of the loglikelihood, taken over membership vector z;
@@ -951,11 +739,6 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
       loglike = sum(log(dnorm(spline.res,0, EM$sd[it])))
     }
     
-    #save final result
-    # alpha.EM = EM$alpha[it]
-    # height.EM = EM$mu.h[it]
-    # sd.EM = EM$sd[it]
-    # prob.EM = EM$prob
     return(list(loglike = loglike,llh.pred=llh.pred,param = c(alpha.EM = EM$alpha[it], height.EM = EM$mu.h[it], sigma.h.EM = EM$sigma.h[it],sd.EM = EM$sd[it]),spikes.EM = spikes.EM,prob.EM = EM$prob))
   }
   if (VIOM == FALSE & MSOM == TRUE){
@@ -964,22 +747,17 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
       alpha.0 = 0
       sd.0 = sqrt(sum((spline.res)^2)/(length(spline.res)-1))  #we are not using the spikes.flag to estimate noise.sd here
       mu.h.0 = 0
-      #sigma.h.0 = sigma.h.0 = sqrt(max(sum((spline.res[spikes.flag] - mu.h.0)^2)/length(spline.res[spikes.flag])-(sd.0^2), constraint*sd.0))
     }else {
       ngrid = length(data$grid)
       alpha.0 = length(spikes.flag)/ngrid
       mu.h.0 = mean(spline.res[spikes.flag])
       sd.0 = sqrt((sum((spline.res[-spikes.flag])^2) + sum((spline.res[spikes.flag]-mu.h.0)^2))/ngrid)
-      #sigma.h.0 = sqrt(max(sum((spline.res[spikes.flag] - mu.h.0)^2)/length(spline.res[spikes.flag])-(sd.0^2), constraint*sd.0))
     }
     
-    EM = list(alpha = c(),sd = c(),mu.h = c(),
-              #sigma.h = c(), 
-              prob = c()) #inefficient storage scheme. Need review
+    EM = list(alpha = c(),sd = c(),mu.h = c(),prob = c()) #inefficient storage scheme. Need review
     EM$alpha[1] = alpha.0
     EM$sd[1] = sd.0
     EM$mu.h[1] = mu.h.0
-    #EM$sigma.h[1] = sigma.h.0
     
     it = 1 #keep track of iteration
     test = 1 #measures the convergence of estimates, to be compared with stopping criteria
@@ -988,7 +766,6 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
       alpha = EM$alpha[it]
       sd = EM$sd[it]
       mu.h = EM$mu.h[it]
-      #sigma.h = EM$sigma.h[it]
       #E step:
       EM.prob = sapply(1:ngrid, function(i){
         component.1 = dnorm(spline.res[i],0, sd)*(1-alpha)  #joint density of data res.i and z.i1 (resi belongs to component 1)
@@ -997,7 +774,6 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
         return(c(prob.1, 1-prob.1))
       })
       EM$prob = EM.prob[2,]  #save the probability of belonging to spike component in the last iteration
-      #EM$flag = which(EM.prob[2,]>0.6)
       #M step:
       EM$alpha[it+1] = sum(EM.prob[2,])/sum(EM.prob)
       EM$mu.h[it+1] = ifelse(sum(EM.prob[2,])>0,sum(spline.res*EM.prob[2,])/sum(EM.prob[2,]),0)
@@ -1033,19 +809,13 @@ mle = function(data, spline.res, spikes.flag = NA, stop.crit = 1e-05, constraint
       spikes.EM = c()
       loglike = sum(log(dnorm(spline.res,0, EM$sd[it])))
     }
-    
-    #save final result
-    # alpha.EM = EM$alpha[it]
-    # height.EM = EM$mu.h[it]
-    # sd.EM = EM$sd[it]
-    # prob.EM = EM$prob
     return(list(loglike = loglike,llh.pred=llh.pred,param = c(alpha.EM = EM$alpha[it], height.EM = EM$mu.h[it],sd.EM = EM$sd[it]),spikes.EM = spikes.EM,prob.EM = EM$prob))
   }
 }
 
 ## This is the main function that puts together the procedure. It uses both the init() and mle() functions
-classify = function(data, range, norder = 5, nbasis=NA,lambda = NA, Lcoef = c(0,0,1), spikes.flag = NA,smooth.true = NA, sigma.jiggle = 1,constraint = 0.5, alpha.prior= 0.3, MSOM = TRUE, VIOM = FALSE,plot = TRUE){
-  # data = one_day_data_jan2010_id1976[[4]]; nbasis=NA;range = c(0.5,24);norder = 4; Lcoef = c(0,1);lambda = c(50,40,30,20, 10,1, 0.1, 0.01, 0.001,0.000001); smooth.true = NA; MSOM = TRUE; VIOM = TRUE;constraint = 0.5; alpha.prior= 0.3
+classify = function(data, range, norder = 4, nbasis=NA,lambda = NA, Lcoef = c(0,0,1), spikes.flag = NA,smooth.true = NA,constraint = 0.5, alpha.prior= 0.3,sigma.jiggle = NA, MSOM = TRUE, VIOM = FALSE,plot = FALSE,border.padding = FALSE){
+  #data = summer_temp; range = c(1910,2015); norder = 4; nbasis=NA;lambda = NA; Lcoef = c(0,1); spikes.flag = NA;smooth.true = NA;constraint = 0.5; alpha.prior= 0.3;sigma.jiggle = NA; MSOM = TRUE; VIOM = TRUE;plot = TRUE;border.padding = FALSE
   # data: is the usual data frame that contains the grid and y values
   # smooth.true: if provided (only possible in simulation setting), plot the estimate next to the true smooth function
   ###the function returns the best iterated mle estimates. That is, in each iteration, we select the best initialization with the
@@ -1075,111 +845,46 @@ classify = function(data, range, norder = 5, nbasis=NA,lambda = NA, Lcoef = c(0,
   }
   if(any(!is.na(smooth.true)) & length(smooth.true) != length(data$grid)){stop('\'smooth.true\' must be of the same length as grid.')}
   
-  #initialize spikes flag
-  init1 = init(data = data,range = range, norder = norder, lambda = lambda,nbasis = nbasis, Lcoef = Lcoef, alpha.prior = alpha.prior, smooth.true = smooth.true, spikes.flag = spikes.flag, plot = plot)
+  #Obtain initial smooth fit and spikes flag
+  init1 = init(data = data,range = range, norder = norder, lambda = lambda,nbasis = nbasis, Lcoef = Lcoef, alpha.prior = alpha.prior, smooth.true = smooth.true, spikes.flag = spikes.flag,sigma.jiggle = sigma.jiggle,border.padding =border.padding, plot = plot)
   ninit = length(init1$spikes.flag)
   if (ninit == 0) {
-  cat("cat1 \t")
-  smooth.data = fit(data,range = range, norder = norder, nbasis = nbasis, lambda = lambda,plot = FALSE) #no smooth.true provide means calculating smoothdata w gcv lambda
-  res = data$y - eval.fd(data$grid,smooth.data$fd)
-  best = mle(data = data, spline.res = res, stop.crit = 1e-03, constraint = constraint, alpha.prior= alpha.prior, MSOM= MSOM, VIOM = VIOM)
-  flag.spikes = best$spikes.EM
-  lamb = NA
+    cat("cat1 \t")
+    smooth.data = fit(data = data,range = range, norder = norder, nbasis = nbasis, Lcoef = Lcoef, lambda = lambda,plot = FALSE) #no smooth.true provide means calculating smoothdata w gcv lambda
+    res = data$y - smooth.data
+    best = mle(data = data, spline.res = res, stop.crit = 1e-03, constraint = constraint, alpha.prior= alpha.prior, MSOM= MSOM, VIOM = VIOM)
+    flag.spikes = best$spikes.EM
+    lamb = NA
+    smooth.fit = NA
+    change.jiggle = NA
   }else{
-  cat("cat2 \t")
-  em = vector("list",ninit)
-  loglike = vector("list",ninit)
-  #Run MLE with different initialization
-  for(i in 1:ninit){
-    em[[i]] = mle(data = data, spline.res = init1$spline.res[[i]], spikes.flag = init1$spikes.flag[[i]], stop.crit = 1e-03, constraint = constraint, alpha.prior= alpha.prior, MSOM= MSOM, VIOM = VIOM)
-    #llh.pred[i] = em[[i]]$llh.pred
-    loglike[i] = em[[i]]$loglike
-    cat('loglike = ', em[[i]]$loglike,'\t')
+    cat("cat2 \t")
+    em = vector("list",ninit)
+    loglike = vector("list",ninit)
+    llh.pred = vector("list",ninit)
+    #Run MLE with different initialization
+    for(i in 1:ninit){
+      em[[i]] = mle(data = data, spline.res = init1$spline.res[[i]], spikes.flag = init1$spikes.flag[[i]], stop.crit = 1e-03, constraint = constraint, alpha.prior= alpha.prior, MSOM= MSOM, VIOM = VIOM)
+      llh.pred[i] = em[[i]]$llh.pred
+      loglike[i] = em[[i]]$loglike
+      cat('loglike = ', em[[i]]$loglike,'\t')
     }
-  #best.ind = which.max(unlist(loglike) - abs(mean(unlist(loglike)))*unlist(init1$change.jiggle)) #scale change.jiggle so that the two terms are balanced
-  best.ind = which.max(rank(unlist(loglike)))#+rank(-unlist(init1$change.jiggle))) #scale change.jiggle so that the two terms are balanced
-  cat('best.ind = ', best.ind, '\n')
-  flag.spikes = em[[best.ind]]$spikes.EM
-  best = em[[best.ind]]
-  smooth.fit = init1$smooth.data[[best.ind]]
-  lamb = init1$lambda[best.ind]
-  change.jiggle = init1$change.jiggle[best.ind]
+    best.ind = which.max(rank(unlist(loglike))+1*rank(-unlist(init1$change.jiggle))) #scale change.jiggle so that the two terms are balanced
+    cat('best.ind = ', best.ind, '\n')
+    flag.spikes = em[[best.ind]]$spikes.EM
+    best = em[[best.ind]]
+    lamb = init1$lambda[best.ind]
+    smooth.fit = init1$smooth.data[[best.ind]]
+    change.jiggle = init1$change.jiggle[best.ind]
   }
-  cat('length(flag) ', length(flag.spikes), ' it = ', it,'\n')
-  # flag.new = NA
-  # flag.old = vector("list")
-  # it = 1
-  # check = TRUE
-  # smooth.fit = NA
-  # while (check){
-  #   flag.old[[it]] = flag.new
-  #   #initialize spikes flag
-  #   init1 = init(data = data,range = range, norder = norder, lambda = lambda,nbasis = nbasis, Lcoef = Lcoef, alpha.prior = alpha.prior, smooth.true = smooth.true, spikes.flag = flag.new, plot = plot)
-  #   ninit = length(init1$spikes.flag)
-  #   if (ninit == 0) {
-  #     cat("cat1 \t")
-  #     smooth.data = fit(data,range = range, norder = norder, nbasis = nbasis, lambda = lambda,plot = FALSE) #no smooth.true provide means calculating smoothdata w gcv lambda
-  #     res = data$y - eval.fd(data$grid,smooth.data$fd)
-  #     best = mle(data = data, spline.res = res, stop.crit = 1e-03, constraint = constraint, alpha.prior= alpha.prior, MSOM= MSOM, VIOM = VIOM)
-  #     flag.new = best$spikes.EM
-  #     lamb = NA
-  #   }else{
-  #     cat("cat2 \t")
-  #     em = vector("list",ninit)
-  #     loglike = vector("list",ninit)
-  #     #Run MLE with different initialization
-  #     for(i in 1:ninit){
-  #       em[[i]] = mle(data = data, spline.res = init1$spline.res[[i]], spikes.flag = init1$spikes.flag[[i]], stop.crit = 1e-03, constraint = constraint, alpha.prior= alpha.prior, MSOM= MSOM, VIOM = VIOM)
-  #       #llh.pred[i] = em[[i]]$llh.pred
-  #       loglike[i] = em[[i]]$loglike
-  #       cat('loglike = ', em[[i]]$loglike,'\t')
-  #     }
-  #     #best.ind = which.max(unlist(loglike) - abs(mean(unlist(loglike)))*unlist(init1$change.jiggle)) #scale change.jiggle so that the two terms are balanced
-  #     best.ind = which.max(rank(unlist(loglike))+3*rank(-unlist(init1$change.jiggle))) #scale change.jiggle so that the two terms are balanced
-  #     cat('best.ind = ', best.ind, '\n')
-  #     flag.new = em[[best.ind]]$spikes.EM
-  #     best = em[[best.ind]]
-  #     smooth.fit = init1$smooth.data[[best.ind]]
-  #     lamb = init1$lambda[best.ind]
-  #     change.jiggle = init1$change.jiggle[best.ind]
-  #   }
-  #   cat('length(flag) ', length(flag.new), ' it = ', it,'\n')
-  #   if (length(flag.new) == 0) check = FALSE  #this is to prevent looping, as it goes back to 1st iteration
-  #   for (i in (2:it)){ #this is also to prevent looping
-  #     if (it ==1) break
-  #     if (all(flag.new == flag.old[[i]])) {
-  #       check = FALSE
-  #       break
-  #     }
-  #   }
-  #   it = it + 1
-  # }
-  
-  # while (any(is.na(flag.new)) || any(!(flag.new %in% flag.old)) || any(!(flag.old %in% flag.new))){
-  #   if(!any(is.na(flag.new))){
-  #     flag.old = flag.new
-  #   }
-  #   #initialize spikes flag
-  #   init = init(data = data,range = range, norder = norder, nbasis = nbasis, Lcoef = Lcoef, smooth.true = smooth.true, spikes.flag = flag.new, plot = plot)
-  #   #Run MLE 5 times with 5 different initialization
-  #   mle1 = mle(data = data, spline.res = init$spline.res[[1]], spikes.flag = init$spikes.flag[[1]], stop.crit = 1e-05, constraint = constraint, alpha.prior= alpha.prior)
-  #   #data = data; spline.res = init$spline.res[[1]]; spikes.flag = init$spikes.flag[[1]]; stop.crit = 1e-05
-  #   mle2 = mle(data = data, spline.res = init$spline.res[[2]], spikes.flag = init$spikes.flag[[2]], stop.crit = 1e-05, constraint = constraint, alpha.prior= alpha.prior)
-  #   mle3 = mle(data = data, spline.res = init$spline.res[[3]], spikes.flag = init$spikes.flag[[3]], stop.crit = 1e-05, constraint = constraint, alpha.prior= alpha.prior)
-  #   mle4 = mle(data = data, spline.res = init$spline.res[[4]], spikes.flag = init$spikes.flag[[4]], stop.crit = 1e-05, constraint = constraint, alpha.prior= alpha.prior)
-  #   mle5 = mle(data = data, spline.res = init$spline.res[[5]], spikes.flag = init$spikes.flag[[5]], stop.crit = 1e-05, constraint = constraint, alpha.prior= alpha.prior)
-  #   best.ind = which.max(c(mle1$llh.pred,mle2$llh.pred,mle3$llh.pred,mle4$llh.pred,mle5$llh.pred))
-  #   flag.new = list(mle1$spikes.EM,mle2$spikes.EM,mle3$spikes.EM,mle4$spikes.EM,mle5$spikes.EM)[[best.ind]]
-  #   cat('length(flag) ', length(flag.new), ' it = ', it,'\n')
-  #   if (length(flag.new) == 0) break  #this is to prevent looping, as it goes back to 1st iteration
-  #   it = it + 1
-  # }
-  
-  return(list(smooth.fit = smooth.fit, EM.result = best, lambda = lamb, change.jiggle = change.jiggle))
+  cat('length(flag) ', length(flag.spikes),'\n')
+    return(list(smooth.fit = smooth.fit, EM.result = best, lambda = lamb,change.jiggle = change.jiggle))
 }
 
+
 # This function provide the final fit based on the classification from the procedure above. It also calculates some goodness of fit diagnostics.
-fit = function(data, range, norder = 5, nbasis=NA, Lcoef = c(0,0,1), smooth.true = NA, spikes.flag = NA, lambda = NA, plot = FALSE){
+fit = function(data, range, norder = 5, nbasis=NA, Lcoef = c(0,0,1), smooth.true = NA, spikes.flag = NA, lambda = NA, plot = FALSE, border.padding = FALSE){
+  # data = heatwave; nbasis=NA;smooth.true = NA;range = c(1910,2015); norder = 4; Lcoef = c(0,1); spikes.flag = EM.result$EM.result$spikes.EM; lambda = NA; plot = FALSE;border.padding = FALSE
   # if smooth.ind is provided (only possible in simulations), then return the smooth residuals.
   # Lcoef starts with differential order 0, i.e. 
   # Lx(t) = b0(t)x(t) + b1(t)Dx(t) + b2(t)(D^2)x(t) + ... + bm(t)(D^m)x(t)
@@ -1213,7 +918,7 @@ fit = function(data, range, norder = 5, nbasis=NA, Lcoef = c(0,0,1), smooth.true
     smoothingdata = data  #this is the data we use to fit the curve.
     #if spikes.flag is provided, we exclude the spikes.flag
   }else {smoothingdata = data[-spikes.flag,]}
-  if (is.na(lambda)){
+  if (any(is.na(lambda))){
     cat(paste('fitting smoothing spline: calculating gcv lambda... \n'))
     lam = 0:9
     nlam = length(lam)
@@ -1222,15 +927,15 @@ fit = function(data, range, norder = 5, nbasis=NA, Lcoef = c(0,0,1), smooth.true
     gcvsave = dfsave
     for (ilam in 1:nlam) {
       #cat(paste('lambda =',10^-lam[ilam],'\n'))
-      lambda = 10^-lam[ilam]
-      fdParobj = fdPar(spline.basis, Lfd, lambda)
-      smoothlist = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)
+      lamb = 10^-lam[ilam]
+      fdParobj = fdPar(spline.basis, Lfd, lamb)
+      smoothlist = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj, dfscale = 1.2)
       dfsave[ilam] = smoothlist$df
       gcvsave[ilam] = sum(smoothlist$gcv)
     }
     #plot(lam, gcvsave, type='b', lwd=2)
-    lambda = 10^(-lam[which.min(gcvsave)[1]])  #which.min(gcvsave)[1] because there might be more than 1 min
-    cat(paste('fitting smoothing spline with gcv lambda = ',lambda,'.\n'))
+    lambda.min.gcv = 10^(-lam[which.min(gcvsave)[1]])  #which.min(gcvsave)[1] because there might be more than 1 min
+    cat(paste('fitting smoothing spline with gcv lambda = ',lambda.min.gcv,'.\n'))
   }else{
     cat(paste('fitting smoothing spline: calculating gcv lambda... \n'))
     nlam = length(lambda)
@@ -1238,34 +943,44 @@ fit = function(data, range, norder = 5, nbasis=NA, Lcoef = c(0,0,1), smooth.true
     gcvsave = dfsave
     for (ilam in 1:nlam) {
       fdParobj = fdPar(spline.basis, Lfd, lambda[ilam])  
-      smoothlist = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)
+      smoothlist = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj, dfscale = 1.2)
       dfsave[ilam] = smoothlist$df
       gcvsave[ilam] = sum(smoothlist$gcv)
     }
-    lambda = lambda[which.min(gcvsave)[1]]  #which.min(gcvsave)[1] because there might be more than 1 min
-    cat(paste('fitting smoothing spline with gcv lambda = ',lambda,'.\n'))
-  }
-  fdParobj = fdPar(spline.basis, Lfd, lambda = lambda)
-  smooth.data = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)  #smooth the data
-  # plot the smoothed data
-  if(plot == TRUE & all(!is.na(smooth.true))){
-    dev.off()
-    par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,4,0), pin = c(6.5,4.5))
-    plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.1)
-    lines(data$grid,smooth.true, lty = 2, col = "green", lwd = 3)
-    lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  }
-  if(plot == TRUE & any(is.na(smooth.true))){
-    dev.off()
-    par(bg = "lightyellow", mar = c(0,0,3,0),oma = c(2,0,3,0), pin = c(5.5,3.5))
-    plot(data$grid, data$y, main = "Spline fit", xlab = "",ylab="", cex = 0.1)
-    lines(smooth.data, lwd = 3, col = "red", lty = 2)
-  }
-  if(all(!is.na(smooth.true))){
-    smooth.res = smooth.true-eval.fd(data$grid,smooth.data$fd)  
-    return(list(l1 = mean(abs(smooth.res)), l2 = mean(smooth.res^2), linf = max(abs(smooth.res)), smooth.res = smooth.res))
-  }else{
-    #return(list(smooth.data = smooth.data, lambda = lambda))
-    return(smooth.data)
+    lambda.min.gcv = lambda[which.min(gcvsave)[1]]  #which.min(gcvsave)[1] because there might be more than 1 min
+    cat(paste('fitting smoothing spline with gcv lambda = ',lambda.min.gcv,'.\n'))
+  }    
+  if (border.padding){
+    grid = smoothingdata$grid
+    ngrid = length(grid)
+    y = smoothingdata$y
+    pad.length = round(min(ngrid*0.3,20))
+    left.border = grid[1]; right.border = grid[ngrid]
+    grid.center.left = grid - left.border; grid.center.right = grid - right.border
+    aug.grid.center.left = -grid.center.left[(pad.length+1):2]; aug.grid.center.right = -grid.center.right[(ngrid-1):(ngrid-pad.length)]
+    aug.grid = c(aug.grid.center.left + left.border, grid, aug.grid.center.right+right.border)
+    aug.y = c(y[(pad.length+1):2],y,y[(ngrid-1):(ngrid-pad.length)])
+    aug.ngrid = length(aug.grid); aug.range = c(aug.grid[1], aug.grid[aug.ngrid])
+    aug.spline.basis = create.bspline.basis(rangeval=aug.range, nbasis=nbasis, norder = norder)  #create basis
+    aug.Lfd = vec2Lfd(Lcoef, aug.range)
+    aug.fdParobj = fdPar(aug.spline.basis, aug.Lfd, lambda = lambda.min.gcv)
+    aug.smooth.fd = smooth.basis(argvals = aug.grid,y = aug.y, fdParobj = aug.fdParobj)  #smooth the data
+    smooth = as.vector(eval.fd(data$grid,aug.smooth.fd$fd))# [(pad.length+1):(aug.ngrid-pad.length)] #have to be evaluated at the original data's grid
+    if(all(!is.na(smooth.true))){
+      smooth.res = smooth.true-smooth
+      return(list(l1 = mean(abs(smooth.res)), l2 = mean(smooth.res^2), linf = max(abs(smooth.res)), smooth.res = smooth.res))
+    }else{
+      return(smooth)
+    }
+  }else{  
+    fdParobj = fdPar(spline.basis, Lfd, lambda = lambda.min.gcv)
+    smooth.fd = smooth.basis(argvals = smoothingdata$grid,y = smoothingdata$y, fdParobj = fdParobj)  #smooth the data
+    smooth = as.vector(eval.fd(data$grid,smooth.fd$fd)) #have to be evaluated at the original data's grid
+    if(all(!is.na(smooth.true))){
+      smooth.res = smooth.true-smooth
+      return(list(l1 = mean(abs(smooth.res)), l2 = mean(smooth.res^2), linf = max(abs(smooth.res)), smooth.res = smooth.res))
+    }else{
+      return(smooth)
+    }
   }
 }
